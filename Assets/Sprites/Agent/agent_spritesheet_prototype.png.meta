@@ -1,69 +1,69 @@
 fileFormatVersion: 2
 guid: 185c2e6cb953bb24cb82b23fcd6ae182
-timeCreated: 1473581142
+timeCreated: 1473731112
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: agent_spritesheet_prototype_0
-    21300002: agent_spritesheet_prototype_1
-    21300004: agent_spritesheet_prototype_2
-    21300006: agent_spritesheet_prototype_3
-    21300008: agent_spritesheet_prototype_4
-    21300010: agent_spritesheet_prototype_5
-    21300012: agent_spritesheet_prototype_6
-    21300014: agent_spritesheet_prototype_7
-    21300016: agent_spritesheet_prototype_8
-    21300018: agent_spritesheet_prototype_9
-    21300020: agent_spritesheet_prototype_10
-    21300022: agent_spritesheet_prototype_11
-    21300024: agent_spritesheet_prototype_12
-    21300026: agent_spritesheet_prototype_13
-    21300028: agent_spritesheet_prototype_14
-    21300030: agent_spritesheet_prototype_15
-    21300032: agent_spritesheet_prototype_16
-    21300034: agent_spritesheet_prototype_17
-    21300036: agent_spritesheet_prototype_18
-    21300038: agent_spritesheet_prototype_19
-    21300040: agent_spritesheet_prototype_20
-    21300042: agent_spritesheet_prototype_21
-    21300044: agent_spritesheet_prototype_22
-    21300046: agent_spritesheet_prototype_23
-    21300048: agent_spritesheet_prototype_24
-    21300050: agent_spritesheet_prototype_25
-    21300052: agent_spritesheet_prototype_26
-    21300054: agent_spritesheet_prototype_27
-    21300056: agent_spritesheet_prototype_28
-    21300058: agent_spritesheet_prototype_29
-    21300060: agent_spritesheet_prototype_30
-    21300062: agent_spritesheet_prototype_31
-    21300064: agent_spritesheet_prototype_32
-    21300066: agent_spritesheet_prototype_33
-    21300068: agent_spritesheet_prototype_34
-    21300070: agent_spritesheet_prototype_35
-    21300072: agent_spritesheet_prototype_36
-    21300074: agent_spritesheet_prototype_37
-    21300076: agent_spritesheet_prototype_38
-    21300078: agent_spritesheet_prototype_39
-    21300080: agent_spritesheet_prototype_40
-    21300082: agent_spritesheet_prototype_41
-    21300084: agent_spritesheet_prototype_42
-    21300086: agent_spritesheet_prototype_43
-    21300088: agent_spritesheet_prototype_44
-    21300090: agent_spritesheet_prototype_45
-    21300092: agent_spritesheet_prototype_46
-    21300094: agent_spritesheet_prototype_47
-    21300096: agent_spritesheet_prototype_48
-    21300098: agent_spritesheet_prototype_49
-    21300100: agent_spritesheet_prototype_50
-    21300102: agent_spritesheet_prototype_51
-    21300104: agent_spritesheet_prototype_52
-    21300106: agent_spritesheet_prototype_53
-    21300108: agent_spritesheet_prototype_54
-    21300110: agent_spritesheet_prototype_55
+    21300000: idle1
+    21300002: idle2
+    21300004: idle3
+    21300006: idle4
+    21300008: idle5
+    21300010: idle6
+    21300012: idle7
+    21300014: idle8
+    21300016: idle9
+    21300018: idle10
+    21300020: walk1
+    21300022: walk2
+    21300024: walk3
+    21300026: walk4
+    21300028: walk5
+    21300030: walk6
+    21300032: walk7
+    21300034: walk8
+    21300036: walk9
+    21300038: walk10
+    21300040: walk11
+    21300042: walk12
+    21300044: walk13
+    21300046: VerticalJump1
+    21300048: VerticalJump2
+    21300050: VerticalJump3
+    21300052: VerticalJump4
+    21300054: VerticalJump5
+    21300056: VerticalJump6
+    21300058: VerticalJump7
+    21300060: VerticalJump8
+    21300062: VerticalJump9
+    21300064: VerticalJump10
+    21300066: VerticalJump11
+    21300068: VerticalJump12
+    21300070: sidejump1
+    21300072: sidejump2
+    21300074: sidejump3
+    21300076: sidejump4
+    21300078: sidejump5
+    21300080: sidejump6
+    21300082: sidejump7
+    21300084: sidejump8
+    21300086: sidejump9
+    21300088: sidejump10
+    21300090: sidejump11
+    21300092: sidejump12
+    21300094: sidejump13
+    21300096: run1
+    21300098: run2
+    21300100: Run3
+    21300102: run4
+    21300104: run5
+    21300106: run6
+    21300108: run7
+    21300110: run8
     21300112: agent_spritesheet_prototype_56
-    21300114: agent_spritesheet_prototype_57
-    21300116: agent_spritesheet_prototype_58
-    21300118: agent_spritesheet_prototype_59
+    21300114: run9
+    21300116: run10
+    21300118: run11
     21300120: agent_spritesheet_prototype_60
     21300122: agent_spritesheet_prototype_61
     21300124: agent_spritesheet_prototype_62
@@ -118,7 +118,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_0
+      name: idle1
       rect:
         serializedVersion: 2
         x: 0
@@ -131,7 +131,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_1
+      name: idle2
       rect:
         serializedVersion: 2
         x: 156
@@ -144,7 +144,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_2
+      name: idle3
       rect:
         serializedVersion: 2
         x: 312
@@ -157,7 +157,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_3
+      name: idle4
       rect:
         serializedVersion: 2
         x: 468
@@ -170,7 +170,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_4
+      name: idle5
       rect:
         serializedVersion: 2
         x: 624
@@ -183,7 +183,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_5
+      name: idle6
       rect:
         serializedVersion: 2
         x: 780
@@ -196,7 +196,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_6
+      name: idle7
       rect:
         serializedVersion: 2
         x: 936
@@ -209,7 +209,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_7
+      name: idle8
       rect:
         serializedVersion: 2
         x: 1092
@@ -222,7 +222,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_8
+      name: idle9
       rect:
         serializedVersion: 2
         x: 1248
@@ -235,7 +235,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_9
+      name: idle10
       rect:
         serializedVersion: 2
         x: 1404
@@ -248,7 +248,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_10
+      name: walk1
       rect:
         serializedVersion: 2
         x: 0
@@ -261,7 +261,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_11
+      name: walk2
       rect:
         serializedVersion: 2
         x: 153
@@ -274,11 +274,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_12
+      name: walk3
       rect:
         serializedVersion: 2
         x: 316
-        y: 810
+        y: 812
         width: 156
         height: 270
       alignment: 0
@@ -287,7 +287,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_13
+      name: walk4
       rect:
         serializedVersion: 2
         x: 471
@@ -300,7 +300,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_14
+      name: walk5
       rect:
         serializedVersion: 2
         x: 621
@@ -313,7 +313,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_15
+      name: walk6
       rect:
         serializedVersion: 2
         x: 778
@@ -326,7 +326,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_16
+      name: walk7
       rect:
         serializedVersion: 2
         x: 935
@@ -339,7 +339,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_17
+      name: walk8
       rect:
         serializedVersion: 2
         x: 1092
@@ -352,7 +352,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_18
+      name: walk9
       rect:
         serializedVersion: 2
         x: 1253
@@ -365,7 +365,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_19
+      name: walk10
       rect:
         serializedVersion: 2
         x: 1407
@@ -378,11 +378,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_20
+      name: walk11
       rect:
         serializedVersion: 2
         x: 1558
-        y: 810
+        y: 812
         width: 156
         height: 270
       alignment: 0
@@ -391,7 +391,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_21
+      name: walk12
       rect:
         serializedVersion: 2
         x: 1714
@@ -404,7 +404,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_22
+      name: walk13
       rect:
         serializedVersion: 2
         x: 1870
@@ -417,7 +417,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_23
+      name: VerticalJump1
       rect:
         serializedVersion: 2
         x: 0
@@ -430,7 +430,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_24
+      name: VerticalJump2
       rect:
         serializedVersion: 2
         x: 156
@@ -443,7 +443,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_25
+      name: VerticalJump3
       rect:
         serializedVersion: 2
         x: 312
@@ -456,7 +456,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_26
+      name: VerticalJump4
       rect:
         serializedVersion: 2
         x: 468
@@ -469,11 +469,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_27
+      name: VerticalJump5
       rect:
         serializedVersion: 2
         x: 624
-        y: 540
+        y: 542
         width: 156
         height: 270
       alignment: 0
@@ -482,12 +482,12 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_28
+      name: VerticalJump6
       rect:
         serializedVersion: 2
-        x: 780
+        x: 783
         y: 540
-        width: 156
+        width: 168
         height: 270
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -495,10 +495,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_29
+      name: VerticalJump7
       rect:
         serializedVersion: 2
-        x: 936
+        x: 938
         y: 540
         width: 156
         height: 270
@@ -508,7 +508,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_30
+      name: VerticalJump8
       rect:
         serializedVersion: 2
         x: 1092
@@ -521,7 +521,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_31
+      name: VerticalJump9
       rect:
         serializedVersion: 2
         x: 1248
@@ -534,7 +534,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_32
+      name: VerticalJump10
       rect:
         serializedVersion: 2
         x: 1404
@@ -547,7 +547,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_33
+      name: VerticalJump11
       rect:
         serializedVersion: 2
         x: 1560
@@ -560,7 +560,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_34
+      name: VerticalJump12
       rect:
         serializedVersion: 2
         x: 1716
@@ -573,7 +573,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_35
+      name: sidejump1
       rect:
         serializedVersion: 2
         x: 0
@@ -586,7 +586,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_36
+      name: sidejump2
       rect:
         serializedVersion: 2
         x: 156
@@ -599,10 +599,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_37
+      name: sidejump3
       rect:
         serializedVersion: 2
-        x: 312
+        x: 317
         y: 270
         width: 156
         height: 270
@@ -612,10 +612,10 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_38
+      name: sidejump4
       rect:
         serializedVersion: 2
-        x: 468
+        x: 472
         y: 270
         width: 156
         height: 270
@@ -625,7 +625,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_39
+      name: sidejump5
       rect:
         serializedVersion: 2
         x: 624
@@ -638,11 +638,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_40
+      name: sidejump6
       rect:
         serializedVersion: 2
         x: 780
-        y: 270
+        y: 263
         width: 156
         height: 270
       alignment: 0
@@ -651,11 +651,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_41
+      name: sidejump7
       rect:
         serializedVersion: 2
         x: 936
-        y: 270
+        y: 275
         width: 156
         height: 270
       alignment: 0
@@ -664,7 +664,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_42
+      name: sidejump8
       rect:
         serializedVersion: 2
         x: 1092
@@ -677,7 +677,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_43
+      name: sidejump9
       rect:
         serializedVersion: 2
         x: 1248
@@ -690,7 +690,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_44
+      name: sidejump10
       rect:
         serializedVersion: 2
         x: 1404
@@ -703,7 +703,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_45
+      name: sidejump11
       rect:
         serializedVersion: 2
         x: 1560
@@ -716,7 +716,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_46
+      name: sidejump12
       rect:
         serializedVersion: 2
         x: 1716
@@ -729,7 +729,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_47
+      name: sidejump13
       rect:
         serializedVersion: 2
         x: 1872
@@ -742,7 +742,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_48
+      name: run1
       rect:
         serializedVersion: 2
         x: 0
@@ -755,7 +755,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_49
+      name: run2
       rect:
         serializedVersion: 2
         x: 157
@@ -768,7 +768,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_50
+      name: Run3
       rect:
         serializedVersion: 2
         x: 308
@@ -781,7 +781,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_51
+      name: run4
       rect:
         serializedVersion: 2
         x: 455
@@ -794,7 +794,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_52
+      name: run5
       rect:
         serializedVersion: 2
         x: 623
@@ -807,7 +807,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_53
+      name: run6
       rect:
         serializedVersion: 2
         x: 778
@@ -820,7 +820,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_54
+      name: run7
       rect:
         serializedVersion: 2
         x: 936
@@ -833,7 +833,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_55
+      name: run8
       rect:
         serializedVersion: 2
         x: 1092
@@ -859,7 +859,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_57
+      name: run9
       rect:
         serializedVersion: 2
         x: 1411
@@ -872,7 +872,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_58
+      name: run10
       rect:
         serializedVersion: 2
         x: 1564
@@ -885,7 +885,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet_prototype_59
+      name: run11
       rect:
         serializedVersion: 2
         x: 1716
