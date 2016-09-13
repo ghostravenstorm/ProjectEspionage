@@ -24,10 +24,10 @@ public class Player : MonoBehaviour{
 		/* Left or Right input */
 		moveX = Input.GetAxis("Horizontal");
 
-		/* Ladder climb input */
+		/* Ladder climb input 
 		if(Input.GetAxis("Vertical") != 0 && isAtLadder){
 			moveY = Input.GetAxis("Vertical");
-		}
+		}*/
 
 		/* Jump input */
 		if(Input.GetAxis("Jump") >= 1 && isGrounded){
@@ -60,9 +60,7 @@ public class Player : MonoBehaviour{
 		else{
 			vectorY = rigidbody.velocity.y;
 			rigidbody.velocity = new Vector3(vectorX, vectorY, 0);
-		}
-
-		
+		}		
 	}
 
 	void OnCollisionEnter(Collision collision){
@@ -72,13 +70,13 @@ public class Player : MonoBehaviour{
 
 	void OnTriggerEnter(Collider collider){
 		if(collider.gameObject.tag == "Ladder"){
-			EnabledLadderMode();
+			//EnabledLadderMode();
 		}
 	}
 
 	void OnColliderExit(Collider collider){
 		if(collider.gameObject.tag == "Ladder"){
-			DisableLadderMode();
+			//DisableLadderMode();
 		}
 	}
 
