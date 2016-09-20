@@ -9,14 +9,17 @@ public class Player : MonoBehaviour{
 
 	private float moveX;
 	private float moveY;
+
 	private bool isGrounded;
 	private bool isSprinting;
 	private bool isAtLadder;
 
 	private new Rigidbody rigidbody;
+	private Animator animator;
 
 	void Start(){
 		rigidbody = GetComponent<Rigidbody>();
+		animator = GetComponent<Animator>();
 	}
 	
 	void Update(){
@@ -24,10 +27,24 @@ public class Player : MonoBehaviour{
 		/* Left or Right input */
 		moveX = Input.GetAxis("Horizontal");
 
-		/* Ladder climb input 
-		if(Input.GetAxis("Vertical") != 0 && isAtLadder){
+		//Debug.Log(Input.GetAxis("Vertical"));
+
+		if(Input.GetAxis("Horizontal") >= 1){
+			this.transform.localScale = new Vector3(-1, 1, 1);
+			animator.SetBool("IsWalking", true);
+		}
+		else if(Input.GetAxis("Horizontal") <= -1){
+			this.transform.localScale = new Vector3(1, 1, 1);
+			animator.SetBool("IsWalking", true);
+		}
+		else
+			animator.SetBool("IsWalking", false);
+
+		/* Ladder climb input */
+		if(Input.GetAxis("Vertical") != 0 && isAtLadder)
 			moveY = Input.GetAxis("Vertical");
-		}*/
+		else
+			moveY = 0;
 
 		/* Jump input */
 		if(Input.GetAxis("Jump") >= 1 && isGrounded){
@@ -36,7 +53,6 @@ public class Player : MonoBehaviour{
 
 		/* Sprint input */
 		if(Input.GetAxis("Sprint") >=1 ){
-			Debug.Log("Sprinting");
 			isSprinting = true;
 		}
 		else	
@@ -55,8 +71,10 @@ public class Player : MonoBehaviour{
 			vectorX = moveX * speed;
 		}
 
-		if(isAtLadder)
+		if(isAtLadder){
 			vectorY = moveY * climbSpeed;
+			rigidbody.velocity = new Vector3(vectorX, vectorY, 0);
+		}
 		else{
 			vectorY = rigidbody.velocity.y;
 			rigidbody.velocity = new Vector3(vectorX, vectorY, 0);
@@ -66,17 +84,24 @@ public class Player : MonoBehaviour{
 	void OnCollisionEnter(Collision collision){
 		if(collision.gameObject.tag == "Ground")
 			isGrounded = true;
+
+		if(collision.gameObject.tag == "Ladder")
+			isGrounded = false;
+	}
+
+	void OnColliderExit(Collider collider){
+		
 	}
 
 	void OnTriggerEnter(Collider collider){
 		if(collider.gameObject.tag == "Ladder"){
-			//EnabledLadderMode();
+			EnabledLadderMode();
 		}
 	}
 
-	void OnColliderExit(Collider collider){
+	void OnTriggerExit(Collider collider){
 		if(collider.gameObject.tag == "Ladder"){
-			//DisableLadderMode();
+			DisableLadderMode();
 		}
 	}
 

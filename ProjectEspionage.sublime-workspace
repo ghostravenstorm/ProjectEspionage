@@ -4,6 +4,26 @@
 		"selected_items":
 		[
 			[
+				"IE",
+				"IESwing"
+			],
+			[
+				"swin",
+				"swingRateInDegrees"
+			],
+			[
+				"i",
+				"isFacingRight"
+			],
+			[
+				"vec",
+				"vectorY"
+			],
+			[
+				"vector",
+				"vectorX"
+			],
+			[
 				"climb",
 				"climbSpeed"
 			],
@@ -252,10 +272,6 @@
 				"IE_ChasePlayer"
 			],
 			[
-				"IE",
-				"IE_ReturnToStart"
-			],
-			[
 				"Stop",
 				"StopCoroutine"
 			],
@@ -435,8 +451,37 @@
 			"file": "Assets/Scripts/Player.cs",
 			"settings":
 			{
-				"buffer_size": 1902,
+				"buffer_size": 2505,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "Assets/Scripts/RopeSwing.cs",
+			"settings":
+			{
+				"buffer_size": 958,
+				"line_ending": "Windows",
+				"name": "using UnityEngine;"
+			}
+		},
+		{
+			"contents": "player\n	camera\n\nbasic AI mob\n\n",
+			"settings":
+			{
+				"buffer_size": 30,
+				"line_ending": "Windows",
+				"name": "player"
+			}
+		},
+		{
+			"contents": "Package Control Messages\n========================\n\nPackage Control\n---------------\n\n  Version 3.2 Release Notes\n  \n  This version of Package Control focuses on bug-fixes, with notable changes\n  including:\n  \n   - OS X TLS trust roots are exported using APIs to prevent the error message\n     displayed to some El Capitan users\n  \n   - Theme, syntax and color scheme upgrades have been improved and should result\n     in fewer popup messages when filenames change\n  \n   - Various bugs related to installing dependencies have been resolved\n  \n   - Windows and OS X trust roots are exported in a way that valid/invalid purpose\n     information is now communicated to the OpenSSL-based Python ssl module\n  \n   - Further improvements have been made to handling of git/hg package upgrades\n  \n   - The Windows WinINet downloader has improved compatibility with Windows 10\n",
+			"settings":
+			{
+				"buffer_size": 865,
+				"line_ending": "Windows",
+				"name": "Package Control Messages",
+				"read_only": true,
+				"scratch": true
 			}
 		}
 	],
@@ -530,6 +575,8 @@
 	],
 	"file_history":
 	[
+		"/E/Projects/ProjectEspionage/Assets/Something.cs",
+		"/K/Stuart/CollegeStuff/DIG4725_WorkshopA/server.txt",
 		"/E/Projects/ProjectEspionage/Assets/Scripts/Player.cs",
 		"/E/Projects/ProjectEspionage/Assets/Scripts/Ladder.cs",
 		"/K/Stuart/CollegeStuff/FIL3720_IntroAnim/Notes.txt",
@@ -655,13 +702,11 @@
 		"/K/USER/UnityProjects/Doubloonacy/Assets/code/SkeletonAnimation.cs",
 		"/K/USER/UnityProjects/Doubloonacy/Assets/code/GUIManager.cs",
 		"/K/USER/UnityProjects/Doubloonacy/Assets/code/mainMenuLoad.cs",
-		"/K/USER/UnityProjects/Doubloonacy/.gitignore",
-		"/R/readme.txt",
-		"/K/USER/UnityProjects/SkeletonCrew/.gitignore"
+		"/K/USER/UnityProjects/Doubloonacy/.gitignore"
 	],
 	"find":
 	{
-		"height": 29.0
+		"height": 62.0
 	},
 	"find_in_files":
 	{
@@ -675,6 +720,9 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"swingRateInDegreesPerSecond",
+			"swingAmountInDegrees",
+			"isfacing",
 			"\"){\n",
 			"RefreshUI",
 			"correctSwitches",
@@ -726,6 +774,8 @@
 		"regex": true,
 		"replace_history":
 		[
+			"swingRate",
+			"swingAmount",
 			"correctButtons",
 			"buttonTable",
 			"correctButtons",
@@ -753,7 +803,7 @@
 	"groups":
 	[
 		{
-			"selected": 0,
+			"selected": 3,
 			"sheets":
 			[
 				{
@@ -762,15 +812,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1902,
+						"buffer_size": 2505,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1346,
-								1346
+								327,
+								327
 							]
 						],
 						"settings":
@@ -779,7 +829,94 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 912.0,
+						"translation.y": 373.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "Assets/Scripts/RopeSwing.cs",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 958,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								330,
+								330
+							]
+						],
+						"settings":
+						{
+							"auto_name": "using UnityEngine;",
+							"syntax": "Packages/C#/C#.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 132.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 30,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								30,
+								30
+							]
+						],
+						"settings":
+						{
+							"auto_name": "player",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 865,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								865,
+								865
+							]
+						],
+						"settings":
+						{
+							"auto_indent": false,
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_width": 2,
+							"word_wrap": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -839,7 +976,7 @@
 	"project": "",
 	"replace":
 	{
-		"height": 54.0
+		"height": 80.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -877,7 +1014,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 168.0,
+	"side_bar_width": 176.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{
