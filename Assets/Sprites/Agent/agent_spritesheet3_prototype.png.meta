@@ -1,0 +1,297 @@
+fileFormatVersion: 2
+guid: 2484d003c1a6a5243909fb67e09a36ea
+timeCreated: 1474669940
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: agent_sneak0
+    21300002: agent_sneak1
+    21300004: agent_sneak2
+    21300006: agent_sneak3
+    21300008: agent_sneak4
+    21300010: agent_sneak5
+    21300012: agent_sneak6
+    21300014: agent_sneak7
+    21300016: agent_sneak8
+    21300018: agent_sneak9
+    21300020: agent_sneak10
+    21300022: agent_sneak11
+    21300024: agent_sneak12
+    21300026: agent_sneak13
+    21300028: agent_hide0
+    21300030: agent_hide1
+    21300032: agent_spritesheet3_prototype_16
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: agent_sneak0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak2
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak3
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak4
+      rect:
+        serializedVersion: 2
+        x: 624
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak5
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak6
+      rect:
+        serializedVersion: 2
+        x: 936
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak7
+      rect:
+        serializedVersion: 2
+        x: 1092
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak8
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak9
+      rect:
+        serializedVersion: 2
+        x: 1404
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak10
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak11
+      rect:
+        serializedVersion: 2
+        x: 1716
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak12
+      rect:
+        serializedVersion: 2
+        x: 1872
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_sneak13
+      rect:
+        serializedVersion: 2
+        x: 2028
+        y: 540
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_hide0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 270
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_hide1
+      rect:
+        serializedVersion: 2
+        x: 156
+        y: 270
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet3_prototype_16
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 270
+        width: 156
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
