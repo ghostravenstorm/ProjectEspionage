@@ -32,19 +32,13 @@ public class RopeSwing : MonoBehaviour{
 			this.transform.rotation = Quaternion.Euler(0, 0, interpolatedRotation);
 			
 			if(interpolatedRotation >= swingAmount){
-				Debug.Log("switch neg");
 				swingRate *= -1;
 			}
 			else if(interpolatedRotation <= 0 - swingAmount){
 				swingRate *= -1;
-				Debug.Log("switch pos");
 			}
-
-
-			Debug.Log(interpolatedRotation);
 
 			yield return new WaitForSeconds(0.01f);
 		}
-
 	}
 }

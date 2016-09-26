@@ -107,6 +107,7 @@ public class Player : MonoBehaviour{
 
 	private void EnabledLadderMode(){
 		// switch forward facing animation
+		Debug.Log("Ladder mode!");
 		rigidbody.useGravity = false;
 		isAtLadder = true;
 		
