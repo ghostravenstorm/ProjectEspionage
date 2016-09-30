@@ -10,6 +10,8 @@ public class Player : MonoBehaviour{
 	private float moveX;
 	private float moveY;
 
+	public Vector3 originalPosition;
+
 	private bool isGrounded;
 	private bool isSprinting;
 	private bool isAtLadder;
@@ -20,6 +22,8 @@ public class Player : MonoBehaviour{
 	void Start(){
 		rigidbody = GetComponent<Rigidbody>();
 		animator = GetComponent<Animator>();
+
+		originalPosition = this.transform.position;
 	}
 	
 	void Update(){
