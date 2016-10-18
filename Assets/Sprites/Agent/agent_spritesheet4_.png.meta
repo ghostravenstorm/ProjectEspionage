@@ -1,0 +1,272 @@
+fileFormatVersion: 2
+guid: 41e996757323b3b429912238fc18311e
+timeCreated: 1476772199
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: agent_spritesheet4__0
+    21300002: agent_spritesheet4__1
+    21300004: agent_spritesheet4__3
+    21300006: agent_spritesheet4__5
+    21300008: agent_spritesheet4__4
+    21300010: agent_spritesheet4__5
+    21300012: agent_spritesheet4__6
+    21300014: agent_spritesheet4__7
+    21300016: agent_spritesheet4__8
+    21300018: agent_spritesheet4__22
+    21300020: agent_spritesheet4__23
+    21300022: agent_spritesheet4__13
+    21300024: agent_spritesheet4__9
+    21300026: agent_spritesheet4__10
+    21300028: agent_spritesheet4__11
+    21300030: agent_spritesheet4__14
+    21300032: agent_spritesheet4__2
+    21300034: agent_spritesheet4__12
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: agent_spritesheet4__0
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 587
+        width: 134
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__1
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 597
+        width: 142
+        height: 203
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__3
+      rect:
+        serializedVersion: 2
+        x: 966
+        y: 622
+        width: 145
+        height: 152
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__4
+      rect:
+        serializedVersion: 2
+        x: 1272
+        y: 622
+        width: 142
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__5
+      rect:
+        serializedVersion: 2
+        x: 1557
+        y: 623
+        width: 142
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__6
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 621
+        width: 199
+        height: 155
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 433
+        width: 254
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__8
+      rect:
+        serializedVersion: 2
+        x: 316
+        y: 433
+        width: 259
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__13
+      rect:
+        serializedVersion: 2
+        x: 1769
+        y: 432
+        width: 295
+        height: 156
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__9
+      rect:
+        serializedVersion: 2
+        x: 597
+        y: 433
+        width: 269
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__10
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 433
+        width: 307
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__11
+      rect:
+        serializedVersion: 2
+        x: 1172
+        y: 433
+        width: 301
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 245
+        width: 295
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__2
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 622
+        width: 148
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet4__12
+      rect:
+        serializedVersion: 2
+        x: 1474
+        y: 433
+        width: 294
+        height: 154
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
