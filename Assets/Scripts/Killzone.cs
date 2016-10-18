@@ -12,7 +12,7 @@ public class Killzone : MonoBehaviour{
 	
 
 	private void RespawnPlayer(GameObject player){
-		Object.Instantiate(playerPrefab, player.GetComponent<Player>().originalPosition, player.transform.rotation);
+		Object.Instantiate(playerPrefab, player.GetComponent<Player>().spawnPoint, player.transform.rotation);
 		Object.Destroy(player);
 	}
 }

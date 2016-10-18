@@ -7,8 +7,9 @@ TagManager:
   - Ground
   - Ladder
   - Rope
-  - LightMain
-  - LightFallOff
+  - FullLight
+  - SemiLight
+  - Cimbable
   layers:
   - Default
   - TransparentFX

@@ -1,13 +1,42 @@
 using UnityEngine;
-using UnityEngine.UI;
+using System.Collections;
 
 public class LightDetector : MonoBehaviour{
 
+	public bool isDetectable;
+	public LightState state;
+
+	void Start(){
+		StartCoroutine("StateCheck");
+	}
+
+	private IEnumerator StateCheck(){
+
+		var controller = this.GetComponent<MainController>().controller;
+
+		while(true){
+			if(state == LightState.Darkness) isDetectable = false;
+			if(state == LightState.SemiLight && controller.state == PlayerState.Sneaking) isDetectable = false;
+			if(state == LightState.SemiLight && controller.state != PlayerState.Sneaking) isDetectable = true;
+			if(state == LightState.FullLight) isDetectable = true; 
+			return null;
+		}
+	}
+
+	void OnTriggerEnter2D(Collider2D collider){
+		if(collider.gameObject.tag == "FullLight") state = LightState.FullLight;
+		if(collider.gameObject.tag == "SemiLight") state = LightState.SemiLight;
+	}
+
+	void OnTriggerExit2D(Collider2D collider){
+		if(collider.gameObject.tag == "FullLight") state = LightState.Darkness;
+		if(collider.gameObject.tag == "SemiLight") state = LightState.Darkness;
+	}
+
+	/*
 	public bool isDetectable{ private set; get; }
 	public bool isInLightMain{ private set; get; }
 	public bool isInLightFallOff{ private set; get; }
-
-	public GameObject GUI;
 
 	void Start(){
 		isDetectable = true;
@@ -27,11 +56,6 @@ public class LightDetector : MonoBehaviour{
 			}
 			Debug.Log("Is detectable: " + isDetectable);
 		}
-
-		if(isDetectable)
-			GUI.GetComponent<Text>().text = "Is Detectable.";
-		else
-			GUI.GetComponent<Text>().text = "Is NOT Detectable.";
 	}
 
 	void OnTriggerEnter2D(Collider2D collider) {
@@ -68,4 +92,5 @@ public class LightDetector : MonoBehaviour{
 			//Debug.Log("Is detectable: " + isDetectable);
 		}
 	}
+	*/
 }

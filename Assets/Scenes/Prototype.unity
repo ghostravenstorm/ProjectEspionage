@@ -348,6 +348,37 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 167636250}
+--- !u!1 &197774909 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011487793988, guid: 390c248be5882554bab0d6a6479635dd,
+    type: 2}
+  m_PrefabInternal: {fileID: 651010521}
+--- !u!114 &197774910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197774909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 783ab9ef6a1795e43a315328280de4c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &197774916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 197774909}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d089e5f1e534bd428463e3db99db5af, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movementSpeed: 3
+  climbModifier: 0.8
+  sprintModifier: 1.5
+  sneakModifier: 0.2
 --- !u!1 &265328541
 GameObject:
   m_ObjectHideFlags: 0
@@ -411,6 +442,46 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!1 &395116556
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 395116558}
+  - 114: {fileID: 395116557}
+  m_Layer: 0
+  m_Name: InputManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &395116557
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395116556}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438cefa2bb65f0342addae1e2a764832, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &395116558
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 395116556}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.881553, y: 0.10125697, z: 1.5117188}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 19
 --- !u!1 &395710305
 GameObject:
   m_ObjectHideFlags: 0
@@ -423,7 +494,7 @@ GameObject:
   - 65: {fileID: 395710306}
   m_Layer: 0
   m_Name: Ladder
-  m_TagString: Ladder
+  m_TagString: Cimbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -618,7 +689,16 @@ Prefab:
       propertyPath: GUI
       value: 
       objectReference: {fileID: 167636250}
-    m_RemovedComponents: []
+    - target: {fileID: 114000013578088054, guid: 390c248be5882554bab0d6a6479635dd,
+        type: 2}
+      propertyPath: sneakSpeedModifier
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 114000014260326178, guid: 390c248be5882554bab0d6a6479635dd, type: 2}
+    - {fileID: 114000014153975794, guid: 390c248be5882554bab0d6a6479635dd, type: 2}
+    - {fileID: 114000013578088054, guid: 390c248be5882554bab0d6a6479635dd, type: 2}
+    - {fileID: 114000013513708562, guid: 390c248be5882554bab0d6a6479635dd, type: 2}
   m_ParentPrefab: {fileID: 100100000, guid: 390c248be5882554bab0d6a6479635dd, type: 2}
   m_IsPrefabParent: 0
 --- !u!1 &692109790
@@ -861,7 +941,7 @@ GameObject:
   - 65: {fileID: 879642058}
   m_Layer: 0
   m_Name: Ladder (1)
-  m_TagString: Ladder
+  m_TagString: Cimbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1591,7 +1671,7 @@ GameObject:
   - 65: {fileID: 1753598825}
   m_Layer: 0
   m_Name: Rope
-  m_TagString: Rope
+  m_TagString: Cimbable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
