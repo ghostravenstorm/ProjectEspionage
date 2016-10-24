@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 19bf0a9c1a4ae9446950e5487a4cc182
-timeCreated: 1474358615
+timeCreated: 1476927525
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -13,12 +13,12 @@ TextureImporter:
     21300012: agent_climb2_6
     21300014: agent_climb2_7
     21300016: agent_climb2_8
-    21300018: agent_spritesheet2_prototype_9
-    21300020: agent_spritesheet2_prototype_10
-    21300022: agent_spritesheet2_prototype_11
-    21300024: agent_spritesheet2_prototype_12
-    21300026: agent_spritesheet2_prototype_13
-    21300028: agent_spritesheet2_prototype_14
+    21300018: agent_swing1
+    21300020: agent_swing2
+    21300022: agent_swing3
+    21300024: agent_swing4
+    21300026: agent_swing5
+    21300028: agent_swing6
     21300030: agent_spritesheet2_prototype_15
     21300032: agent_spritesheet2_prototype_16
     21300034: agent_spritesheet2_prototype_17
@@ -188,7 +188,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet2_prototype_9
+      name: agent_swing1
       rect:
         serializedVersion: 2
         x: 0
@@ -201,11 +201,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet2_prototype_10
+      name: agent_swing2
       rect:
         serializedVersion: 2
-        x: 156
-        y: 0
+        x: 155
+        y: 1
         width: 156
         height: 270
       alignment: 0
@@ -214,11 +214,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet2_prototype_11
+      name: agent_swing3
       rect:
         serializedVersion: 2
         x: 312
-        y: 0
+        y: 1
         width: 156
         height: 270
       alignment: 0
@@ -227,7 +227,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet2_prototype_12
+      name: agent_swing4
       rect:
         serializedVersion: 2
         x: 468
@@ -240,11 +240,11 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet2_prototype_13
+      name: agent_swing5
       rect:
         serializedVersion: 2
         x: 624
-        y: 0
+        y: 1
         width: 156
         height: 270
       alignment: 0
@@ -253,7 +253,7 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet2_prototype_14
+      name: agent_swing6
       rect:
         serializedVersion: 2
         x: 780

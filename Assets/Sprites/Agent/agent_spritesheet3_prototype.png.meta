@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2484d003c1a6a5243909fb67e09a36ea
-timeCreated: 1476768971
+timeCreated: 1477272200
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -20,34 +20,34 @@ TextureImporter:
     21300026: agent_sneak13
     21300028: agent_hide0
     21300030: agent_hide1
-    21300032: agent_spritesheet3_prototype_16
-    21300034: agent_spritesheet3_prototype_0
-    21300036: agent_spritesheet3_prototype_1
-    21300038: agent_spritesheet3_prototype_2
-    21300040: agent_spritesheet3_prototype_3
-    21300042: agent_spritesheet3_prototype_4
-    21300044: agent_spritesheet3_prototype_5
-    21300046: agent_spritesheet3_prototype_6
-    21300048: agent_spritesheet3_prototype_7
-    21300050: agent_spritesheet3_prototype_8
-    21300052: agent_spritesheet3_prototype_9
-    21300054: agent_spritesheet3_prototype_10
-    21300056: agent_spritesheet3_prototype_11
-    21300058: agent_spritesheet3_prototype_12
-    21300060: agent_spritesheet3_prototype_13
-    21300062: agent_spritesheet3_prototype_14
-    21300064: agent_spritesheet3_prototype_15
-    21300066: agent_spritesheet3_prototype_17
-    21300068: agent_spritesheet3_prototype_18
-    21300070: agent_spritesheet3_prototype_19
-    21300072: agent_spritesheet3_prototype_20
-    21300074: agent_spritesheet3_prototype_21
-    21300076: agent_spritesheet3_prototype_22
-    21300078: agent_spritesheet3_prototype_23
-    21300080: agent_spritesheet3_prototype_24
-    21300082: agent_spritesheet3_prototype_25
-    21300084: agent_spritesheet3_prototype_26
-    21300086: agent_spritesheet3_prototype_27
+    21300032: hang1
+    21300034: sneak1
+    21300036: sneak2
+    21300038: sneak3
+    21300040: swing4
+    21300042: swing5
+    21300044: swing6
+    21300046: swing7
+    21300048: swing8
+    21300050: swing9
+    21300052: swing10
+    21300054: swing11
+    21300056: swing12
+    21300058: swing13
+    21300060: swing14
+    21300062: hide1
+    21300064: hide2
+    21300066: hang2
+    21300068: hang3
+    21300070: hang4
+    21300072: ledge1
+    21300074: ledge2
+    21300076: ledge3
+    21300078: ledge4
+    21300080: ledge5
+    21300082: ledge6
+    21300084: ledge7
+    21300086: ledge8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -97,7 +97,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_0
+      name: sneak1
       rect:
         serializedVersion: 2
         x: 0
@@ -105,12 +105,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_1
+      name: sneak2
       rect:
         serializedVersion: 2
         x: 156
@@ -118,12 +118,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_2
+      name: sneak3
       rect:
         serializedVersion: 2
         x: 312
@@ -131,12 +131,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_3
+      name: swing4
       rect:
         serializedVersion: 2
         x: 468
@@ -144,12 +144,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_4
+      name: swing5
       rect:
         serializedVersion: 2
         x: 624
@@ -157,12 +157,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_5
+      name: swing6
       rect:
         serializedVersion: 2
         x: 780
@@ -170,12 +170,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_6
+      name: swing7
       rect:
         serializedVersion: 2
         x: 936
@@ -183,12 +183,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_7
+      name: swing8
       rect:
         serializedVersion: 2
         x: 1092
@@ -196,12 +196,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_8
+      name: swing9
       rect:
         serializedVersion: 2
         x: 1248
@@ -209,12 +209,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_9
+      name: swing10
       rect:
         serializedVersion: 2
         x: 1404
@@ -222,12 +222,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_10
+      name: swing11
       rect:
         serializedVersion: 2
         x: 1560
@@ -235,12 +235,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_11
+      name: swing12
       rect:
         serializedVersion: 2
         x: 1716
@@ -248,12 +248,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_12
+      name: swing13
       rect:
         serializedVersion: 2
         x: 1872
@@ -261,12 +261,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_13
+      name: swing14
       rect:
         serializedVersion: 2
         x: 2028
@@ -274,12 +274,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_14
+      name: hide1
       rect:
         serializedVersion: 2
         x: 0
@@ -287,12 +287,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_15
+      name: hide2
       rect:
         serializedVersion: 2
         x: 156
@@ -300,12 +300,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_16
+      name: hang1
       rect:
         serializedVersion: 2
         x: 312
@@ -313,12 +313,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_17
+      name: hang2
       rect:
         serializedVersion: 2
         x: 468
@@ -326,12 +326,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_18
+      name: hang3
       rect:
         serializedVersion: 2
         x: 624
@@ -339,12 +339,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_19
+      name: hang4
       rect:
         serializedVersion: 2
         x: 780
@@ -352,12 +352,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_20
+      name: ledge1
       rect:
         serializedVersion: 2
         x: 936
@@ -365,12 +365,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_21
+      name: ledge2
       rect:
         serializedVersion: 2
         x: 1092
@@ -378,12 +378,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_22
+      name: ledge3
       rect:
         serializedVersion: 2
         x: 1248
@@ -391,12 +391,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_23
+      name: ledge4
       rect:
         serializedVersion: 2
         x: 1404
@@ -404,12 +404,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_24
+      name: ledge5
       rect:
         serializedVersion: 2
         x: 1560
@@ -417,12 +417,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_25
+      name: ledge6
       rect:
         serializedVersion: 2
         x: 1716
@@ -430,12 +430,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_26
+      name: ledge7
       rect:
         serializedVersion: 2
         x: 1872
@@ -443,12 +443,12 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet3_prototype_27
+      name: ledge8
       rect:
         serializedVersion: 2
         x: 2028
@@ -456,7 +456,7 @@ TextureImporter:
         width: 156
         height: 270
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0

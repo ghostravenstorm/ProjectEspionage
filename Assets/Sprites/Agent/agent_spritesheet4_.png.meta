@@ -1,27 +1,28 @@
 fileFormatVersion: 2
 guid: 41e996757323b3b429912238fc18311e
-timeCreated: 1476772199
+timeCreated: 1476935962
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
-    21300000: agent_spritesheet4__0
-    21300002: agent_spritesheet4__1
-    21300004: agent_spritesheet4__3
-    21300006: agent_spritesheet4__5
-    21300008: agent_spritesheet4__4
-    21300010: agent_spritesheet4__5
-    21300012: agent_spritesheet4__6
-    21300014: agent_spritesheet4__7
-    21300016: agent_spritesheet4__8
+    21300000: death1
+    21300002: death2
+    21300004: death4
+    21300006: death6
+    21300008: death5
+    21300010: death6
+    21300012: death7
+    21300014: death8
+    21300016: death9
     21300018: agent_spritesheet4__22
     21300020: agent_spritesheet4__23
-    21300022: agent_spritesheet4__13
-    21300024: agent_spritesheet4__9
-    21300026: agent_spritesheet4__10
-    21300028: agent_spritesheet4__11
-    21300030: agent_spritesheet4__14
-    21300032: agent_spritesheet4__2
+    21300022: death14
+    21300024: death10
+    21300026: death11
+    21300028: death12
+    21300030: death15
+    21300032: death3
     21300034: agent_spritesheet4__12
+    21300036: death13
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -71,12 +72,12 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: agent_spritesheet4__0
+      name: death1
       rect:
         serializedVersion: 2
-        x: 89
+        x: 0
         y: 587
-        width: 134
+        width: 295
         height: 223
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -84,38 +85,90 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__1
+      name: death2
       rect:
         serializedVersion: 2
-        x: 370
-        y: 597
-        width: 142
-        height: 203
+        x: 295
+        y: 587
+        width: 295
+        height: 223
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__3
+      name: death3
       rect:
         serializedVersion: 2
-        x: 966
-        y: 622
-        width: 145
-        height: 152
+        x: 590
+        y: 587
+        width: 295
+        height: 223
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__4
+      name: death4
       rect:
         serializedVersion: 2
-        x: 1272
-        y: 622
-        width: 142
+        x: 881
+        y: 587
+        width: 295
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: death5
+      rect:
+        serializedVersion: 2
+        x: 1187
+        y: 587
+        width: 295
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: death6
+      rect:
+        serializedVersion: 2
+        x: 1472
+        y: 592
+        width: 295
+        height: 218
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: death7
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 587
+        width: 295
+        height: 223
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: death8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 434
+        width: 244
         height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -123,85 +176,33 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__5
-      rect:
-        serializedVersion: 2
-        x: 1557
-        y: 623
-        width: 142
-        height: 155
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: agent_spritesheet4__6
-      rect:
-        serializedVersion: 2
-        x: 1818
-        y: 621
-        width: 199
-        height: 155
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: agent_spritesheet4__7
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 433
-        width: 254
-        height: 154
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: agent_spritesheet4__8
+      name: death9
       rect:
         serializedVersion: 2
         x: 316
-        y: 433
+        y: 434
         width: 259
-        height: 154
+        height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__13
+      name: death10
       rect:
         serializedVersion: 2
-        x: 1769
-        y: 432
-        width: 295
-        height: 156
+        x: 598
+        y: 435
+        width: 268
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__9
-      rect:
-        serializedVersion: 2
-        x: 597
-        y: 433
-        width: 269
-        height: 154
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: agent_spritesheet4__10
+      name: death11
       rect:
         serializedVersion: 2
         x: 866
@@ -214,38 +215,25 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__11
+      name: death12
       rect:
         serializedVersion: 2
         x: 1172
-        y: 433
-        width: 301
-        height: 154
+        y: 435
+        width: 302
+        height: 152
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__14
+      name: death13
       rect:
         serializedVersion: 2
-        x: 0
-        y: 245
+        x: 1475
+        y: 434
         width: 295
-        height: 154
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: agent_spritesheet4__2
-      rect:
-        serializedVersion: 2
-        x: 673
-        y: 622
-        width: 148
         height: 153
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -253,12 +241,25 @@ TextureImporter:
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: agent_spritesheet4__12
+      name: death14
       rect:
         serializedVersion: 2
-        x: 1474
-        y: 433
-        width: 294
+        x: 1769
+        y: 434
+        width: 296
+        height: 153
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: death15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 245
+        width: 295
         height: 154
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
