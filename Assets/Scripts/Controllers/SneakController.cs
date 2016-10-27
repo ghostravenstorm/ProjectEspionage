@@ -13,6 +13,10 @@ public class SneakController : IController{
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = true;
+
+		
+
+		Debug.Log("Sneak Active");
 	}
 
 	public void Update(Rigidbody rigidbody){

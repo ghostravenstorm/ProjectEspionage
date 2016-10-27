@@ -6,91 +6,55 @@ public class LightDetector : MonoBehaviour{
 	public bool isDetectable;
 	public LightState state;
 
+	private MainController maincontroller;
+
 	void Start(){
 		StartCoroutine("StateCheck");
+		maincontroller = (GetComponentInParent(typeof(MainController)) as MainController);
+		//Debug.Log(maincontroller.controller);
 	}
 
 	private IEnumerator StateCheck(){
 
-		var controller = this.GetComponent<MainController>().controller;
-
 		while(true){
 			if(state == LightState.Darkness) isDetectable = false;
-			if(state == LightState.SemiLight && controller.state == PlayerState.Sneaking) isDetectable = false;
-			if(state == LightState.SemiLight && controller.state != PlayerState.Sneaking) isDetectable = true;
-			if(state == LightState.FullLight) isDetectable = true; 
-			return null;
+			if(state == LightState.SemiLight && maincontroller.controller.state == PlayerState.Sneaking) isDetectable = false;
+			if(state == LightState.SemiLight && maincontroller.controller.state != PlayerState.Sneaking) isDetectable = true;
+			if(state == LightState.FullLight) isDetectable = true;
+			//Debug.Log("Detectable: " + isDetectable);
+			
+			yield return null;
 		}
-	}
-
-	void OnTriggerEnter2D(Collider2D collider){
-		if(collider.gameObject.tag == "FullLight") state = LightState.FullLight;
-		if(collider.gameObject.tag == "SemiLight") state = LightState.SemiLight;
-	}
-
-	void OnTriggerExit2D(Collider2D collider){
-		if(collider.gameObject.tag == "FullLight") state = LightState.Darkness;
-		if(collider.gameObject.tag == "SemiLight") state = LightState.Darkness;
-	}
-
-	/*
-	public bool isDetectable{ private set; get; }
-	public bool isInLightMain{ private set; get; }
-	public bool isInLightFallOff{ private set; get; }
-
-	void Start(){
-		isDetectable = true;
 	}
 
 	void Update(){
-		var player = transform.parent.GetComponent<Sneakable>();
-
-		if(Input.GetButtonDown("Sneak") && !player.isSneaking){
-			isDetectable = false;
-			Debug.Log("Is detectable: " + isDetectable);
-		}
 		
-		if(Input.GetButtonDown("Sneak") && player.isSneaking){
-			if(!isInLightMain){
-				isDetectable = true;
-			}
-			Debug.Log("Is detectable: " + isDetectable);
-		}
 	}
 
-	void OnTriggerEnter2D(Collider2D collider) {
+	void OnTriggerEnter2D(Collider2D collider){
 
-		var player = transform.parent.GetComponent<Sneakable>();
-
-		if(collider.gameObject.tag == "LightMain"){
-			isDetectable = true;
-			isInLightMain = true;
-			//Debug.Log("Is detectable: " + isDetectable);
-			//Debug.Log("Is in main light: " + isInLightMain);
+		if(collider.gameObject.tag == "FullLight"){
+			state = LightState.FullLight;
+			//Debug.Log("Light State: Full");
+			//Debug.Log("Detectable:" + isDetectable);
 		}
-
-		if(collider.gameObject.tag == "LightFallOff"){
-			isInLightFallOff = true;
-
-			if(!player.isSneaking){
-				isDetectable = true;
-				//Debug.Log("Is detectable: " + isDetectable);
-			}
-			//Debug.Log("Is in fall off light: " + isInLightFallOff);
+		if(collider.gameObject.tag == "SemiLight"){
+			state = LightState.SemiLight;
+			//Debug.Log("Light State: Semi");
+			//if(maincontroller.controller.state == PlayerState.Sneaking) Debug.Log("Stealth: Not Detectable");
+			//else Debug.Log("Detectable: " + isDetectable);
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D collider){
-		if(collider.gameObject.tag == "LightMain"){
-			isInLightMain = false;
-			//Debug.Log("Is in main light: " + isInLightMain);
+		if(collider.gameObject.tag == "FullLight"){
+			state = LightState.Darkness;
+			//Debug.Log("Light State: Darkness");
 		}
-
-		if(collider.gameObject.tag == "LightFallOff"){
-			isInLightFallOff = false;
-			//Debug.Log("Is in fall off light: " + isInLightFallOff);
-			//Debug.Log("Is detectable: " + isDetectable);
+		if(collider.gameObject.tag == "SemiLight"){
+			state = LightState.Darkness;
+			//Debug.Log("Light State: Darkness");
 		}
+		//Debug.Log("Detectable: " + isDetectable);
 	}
-	*/
 }

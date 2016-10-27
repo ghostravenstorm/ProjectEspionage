@@ -15,6 +15,7 @@ public class NormalController : IController{
 		this.state = PlayerState.Standing;
 		this.speed = speed;
 		this.modifier = modifier;
+		Debug.Log("Normal Active");
 	}
 
 	public void Update(Rigidbody rigidbody){
