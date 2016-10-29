@@ -4,8 +4,15 @@ using System.Collections.Generic;
 
 public class Guard : MonoBehaviour{
 
+	public bool isPatrolling;
 	public float patrolSpeed;
+
+	[Tooltip("Guard starts patroling to the left, if not, then to the right.")]
+	public bool startLeft;
 	public GameObject waypointRef;
+
+	/* Waypoint A is always the right point, and Waypoint B is always the left point. */
+	/* The guard must be between both of these points. */
 
 	[Tooltip("Use if, and only if, waypoints are placed manually in the scene. This is where they would be referenced.")]
 	public GameObject[] wayPoints;
@@ -32,7 +39,7 @@ public class Guard : MonoBehaviour{
 		rigidbody = this.GetComponent<Rigidbody>();
 		startPoint = this.transform.position;
 		originalScale = this.transform.localScale;
-
+		
 		if(wayPoints.Length == 0)
 			wayPoints = new GameObject[2];
 
@@ -44,7 +51,6 @@ public class Guard : MonoBehaviour{
 			wayPoints[0] = ( (GameObject)Instantiate(waypointRef, pointA, this.transform.rotation) );
 			/*if(usePointB)*/ wayPoints[1] = ( (GameObject)Instantiate(waypointRef, pointB, this.transform.rotation) );
 		}
-
 		/*
 		if(!usePointB) 
 			wayPoints[1] = (GameObject)Instantiate(waypointRef, startPoint, this.transform.rotation); */
@@ -55,19 +61,18 @@ public class Guard : MonoBehaviour{
 		}
 		else
 			Debug.LogError("Waypoints for " +  this.gameObject.name + " is not set. Patroling disabled.");
+
+		if(startLeft) patrolSpeed *= -1;
 	}
 
 	void OnTriggerEnter(Collider collider){
 
-		if(collider.gameObject.tag == "Waypoint"){
-			patrolSpeed *= -1;
-			this.transform.localScale = new Vector3(this.transform.localScale.x * -1, originalScale.y, originalScale.z);
-		}
+		if(collider.gameObject.tag == "Waypoint") patrolSpeed *= -1;
 	}
 
 	private IEnumerator Patrol(){
 
-		while(true){
+		while(isPatrolling){
 
 			rigidbody.velocity = new Vector3(patrolSpeed, rigidbody.velocity.y, 0);
 

@@ -7,5 +7,6 @@ public enum PlayerState{
 	Swinging,
 	Standing,
 	Jumping, 
-	Falling
+	Falling,
+	Dead
 };

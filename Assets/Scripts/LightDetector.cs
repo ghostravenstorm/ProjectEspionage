@@ -28,7 +28,8 @@ public class LightDetector : MonoBehaviour{
 	}
 
 	void Update(){
-		
+		if(isDetectable) GUIManager.instance.setDetector(true);
+		else GUIManager.instance.setDetector(false);		
 	}
 
 	void OnTriggerEnter2D(Collider2D collider){
@@ -44,6 +45,8 @@ public class LightDetector : MonoBehaviour{
 			//if(maincontroller.controller.state == PlayerState.Sneaking) Debug.Log("Stealth: Not Detectable");
 			//else Debug.Log("Detectable: " + isDetectable);
 		}
+
+		//Debug.Log("Light Detected.");
 	}
 
 	void OnTriggerExit2D(Collider2D collider){

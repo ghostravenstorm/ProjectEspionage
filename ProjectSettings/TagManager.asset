@@ -26,7 +26,7 @@ TagManager:
   - Lights
   - Guards
   - PlayerDetector
-  - 
+  - Camera
   - 
   - 
   - 
@@ -56,6 +56,9 @@ TagManager:
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Light
+    uniqueID: 1386435487
     locked: 0
   - name: Foreground
     uniqueID: 1654077173

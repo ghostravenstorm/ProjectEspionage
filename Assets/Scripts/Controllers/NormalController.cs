@@ -15,7 +15,7 @@ public class NormalController : IController{
 		this.state = PlayerState.Standing;
 		this.speed = speed;
 		this.modifier = modifier;
-		Debug.Log("Normal Active");
+		//Debug.Log("Normal Active");
 	}
 
 	public void Update(Rigidbody rigidbody){
@@ -35,5 +35,6 @@ public class NormalController : IController{
 
 		if(rigidbody.velocity == Vector3.zero) state = PlayerState.Standing;
 		else if(Input.GetButton("Sprint")) state = PlayerState.Running;
+		else state = PlayerState.Walking;
 	}
 }

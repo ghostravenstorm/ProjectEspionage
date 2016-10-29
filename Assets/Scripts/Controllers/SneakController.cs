@@ -16,7 +16,7 @@ public class SneakController : IController{
 
 		
 
-		Debug.Log("Sneak Active");
+		//Debug.Log("Sneak Active");
 	}
 
 	public void Update(Rigidbody rigidbody){

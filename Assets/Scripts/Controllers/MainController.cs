@@ -12,6 +12,8 @@ public class MainController : MonoBehaviour{
 
 	public IController controller;
 
+	private IController prevController;
+
 	void Start(){
 		rigidbody = this.GetComponent<Rigidbody>();
 
@@ -59,6 +61,15 @@ public class MainController : MonoBehaviour{
 	private void DisableClimbMode(){
 		rigidbody.useGravity = true;
 		controller = new NormalController(movementSpeed, sprintModifier);
+	}
+
+	public void pauseController(){
+		prevController = controller;
+		controller = new NullController(PlayerState.Dead);
+	}
+
+	public void resumeController(){
+		controller = prevController;
 	}
 
 	private void StateCheck(){
