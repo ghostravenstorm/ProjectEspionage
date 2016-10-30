@@ -45,6 +45,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: ParallaxBackground
+    uniqueID: 513171975
+    locked: 0
+  - name: ParallaxMidground
+    uniqueID: 2808515965
+    locked: 0
   - name: Background
     uniqueID: 1519073239
     locked: 0
@@ -62,4 +68,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 1654077173
+    locked: 0
+  - name: ParallaxForeground
+    uniqueID: 2355685475
     locked: 0

@@ -15,7 +15,6 @@ public class NormalController : IController{
 		this.state = PlayerState.Standing;
 		this.speed = speed;
 		this.modifier = modifier;
-		//Debug.Log("Normal Active");
 	}
 
 	public void Update(Rigidbody rigidbody){
@@ -29,6 +28,7 @@ public class NormalController : IController{
 
 		if(Input.GetButtonDown("Jump") && isGrounded){
 			isGrounded = false;
+			state = PlayerState.Jumping;
 			vectorX = rigidbody.velocity.x;
 			rigidbody.AddForce(vectorX, jumpForce, 0, ForceMode.Impulse);
 		}

@@ -9,6 +9,8 @@ public class SpyAnimationController : MonoBehaviour{
 	public bool isFacingRight;
 	public float standAnimationSpeed = 1f;
 	public float walkAnimationSpeed = 1f;
+	public float jumpAnimationSpeed = 1f;
+	public float sprintAnimationSpeed = 1f;
 	public float sneakAnimationSpeed = 0.6f;
 
 	void Start(){
@@ -24,32 +26,60 @@ public class SpyAnimationController : MonoBehaviour{
 
 		var controller = this.GetComponent<MainController>().controller;
 
-		//Debug.Log(controller.state);
+		Debug.Log(controller.state);
+
+		// Moving right. //
+		if(Input.GetAxis("Horizontal") >= 1)
+			isFacingRight = true;
+		// Moving left. //
+		else if(Input.GetAxis("Horizontal") <= -1)
+			isFacingRight = false;
 
 		if(controller.state == PlayerState.Walking){
-
+			animator.SetBool("IsWalking", true);
 			animator.speed = walkAnimationSpeed;
-
-			/* Moving right. */
-			if(Input.GetAxis("Horizontal") >= 1){
-				isFacingRight = true;
-				animator.SetBool("IsWalking", true);
-			}
-			/* Moving left. */
-			else if(Input.GetAxis("Horizontal") <= -1){
-				isFacingRight = false;
-				animator.SetBool("IsWalking", true);
-			}
 		}
+		else animator.SetBool("IsWalking", false);
+
+		if(controller.state == PlayerState.Running){
+			animator.SetBool("IsSprinting", true);
+			animator.speed = sprintAnimationSpeed;
+		}
+		else animator.SetBool("IsSprinting", false);
+
+		if(controller.state == PlayerState.Standing){
+			animator.SetBool("IsStanding", true);
+			animator.speed = standAnimationSpeed;
+		}
+		else animator.SetBool("IsStanding", false);
+
+
+
+
+
+
+		/*
+		if(controller.state == PlayerState.Jumping){
+			animator.SetTrigger("Jump");
+			animator.speed = jumpAnimationSpeed;
+		}
+
+
+		if(controller.state == PlayerState.Running){
+			animator.SetBool("IsSprinting", true);
+			animator.speed = sprintAnimationSpeed;
+		}
+		else animator.SetBool("IsSprinting", false);
+
 
 		if(controller.state == PlayerState.Sneaking){
 			animator.SetBool("IsSneaking", true);
 			animator.speed = sneakAnimationSpeed;
 
-			/* Moving right. */
+			// Moving right. //
 			if(Input.GetAxis("Horizontal") >= 1)
 				isFacingRight = true;
-			/* Moving left. */
+			// Moving left. //
 			else if(Input.GetAxis("Horizontal") <= -1)
 				isFacingRight = false;
 
@@ -58,12 +88,32 @@ public class SpyAnimationController : MonoBehaviour{
 			else
 				animator.speed = sneakAnimationSpeed;
 		}
+		else animator.SetBool("IsSneaking", false);
+
+
+		if(controller.state == PlayerState.Walking){
+
+			animator.speed = walkAnimationSpeed;
+
+			// Moving right. //
+			if(Input.GetAxis("Horizontal") >= 1){
+				isFacingRight = true;
+				animator.SetBool("IsWalking", true);
+			}
+			// Moving left. //
+			else if(Input.GetAxis("Horizontal") <= -1){
+				isFacingRight = false;
+				animator.SetBool("IsWalking", true);
+			}
+		}
+		else animator.SetBool("IsWalking", false);
+
 
 		if(controller.state == PlayerState.Standing){
-			animator.SetBool("IsWalking", false);
-			animator.SetBool("IsSneaking", false);
 			animator.speed = standAnimationSpeed;
 		}
+		*/
+		
 
 		if(isFacingRight) sprite.flipX = true;
 		else sprite.flipX = false;
