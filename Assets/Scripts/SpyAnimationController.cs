@@ -27,7 +27,7 @@ public class SpyAnimationController : MonoBehaviour{
 		var controller = this.GetComponent<MainController>().controller;
 
 		//Debug.Log(controller.state);
-		Debug.Log(controller.isGrounded);
+		//Debug.Log(controller.isGrounded);
 
 		// Moving right. //
 		if(Input.GetAxis("Horizontal") >= 1)

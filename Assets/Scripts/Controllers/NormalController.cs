@@ -16,6 +16,7 @@ public class NormalController : IController{
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = groundState;
+		Debug.Log("Normal  controller active.");
 	}
 
 	public void Update(Rigidbody rigidbody){
