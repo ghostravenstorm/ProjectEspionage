@@ -11,10 +11,11 @@ public class NormalController : IController{
 
 	private float jumpForce = 5f;
 
-	public NormalController(float speed, float modifier){
+	public NormalController(float speed, float modifier, bool groundState){
 		this.state = PlayerState.Standing;
 		this.speed = speed;
 		this.modifier = modifier;
+		this.isGrounded = groundState;
 	}
 
 	public void Update(Rigidbody rigidbody){
@@ -33,8 +34,11 @@ public class NormalController : IController{
 			rigidbody.AddForce(vectorX, jumpForce, 0, ForceMode.Impulse);
 		}
 
-		if(rigidbody.velocity == Vector3.zero) state = PlayerState.Standing;
-		else if(Input.GetButton("Sprint")) state = PlayerState.Running;
-		else state = PlayerState.Walking;
+		if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0)
+			state = PlayerState.Running;
+		else if(rigidbody.velocity.x != 0)
+			state = PlayerState.Walking;
+		else
+			state = PlayerState.Standing;
 	}
 }

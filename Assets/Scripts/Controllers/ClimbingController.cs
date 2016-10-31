@@ -16,6 +16,7 @@ public class ClimbingController : IController{
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = true;
+		Debug.Log("Climbing controller active.");
 	}
 
 	public void Update(Rigidbody rigidbody){

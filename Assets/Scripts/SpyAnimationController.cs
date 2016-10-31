@@ -1,4 +1,5 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class SpyAnimationController : MonoBehaviour{
@@ -19,14 +20,14 @@ public class SpyAnimationController : MonoBehaviour{
 
 		if(isFacingRight) sprite.flipX = true;
 		else sprite.flipX = false;
-
 	}
 
 	void Update(){
 
 		var controller = this.GetComponent<MainController>().controller;
 
-		Debug.Log(controller.state);
+		//Debug.Log(controller.state);
+		Debug.Log(controller.isGrounded);
 
 		// Moving right. //
 		if(Input.GetAxis("Horizontal") >= 1)
@@ -36,33 +37,38 @@ public class SpyAnimationController : MonoBehaviour{
 			isFacingRight = false;
 
 		if(controller.state == PlayerState.Walking){
+			toggleOffOtherBools("IsWalking");
 			animator.SetBool("IsWalking", true);
 			animator.speed = walkAnimationSpeed;
 		}
-		else animator.SetBool("IsWalking", false);
-
-		if(controller.state == PlayerState.Running){
+		else if(controller.state == PlayerState.Running){
+			toggleOffOtherBools("IsSprinting");
 			animator.SetBool("IsSprinting", true);
 			animator.speed = sprintAnimationSpeed;
 		}
-		else animator.SetBool("IsSprinting", false);
-
-		if(controller.state == PlayerState.Standing){
+		else if(controller.state == PlayerState.Standing){
+			toggleOffOtherBools("IsStanding");
 			animator.SetBool("IsStanding", true);
 			animator.speed = standAnimationSpeed;
 		}
-		else animator.SetBool("IsStanding", false);
+		else if(controller.state == PlayerState.Sneaking){
+			toggleOffOtherBools("IsSneaking");
+			animator.SetBool("IsSneaking", true);
+			animator.speed = sneakAnimationSpeed;
 
-
-
-
-
-
-		/*
-		if(controller.state == PlayerState.Jumping){
+			if(Input.GetAxis("Horizontal") == 0)
+				animator.speed = 0f;
+			else
+				animator.speed = sneakAnimationSpeed;
+		}
+		else if(controller.state == PlayerState.Jumping){
 			animator.SetTrigger("Jump");
 			animator.speed = jumpAnimationSpeed;
 		}
+
+
+		/*
+		
 
 
 		if(controller.state == PlayerState.Running){
@@ -112,11 +118,18 @@ public class SpyAnimationController : MonoBehaviour{
 		if(controller.state == PlayerState.Standing){
 			animator.speed = standAnimationSpeed;
 		}
-		*/
-		
+		*/		
 
 		if(isFacingRight) sprite.flipX = true;
 		else sprite.flipX = false;
+	}
+
+	private void toggleOffOtherBools(string name){
+
+		for(int i = 0; i < animator.parameters.Length; i++){
+			if(animator.parameters[i].name != name)
+				animator.SetBool(animator.parameters[i].name, false);
+		}
 	}
 
 	public IEnumerator playDeath(){

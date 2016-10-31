@@ -39,12 +39,13 @@ public class PlayerDetector : MonoBehaviour{
 			if(obj.tag == "Player"){
 			
 				var detector = obj.transform.GetChild(0).GetComponent<LightDetector>();
-
+				
 				if(detector.isDetectable){
 					StartCoroutine( obj.GetComponent<SpyAnimationController>().playDeath() );
 					this.transform.parent.GetComponent<GuardAnimationController>().playShoot();
 					StopCoroutine(IEDetectorCheck);
 				}
+
 			}
 
 			yield return null;

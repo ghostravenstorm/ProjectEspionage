@@ -161,8 +161,10 @@ MonoBehaviour:
   startLeft: 0
   waypointRef: {fileID: 1000011713336696, guid: 63f01515d30afb64d854924fe07f4e5a,
     type: 2}
-  wayPoints: []
-  autoGenerateWaypoints: 1
+  wayPoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  autoGenerateWaypoints: 0
   pointADistance: 5
   pointBDistance: 1
 --- !u!136 &136000012396387384

@@ -17,20 +17,20 @@ public class MainController : MonoBehaviour{
 	void Start(){
 		rigidbody = this.GetComponent<Rigidbody>();
 
-		controller = new NormalController(movementSpeed, sprintModifier);
+		controller = new NormalController(movementSpeed, sprintModifier, true);
 	}
 
 	void Update(){
 		controller.Update(rigidbody);
 
-		if(Input.GetButtonDown("Sneak")) ToggleSneakMode();
-
-		StateCheck();
+		if(Input.GetButtonDown("Sneak") && controller.isGrounded)
+			ToggleSneakMode();
 	}
 
 	void OnCollisionEnter(Collision collision){
 		if(collision.gameObject.tag == "Ground")
 			controller.isGrounded = true;
+
 	}
 
 	void OnCollisionExit(Collision collision){
@@ -38,8 +38,10 @@ public class MainController : MonoBehaviour{
 	}
 
 	void OnTriggerEnter(Collider collider){
-		if(collider.gameObject.tag == "Climbable" && controller.state != PlayerState.Sneaking)
+		if(collider.gameObject.tag == "Climbable" && controller.state != PlayerState.Sneaking){
+			Debug.Log("Climb");
 			EnableClimbMode();
+		}
 	}
 
 	void OnTriggerExit(Collider collider){
@@ -48,9 +50,12 @@ public class MainController : MonoBehaviour{
 	}
 
 	private void ToggleSneakMode(){
-		if(controller is ClimbingController) return;
-		if(controller is SneakController) controller = new NormalController(movementSpeed, sprintModifier);
-		else controller = new SneakController(movementSpeed, sneakModifier);
+		if(controller is ClimbingController)
+			return;
+		if(controller is SneakController)
+			controller = new NormalController(movementSpeed, sprintModifier, true);
+		else
+			controller = new SneakController(movementSpeed, sneakModifier);
 	}
 
 	private void EnableClimbMode(){
@@ -60,7 +65,7 @@ public class MainController : MonoBehaviour{
 
 	private void DisableClimbMode(){
 		rigidbody.useGravity = true;
-		controller = new NormalController(movementSpeed, sprintModifier);
+		controller = new NormalController(movementSpeed, sprintModifier, true);
 	}
 
 	public void pauseController(){
@@ -70,16 +75,5 @@ public class MainController : MonoBehaviour{
 
 	public void resumeController(){
 		controller = prevController;
-	}
-
-	private void StateCheck(){
-		/*
-		if(rigidbody.velocity.y <= 0 && controller is ClimbingController) 
-			controller.state = PlayerState.Falling;
-		if(rigidbody.velocity.y <= 0 && controller is ClimbingController)
-			controller.state = PlayerState.Jumping;
-
-		if(controller.state == PlayerState.Falling) controller = new NormalController(movementSpeed, sprintModifier);
-		*/
 	}
 }

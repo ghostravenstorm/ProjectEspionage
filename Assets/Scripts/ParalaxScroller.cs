@@ -20,7 +20,6 @@ public class ParalaxScroller : MonoBehaviour{
 	}
 
 	void Update(){
-		float playerSpeed = playerRef.GetComponent<Rigidbody>().velocity.x;
 		float playerPos = playerRef.GetComponent<Player>().XDistanceFromSpawn;
 		float x = Mathf.Repeat( playerPos * speedMultiplier * -1, 2);
 		Vector2 offset = new Vector2(x, savedOffset.y);

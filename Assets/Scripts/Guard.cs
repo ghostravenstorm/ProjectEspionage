@@ -31,14 +31,12 @@ public class Guard : MonoBehaviour{
 
 	private new Rigidbody rigidbody;
 	private Vector3 startPoint;
-	private Vector3 originalScale;
 	private IEnumerator IEPatrol;
 
 	void Start(){
 
 		rigidbody = this.GetComponent<Rigidbody>();
 		startPoint = this.transform.position;
-		originalScale = this.transform.localScale;
 		
 		if(wayPoints.Length == 0)
 			wayPoints = new GameObject[2];
