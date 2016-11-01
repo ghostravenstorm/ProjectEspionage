@@ -30,12 +30,15 @@ public class NormalController : IController{
 
 		if(Input.GetButtonDown("Jump") && isGrounded){
 			isGrounded = false;
-			state = PlayerState.Jumping;
 			vectorX = rigidbody.velocity.x;
 			rigidbody.AddForce(vectorX, jumpForce, 0, ForceMode.Impulse);
 		}
 
-		if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0)
+		//Debug.Log(rigidbody.velocity.y);
+
+		if(Input.GetButtonDown("Jump") /*&& rigidbody.velocity.y > 0*/)
+			state = PlayerState.Jumping;
+		else if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0)
 			state = PlayerState.Running;
 		else if(rigidbody.velocity.x != 0)
 			state = PlayerState.Walking;

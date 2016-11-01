@@ -86,7 +86,7 @@ public class dialogue_system : MonoBehaviour {
 
     public void  AnimateAvatar(int iter)
     {
-                avatar.sprite = frames[iter];
+                //avatar.sprite = frames[iter];
     }
 
     public void StartRender()

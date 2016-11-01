@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class MenuManager : MonoBehaviour{
 	
 	public GameObject menuList;
-	public string[] scenelist;
+	public string[] sceneList;
 
 	private int selection = 0;
 
@@ -17,25 +17,25 @@ public class MenuManager : MonoBehaviour{
 
 		//E35143
 
-		//Debug.Log(selection);
+		Debug.Log(selection);
 
 		if(Input.GetButtonDown("Up")){
 			selection--;
-			if(selection <= -1) selection = 3;
-			if(selection >= 4) selection = 0;
+			if(selection <= -1) selection = sceneList.Length-1;
+			if(selection >= sceneList.Length) selection = 0;
 			updateStyle();
 		}
 
 		if(Input.GetButtonDown("Down")){
 			selection++;
-			if(selection <= -1) selection = 3;
-			if(selection >= 4) selection = 0;
+			if(selection <= -1) selection = sceneList.Length-1;
+			if(selection >= sceneList.Length) selection = 0;
 			updateStyle();
 		}
 
 		if(Input.GetButtonDown("Submit")){
-			//SceneManager.LoadScene(scenelist[selection]);
-			Debug.Log("Loading scene " + selection);
+			SceneManager.LoadScene(sceneList[selection]);
+			GameManager.instance.setCurrentScene(sceneList[selection]);
 		}
 	}
 

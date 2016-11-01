@@ -40,7 +40,7 @@ GameObject:
   - 4: {fileID: 4000013365187890}
   - 212: {fileID: 212000010498702272}
   m_Layer: 0
-  m_Name: CeilingLightB
+  m_Name: CeilingLight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -3,7 +3,7 @@ using UnityEngine.UI;
 
 public class GUIManager : MonoBehaviour {
 	
-	public static GUIManager instance { get; private set; }
+	public static GUIManager instance;
 
 	public Image detector;
 	public Sprite eyeOpen;
@@ -11,6 +11,7 @@ public class GUIManager : MonoBehaviour {
 
 	void Awake(){
 		instance = this;
+		DontDestroyOnLoad(this);
 	}
 
 	public void setDetector(bool detection){

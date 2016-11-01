@@ -3,7 +3,7 @@ using UnityEngine;
 public class GuardAnimationController : MonoBehaviour{
 	
 	private Animator animator;
-	private SpriteRenderer sprite;
+	//private SpriteRenderer sprite;
 	private new Rigidbody rigidbody;
 
 	//public GuardType guardType;
@@ -15,7 +15,7 @@ public class GuardAnimationController : MonoBehaviour{
 
 	void Start(){
 		animator = this.GetComponent<Animator>();
-		sprite = this.GetComponent<SpriteRenderer>();
+		//sprite = this.GetComponent<SpriteRenderer>();
 		rigidbody = this.GetComponent<Rigidbody>();
 
 		animator.speed = walkAnimationSpeed;
