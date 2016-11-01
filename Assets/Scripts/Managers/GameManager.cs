@@ -27,9 +27,9 @@ public class GameManager : MonoBehaviour{
 	}
 
 	void Update(){
-		if(Input.anyKeyDown && currentScene == demoEndScreen){
-			//SceneManager.LoadScene(startScreen);
-			//currentScene = startScreen;
+		if(Input.GetKeyDown(KeyCode.Escape) && currentScene == demoEndScreen){
+			SceneManager.LoadScene(startScreen);
+			currentScene = startScreen;
 		}
 	}
 

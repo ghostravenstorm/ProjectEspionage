@@ -1,0 +1,28 @@
+[X] Footsteps (Grass)
+[X] Footsteps (Stone)
+[X] Footsteps (Steel)
+[X] Footsteps (Sneaking)
+[ ] Jump
+[ ] Long Jump
+[ ] Landing
+[X] Ladder Climb
+[ ] Ledge Climb
+[X] Ropeswing (Swoosh)
+[X] Ropeswing (Creak)
+[ ] Communicator On
+[X] Voice Noises?
+[X] Gunshot
+[X] Light Flicker
+[ ] Switch Flip
+[ ] Button Press
+[X] Keys Typed
+[X] Flip Lighter
+[X] Laser Tripwire
+[ ] Camera Turn
+
+[ ] Ambience (Jungle)
+[ ] Ambience (Jungle Night)
+[ ] Ambience (Cave)
+[ ] Ambience (Volcano)
+[ ] Ambience (Lab)
+[ ] Ambience (Lab Escape)

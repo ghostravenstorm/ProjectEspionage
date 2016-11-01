@@ -17,7 +17,7 @@ public class MenuManager : MonoBehaviour{
 
 		//E35143
 
-		Debug.Log(selection);
+		//Debug.Log(selection);
 
 		if(Input.GetButtonDown("Up")){
 			selection--;
@@ -34,8 +34,25 @@ public class MenuManager : MonoBehaviour{
 		}
 
 		if(Input.GetButtonDown("Submit")){
-			SceneManager.LoadScene(sceneList[selection]);
-			GameManager.instance.setCurrentScene(sceneList[selection]);
+
+			switch(selection){
+				case 0 : 
+					SceneManager.LoadScene(sceneList[selection]);
+					GameManager.instance.setCurrentScene(sceneList[selection]);
+					break;
+				case 1 : 
+					SceneManager.LoadScene(sceneList[selection]);
+					GameManager.instance.setCurrentScene(sceneList[selection]);
+					break;
+				case 2 : 
+					SceneManager.LoadScene(sceneList[selection]);
+					GameManager.instance.setCurrentScene(sceneList[selection]);
+					break;
+				case 3 : 
+					Application.Quit();
+					break;					
+			}
+
 		}
 	}
 
