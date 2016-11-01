@@ -10,24 +10,28 @@ public class ClimbingController : IController{
 	public bool isGrounded{ set; get; }
 
 	private float jumpForce = 3f;
-	private GameObject rope;
+	private GameObject climbable;
 	private GameObject ropePoint;
 
-	public ClimbingController(float speed, float modifier, GameObject ropePoint, GameObject rope){
-		this.state = PlayerState.Climbing;
+	public ClimbingController(float speed, float modifier, GameObject ropePoint, GameObject climbable){
+		if(climbable.tag == "Rope") this.state = PlayerState.ClimbingRope;
+		if(climbable.tag == "Ladder") this.state = PlayerState.ClimbingLadder;
+		if(climbable.tag == "Ledge") this.state = PlayerState.ClimbingLedge;
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = true;
 		this.ropePoint = ropePoint;
-		this.rope = rope;
-		Debug.Log("Climbing controller active.");
+		this.climbable = climbable;
+		//Debug.Log("Climbing controller active.");
 	}
 
 	public void Update(Rigidbody rigidbody){
 
-		ropePoint.transform.position = new Vector3(
-			rope.transform.position.x, rope.transform.position.y, ropePoint.transform.position.z
-		);
+		if(state == PlayerState.ClimbingRope){
+			ropePoint.transform.position = new Vector3(
+				climbable.transform.position.x, climbable.transform.position.y, ropePoint.transform.position.z
+			);
+		}
 
 		float vectorX = Input.GetAxis("Horizontal");
 		float vectorY = Input.GetAxis("Vertical");

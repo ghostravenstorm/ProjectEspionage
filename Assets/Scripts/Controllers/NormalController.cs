@@ -16,7 +16,7 @@ public class NormalController : IController{
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = groundState;
-		Debug.Log("Normal  controller active.");
+		//Debug.Log("Normal controller active.");
 	}
 
 	public void Update(Rigidbody rigidbody){
@@ -36,13 +36,23 @@ public class NormalController : IController{
 
 		//Debug.Log(rigidbody.velocity.y);
 
-		if(Input.GetButtonDown("Jump") /*&& rigidbody.velocity.y > 0*/)
+		if(Input.GetButtonDown("Jump") /*&& rigidbody.velocity.y > 0*/){
 			state = PlayerState.Jumping;
-		else if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0)
-			state = PlayerState.Running;
-		else if(rigidbody.velocity.x != 0)
-			state = PlayerState.Walking;
-		else
+		}
+		else if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0){
+			if(Input.GetButtonDown("Jump"))
+				state = PlayerState.Jumping;
+			else
+				state = PlayerState.Running;
+		}
+		else if(rigidbody.velocity.x != 0){
+			if(Input.GetButtonDown("Jump"))
+				state = PlayerState.Jumping;
+			else
+				state = PlayerState.Walking;
+		}
+		else{
 			state = PlayerState.Standing;
+		}
 	}
 }

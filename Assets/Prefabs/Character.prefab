@@ -188,6 +188,7 @@ MonoBehaviour:
   jumpAnimationSpeed: 0.5
   sprintAnimationSpeed: 1.2
   sneakAnimationSpeed: 0.6
+  climbAnimationSpeed: 1
 --- !u!114 &114000011096976818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -213,9 +214,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementSpeed: 3
-  climbModifier: 0.8
+  climbModifier: 0.7
   sprintModifier: 1.8
   sneakModifier: 0.3
+  ropePointRef: {fileID: 1000011835256294, guid: fe4f9c8f0f631ce4fb1407113af21e08,
+    type: 2}
 --- !u!114 &114000013875614618
 MonoBehaviour:
   m_ObjectHideFlags: 1

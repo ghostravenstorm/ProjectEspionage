@@ -7,8 +7,10 @@ TagManager:
   - Ground
   - FullLight
   - SemiLight
-  - Climbable
   - Waypoint
+  - Ladder
+  - Ledge
+  - Rope
   layers:
   - Default
   - TransparentFX
@@ -51,6 +53,9 @@ TagManager:
     locked: 0
   - name: Background
     uniqueID: 1519073239
+    locked: 0
+  - name: Ground
+    uniqueID: 650228787
     locked: 0
   - name: Climbables
     uniqueID: 2321903869

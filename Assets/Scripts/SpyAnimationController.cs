@@ -13,6 +13,7 @@ public class SpyAnimationController : MonoBehaviour{
 	public float jumpAnimationSpeed = 1f;
 	public float sprintAnimationSpeed = 1f;
 	public float sneakAnimationSpeed = 0.6f;
+	public float climbAnimationSpeed = 1f;
 
 	void Start(){
 		animator = this.GetComponent<Animator>();
@@ -36,7 +37,22 @@ public class SpyAnimationController : MonoBehaviour{
 		else if(Input.GetAxis("Horizontal") <= -1)
 			isFacingRight = false;
 
-		if(controller.state == PlayerState.Walking){
+
+		if(controller.state == PlayerState.ClimbingRope){
+			animator.SetBool("IsClimbingRope", true);
+			if(Input.GetAxis("Vertical") == 0)
+				animator.speed = 0;
+			else
+				animator.speed = climbAnimationSpeed;
+		}
+		else if(controller.state == PlayerState.ClimbingLadder){
+			animator.SetBool("IsClimbingLadder", true);
+			if(Input.GetAxis("Vertical") == 0)
+				animator.speed = 0;
+			else
+				animator.speed = climbAnimationSpeed;
+		}
+		else if(controller.state == PlayerState.Walking){
 			toggleOffOtherBools("IsWalking");
 			animator.SetBool("IsWalking", true);
 			animator.speed = walkAnimationSpeed;
@@ -54,7 +70,6 @@ public class SpyAnimationController : MonoBehaviour{
 		else if(controller.state == PlayerState.Sneaking){
 			toggleOffOtherBools("IsSneaking");
 			animator.SetBool("IsSneaking", true);
-			animator.speed = sneakAnimationSpeed;
 
 			if(Input.GetAxis("Horizontal") == 0)
 				animator.speed = 0f;
