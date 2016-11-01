@@ -13,6 +13,8 @@ public class GameManager : MonoBehaviour{
 	public string startScreen;
 	public string demoEndScreen;
 
+
+
 	private Vector3 checkPoint;
 
 	void Awake(){
