@@ -8,19 +8,60 @@ public class NormalController : IController{
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
-
+    private bool isPaused = false;
 	private float jumpForce = 5f;
-
-	public NormalController(float speed, float modifier, bool groundState){
+    private AudioClip PauseSrc;
+    private AudioClip GameSrc;
+    private GameObject pauseTxt;
+    public NormalController(float speed, float modifier, bool groundState){
 		this.state = PlayerState.Standing;
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = groundState;
-		//Debug.Log("Normal controller active.");
-	}
+        //Debug.Log("Normal controller active.");
+    }
+   public void Start()
+    {
+        
+    }
+    public void Update(Rigidbody rigidbody){
 
-	public void Update(Rigidbody rigidbody){
+        if(GameSrc == null)
+        {
+            GameSrc = GameObject.Find("MusicPlayer").GetComponent<AudioSource>().clip;
+            PauseSrc = Resources.Load<AudioClip>("Pause");
+            pauseTxt = GameObject.Find("MainGUI/Text");
+        }
+        if (isPaused == true && GameObject.Find("MusicPlayer").GetComponent<AudioSource>().clip != PauseSrc) { 
+            Time.timeScale = 0;
+            pauseTxt.SetActive(true);
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();
 
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().clip = PauseSrc;
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().loop = true;
+
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Play();
+        }
+             else if( isPaused == false && GameObject.Find("MusicPlayer").GetComponent<AudioSource>().clip == PauseSrc)
+        {
+            Time.timeScale = 1;
+            pauseTxt.SetActive(false);
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Stop();
+
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().clip = GameSrc;
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().loop = true;
+
+            GameObject.Find("MusicPlayer").GetComponent<AudioSource>().Play();
+
+        }
+
+        if(isPaused == false && pauseTxt != null)
+        {
+            pauseTxt.SetActive(false);
+        }
+        if (Input.GetButtonDown("Pause")){
+            isPaused = !isPaused;
+        }
 		float vectorX = Input.GetAxis("Horizontal");
 
 		if(Input.GetButton("Sprint")) vectorX *= this.speed * this.modifier;

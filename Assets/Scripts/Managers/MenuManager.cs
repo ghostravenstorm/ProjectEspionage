@@ -45,10 +45,6 @@ public class MenuManager : MonoBehaviour{
 					GameManager.instance.setCurrentScene(sceneList[selection]);
 					break;
 				case 2 : 
-					SceneManager.LoadScene(sceneList[selection]);
-					GameManager.instance.setCurrentScene(sceneList[selection]);
-					break;
-				case 3 : 
 					Application.Quit();
 					break;					
 			}
