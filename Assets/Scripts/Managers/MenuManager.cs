@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour{
+public class MenuManager : MonoBehaviour, IInputController{
 	
 	public GameObject menuList;
 	public string[] sceneList;
@@ -10,9 +10,44 @@ public class MenuManager : MonoBehaviour{
 	private int selection = 0;
 
 	void Start(){
+		InputManager.instance.inputController = this;
 		updateStyle();
 	}
 
+	public void OnSubmit(){
+		switch(selection){
+			case 0 : 
+				SceneManager.LoadScene(sceneList[selection]);
+				GameManager.instance.setCurrentScene(sceneList[selection]);
+				break;
+			case 1 : 
+				SceneManager.LoadScene(sceneList[selection]);
+				GameManager.instance.setCurrentScene(sceneList[selection]);
+				break;
+			case 2 : 
+				Application.Quit();
+				break;					
+		}
+	}
+
+	public void OnUpArrow(){
+		selection--;
+		if(selection <= -1) selection = sceneList.Length - 1;
+		updateStyle();
+	}
+
+	public void OnDownArrow(){
+		selection++;
+		if(selection >= sceneList.Length) selection = 0;
+		updateStyle();
+	}
+
+	public void OnConsole(){}
+	public void OnEscape(){}
+
+
+
+	/*
 	void Update(){
 
 		//E35143
@@ -50,7 +85,7 @@ public class MenuManager : MonoBehaviour{
 			}
 
 		}
-	}
+	}*/
 
 	private void updateStyle(){
 

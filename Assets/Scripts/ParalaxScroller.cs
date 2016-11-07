@@ -4,6 +4,7 @@ public class ParalaxScroller : MonoBehaviour{
 	
 	public string sortingLayer;
 	public GameObject playerRef;
+	public bool isScrolling;
 	public float speedMultiplier;
 
 	private Vector2 savedOffset;
@@ -20,10 +21,12 @@ public class ParalaxScroller : MonoBehaviour{
 	}
 
 	void Update(){
-		float playerPos = playerRef.GetComponent<Player>().XDistanceFromSpawn;
-		float x = Mathf.Repeat( playerPos * speedMultiplier * -1, 2);
-		Vector2 offset = new Vector2(x, savedOffset.y);
-		this.GetComponent<Renderer>().sharedMaterial.SetTextureOffset("_MainTex", offset);
+		if(!isScrolling){
+			float playerPos = playerRef.GetComponent<Player>().XDistanceFromSpawn;
+			float x = Mathf.Repeat( playerPos * speedMultiplier * -1, 2);
+			Vector2 offset = new Vector2(x, savedOffset.y);
+			this.GetComponent<Renderer>().sharedMaterial.SetTextureOffset("_MainTex", offset);
+		}
 	}
 
 	void OnDisable(){

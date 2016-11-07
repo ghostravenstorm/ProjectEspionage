@@ -18,12 +18,15 @@ public class GameManager : MonoBehaviour{
 	private Vector3 checkPoint;
 
 	void Awake(){
-		instance = this;
-		DontDestroyOnLoad(this);
+		if(instance == null){
+			instance = this;
+			DontDestroyOnLoad(this);
+		}
 	}
 
 	void Start(){
-		
+		Cursor.lockState = CursorLockMode.Locked;
+		Cursor.visible = false;
 	}
 
 	void Update(){

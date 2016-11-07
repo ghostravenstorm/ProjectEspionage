@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,13 +11,15 @@ public class GUIManager : MonoBehaviour {
 	public Sprite eyeClosed;
 
 	void Awake(){
-		instance = this;
-		DontDestroyOnLoad(this);
+		if(instance == null){
+			instance = this;
+			DontDestroyOnLoad(this);
+		}
 	}
 
 	public void setDetector(bool detection){
 		if(detection) detector.sprite = eyeOpen;
 		if(!detection) detector.sprite = eyeClosed;
 	}
-	
 }
+
