@@ -288,6 +288,58 @@ Prefab:
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 5e0a5c7f35a26a74bbea783d860fa517, type: 2}
   m_IsPrefabParent: 0
+--- !u!1001 &292733110
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4000011140879682, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 2.379583
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011140879682, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 1.4670764
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011140879682, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -3.2946198
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011140879682, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011140879682, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011140879682, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011140879682, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4000011140879682, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+      propertyPath: m_RootOrder
+      value: 36
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010419658882, guid: 1232d7ce87496d04594b490de969da9f,
+        type: 2}
+      propertyPath: startScreen
+      value: MenuScreen
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010419658882, guid: 1232d7ce87496d04594b490de969da9f,
+        type: 2}
+      propertyPath: demoEndScreen
+      value: DemoEnd
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 1232d7ce87496d04594b490de969da9f, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &306602355
 Prefab:
   m_ObjectHideFlags: 0
@@ -451,6 +503,11 @@ Prefab:
     - target: {fileID: 114000013817112090, guid: e690da1d80d344348aa5b33d31fac938,
         type: 2}
       propertyPath: autoGenerateWaypoints
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000013817112090, guid: e690da1d80d344348aa5b33d31fac938,
+        type: 2}
+      propertyPath: isPatrolling
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -642,7 +699,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4000010047991554, guid: d44dc0f3f4b34ae45b8ee38455d0b6ba, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 23.322489
+      value: 4.31
       objectReference: {fileID: 0}
     - target: {fileID: 4000010047991554, guid: d44dc0f3f4b34ae45b8ee38455d0b6ba, type: 2}
       propertyPath: m_LocalPosition.y
@@ -689,7 +746,12 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1000010068084338, guid: d44dc0f3f4b34ae45b8ee38455d0b6ba, type: 2}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010531783596, guid: d44dc0f3f4b34ae45b8ee38455d0b6ba,
+        type: 2}
+      propertyPath: isPatrolling
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: d44dc0f3f4b34ae45b8ee38455d0b6ba, type: 2}
@@ -745,6 +807,15 @@ Prefab:
     - target: {fileID: 114000013553151918, guid: d44dc0f3f4b34ae45b8ee38455d0b6ba,
         type: 2}
       propertyPath: lightType
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114000010531783596, guid: d44dc0f3f4b34ae45b8ee38455d0b6ba,
+        type: 2}
+      propertyPath: isPatrolling
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010068084338, guid: d44dc0f3f4b34ae45b8ee38455d0b6ba, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []

@@ -46,7 +46,6 @@ public class GuardAnimationController : MonoBehaviour{
 	}
 
 	public void playShoot(){
-		this.GetComponent<Guard>().isPatrolling = false;
 		animator.SetTrigger("Shoot");
 	}
 }

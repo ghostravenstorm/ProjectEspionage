@@ -153,5 +153,16 @@ public class SpyAnimationController : MonoBehaviour{
 
 		this.GetComponent<MainController>().pauseController();
 		animator.SetTrigger("Death");
+
+		yield return new WaitForSeconds(2f);
+
+		this.transform.position = GameManager.instance.getCheckPoint();
+		this.GetComponent<SpyAnimationController>().ResetAnimation();
+		this.GetComponent<MainController>().resumeController();
+
+	}
+
+	public void ResetAnimation(){
+		animator.SetTrigger("Reset");
 	}
 }

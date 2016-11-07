@@ -7,7 +7,7 @@ public class Player : MonoBehaviour{
 
 	void Start(){
 		this.spawnPoint = this.transform.position;
-		//GameManager.instance.setCheckPoint(this.transform.position);
+		GameManager.instance.setCheckPoint(this.transform.position);
 	}
 
 	void Update(){

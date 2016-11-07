@@ -70,9 +70,12 @@ public class Guard : MonoBehaviour{
 
 	private IEnumerator Patrol(){
 
-		while(isPatrolling){
 
-			rigidbody.velocity = new Vector3(patrolSpeed, rigidbody.velocity.y, 0);
+		while(true){
+
+			if(isPatrolling){
+				rigidbody.velocity = new Vector3(patrolSpeed, rigidbody.velocity.y, 0);
+			}
 
 			yield return null;
 		}
