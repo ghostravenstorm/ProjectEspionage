@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 4a445485c9822e24a88f25fd0b24b799
-timeCreated: 1474356983
+timeCreated: 1478585923
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -173,45 +173,6 @@ TextureImporter:
         y: 12
         width: 156
         height: 258
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: agent_climb1_8
-      rect:
-        serializedVersion: 2
-        x: 1243
-        y: 13
-        width: 156
-        height: 248
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: agent_climb1_9
-      rect:
-        serializedVersion: 2
-        x: 1398
-        y: 16
-        width: 156
-        height: 254
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      tessellationDetail: 0
-    - serializedVersion: 2
-      name: agent_climb1_10
-      rect:
-        serializedVersion: 2
-        x: 1555
-        y: 23
-        width: 154
-        height: 247
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
