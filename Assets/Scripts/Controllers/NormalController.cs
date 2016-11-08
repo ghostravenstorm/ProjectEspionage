@@ -9,11 +9,7 @@ public class NormalController : IController{
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
 
-    private bool isPaused = false;
-	private float jumpForce = 5f;
-    private AudioClip PauseSrc;
-    private AudioClip GameSrc;
-    private GameObject pauseTxt;
+    private float jumpForce = 5f;
 
     public NormalController(float speed, float modifier, bool groundState){
 		this.state = PlayerState.Standing;
@@ -22,10 +18,7 @@ public class NormalController : IController{
 		this.isGrounded = groundState;
         //Debug.Log("Normal controller active.");
     }
-   public void Start()
-    {
-        
-    }
+
     public void Update(Rigidbody rigidbody){
 
         float vectorX = Input.GetAxis("Horizontal");

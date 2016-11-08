@@ -5,7 +5,6 @@ public class MusicPlayer : MonoBehaviour{
 	public AudioClip defaultMusic;
 	public AudioClip pauseMusic;
 
-	private bool isPaused;
 	private float defaultMusicPosition = 0;
 	private float pauseMusicPosition = 0;
 
@@ -14,24 +13,19 @@ public class MusicPlayer : MonoBehaviour{
 	}
 
 	public void Pause(){
-		if(isPaused){
-			//Debug.Log("Unpause audio");
-			isPaused = false;
-			pauseMusicPosition = GetComponent<AudioSource>().time;
-			GetComponent<AudioSource>().Stop();
-			GetComponent<AudioSource>().clip = defaultMusic;
-			GetComponent<AudioSource>().time = defaultMusicPosition;
-			GetComponent<AudioSource>().Play();
-		}
-		else{
-			//Debug.Log("Pause audio");
-			isPaused = true;
-			defaultMusicPosition = GetComponent<AudioSource>().time;
-			GetComponent<AudioSource>().Stop();
-			GetComponent<AudioSource>().clip = pauseMusic;
-			GetComponent<AudioSource>().time = pauseMusicPosition;
-			GetComponent<AudioSource>().Play();
-		}
+		defaultMusicPosition = GetComponent<AudioSource>().time;
+		GetComponent<AudioSource>().Stop();
+		GetComponent<AudioSource>().clip = pauseMusic;
+		GetComponent<AudioSource>().time = pauseMusicPosition;
+		GetComponent<AudioSource>().Play();
+	}
+
+	public void Unpause(){
+		pauseMusicPosition = GetComponent<AudioSource>().time;
+		GetComponent<AudioSource>().Stop();
+		GetComponent<AudioSource>().clip = defaultMusic;
+		GetComponent<AudioSource>().time = defaultMusicPosition;
+		GetComponent<AudioSource>().Play();
 	}
 
 	/*

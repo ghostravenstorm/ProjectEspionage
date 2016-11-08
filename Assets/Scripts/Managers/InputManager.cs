@@ -16,8 +16,6 @@ public class InputManager : MonoBehaviour{
 
 	public IInputController inputController;
 
-	private GameObject musicPlayer;
-
 	void Awake(){
 		if(instance == null){
 			instance = this;
@@ -36,10 +34,10 @@ public class InputManager : MonoBehaviour{
 			inputController.OnDownArrow();
 
 		if(Input.GetButtonDown("Pause")){
-			if(musicPlayer == null)
-				musicPlayer = GameObject.Find("MusicPlayer");
 			GameManager.instance.pauseGame();
-			musicPlayer.GetComponent<MusicPlayer>().Pause();
 		}
+
+		if(Input.GetKeyDown(KeyCode.Two))
+			Application.Quit();
 	}
 }

@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour{
 	public bool isPaused;
 
 	private Vector3 checkPoint;
+	private GameObject musicPlayerRef;
 
 	void Awake(){
 		if(instance == null){
@@ -44,6 +45,8 @@ public class GameManager : MonoBehaviour{
 			Time.timeScale = 0;
 			SceneManager.LoadSceneAsync("PauseMenu", LoadSceneMode.Additive);
 			GUIManager.instance.SetPause();
+			if(musicPlayerRef == null) musicPlayerRef = GameObject.Find("MusicPlayer");
+			musicPlayerRef.GetComponent<MusicPlayer>().Pause();
 		}
 	}
 
@@ -53,6 +56,8 @@ public class GameManager : MonoBehaviour{
 		SceneManager.UnloadScene("PauseMenu");
 		InputManager.instance.inputController = new NullInputController();
 		GUIManager.instance.SetUnpause();
+		if(musicPlayerRef == null) musicPlayerRef = GameObject.Find("MusicPlayer");
+		musicPlayerRef.GetComponent<MusicPlayer>().Unpause();
 	}
 
 	public void restartFromCheckpoint(){
