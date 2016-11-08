@@ -21,12 +21,14 @@ public class MenuManager : MonoBehaviour, IInputController{
 				GameManager.instance.setCurrentScene(sceneList[selection]);
 				break;
 			case 1 : 
+				break;
+			case 2 : 
 				SceneManager.LoadScene(sceneList[selection]);
 				GameManager.instance.setCurrentScene(sceneList[selection]);
 				break;
-			case 2 : 
+			case 3 :
 				Application.Quit();
-				break;					
+				break;
 		}
 	}
 

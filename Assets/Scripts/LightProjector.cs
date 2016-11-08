@@ -26,11 +26,11 @@ public class LightProjector : MonoBehaviour{
 		
 		if(lightType == LightType.Semi){
 			this.gameObject.tag = "SemiLight";
-			this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.9f, 0.7f, 0.1f);
+			this.GetComponent<SpriteRenderer>().color = new Color32(255, 200, 150, 100);
 		}
 		else{
 			this.gameObject.tag = "FullLight";
-			this.GetComponent<SpriteRenderer>().color = new Color(1f, 0.9f, 0.7f, 0.3f);
+			this.GetComponent<SpriteRenderer>().color = new Color32(255, 200, 150, 200);
 		}
 
 		if(projType == ProjectorType.Ceiling){

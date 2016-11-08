@@ -9,6 +9,7 @@ public class GUIManager : MonoBehaviour {
 	public Image detector;
 	public Sprite eyeOpen;
 	public Sprite eyeClosed;
+	public Text paused;
 
 	void Awake(){
 		if(instance == null){
@@ -20,6 +21,21 @@ public class GUIManager : MonoBehaviour {
 	public void setDetector(bool detection){
 		if(detection) detector.sprite = eyeOpen;
 		if(!detection) detector.sprite = eyeClosed;
+	}
+
+	public void Pause(){
+		if(GameManager.instance.isPaused)
+			paused.enabled = true;
+		else
+			paused.enabled = false;
+	}
+
+	public void SetPause(){
+		paused.enabled = true;
+	}
+
+	public void SetUnpause(){
+		paused.enabled = false;
 	}
 }
 

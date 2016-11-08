@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour{
 	public string startScreen;
 	public string demoEndScreen;
 
-
+	public bool isPaused;
 
 	private Vector3 checkPoint;
 
@@ -27,6 +27,7 @@ public class GameManager : MonoBehaviour{
 	void Start(){
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
+		isPaused = false;
 	}
 
 	void Update(){
@@ -34,6 +35,28 @@ public class GameManager : MonoBehaviour{
 			SceneManager.LoadScene(startScreen);
 			currentScene = startScreen;
 		}
+	}
+
+	public void pauseGame(){
+		if(!isPaused){
+			Debug.Log("Game manager pause");
+			isPaused = true;
+			Time.timeScale = 0;
+			SceneManager.LoadSceneAsync("PauseMenu", LoadSceneMode.Additive);
+			GUIManager.instance.SetPause();
+		}
+	}
+
+	public void unpauseGame(){
+		isPaused = false;
+		Time.timeScale = 1;
+		SceneManager.UnloadScene("PauseMenu");
+		InputManager.instance.inputController = new NullInputController();
+		GUIManager.instance.SetUnpause();
+	}
+
+	public void restartFromCheckpoint(){
+		GameObject.Find("Character").transform.position = getCheckPoint();
 	}
 
 	public void setCurrentScene(string name){
