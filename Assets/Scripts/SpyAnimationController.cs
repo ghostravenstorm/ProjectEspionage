@@ -1,3 +1,4 @@
+using System.Threading;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,6 +7,7 @@ public class SpyAnimationController : MonoBehaviour{
 	
 	private Animator animator;
 	private SpriteRenderer sprite;
+	private new AudioSource audio;
 
 	public bool isFacingRight;
 	public float standAnimationSpeed = 1f;
@@ -15,12 +17,34 @@ public class SpyAnimationController : MonoBehaviour{
 	public float sneakAnimationSpeed = 0.6f;
 	public float climbAnimationSpeed = 1f;
 
+	public AudioClip[] sneakingFootsteps;
+	public AudioClip[] walkingFootsteps;
+	public AudioClip[] spritingFootsteps;
+	public AudioClip[] jumpTakeoff;
+	public AudioClip[] groundLand;
+	public AudioClip[] dying;
+
+	private AudioClip[] currentLoopingAudio;
+
+	private Thread audioPlayer;
+	private int audioSleepTimer;
+
+	private System.Random rand;
+
 	void Start(){
 		animator = this.GetComponent<Animator>();
 		sprite = this.GetComponent<SpriteRenderer>();
+		audio = this.GetComponent<AudioSource>();
 
 		if(isFacingRight) sprite.flipX = true;
 		else sprite.flipX = false;
+
+		//audioPlayer = new Thread(this.playAudioLooping);
+		currentLoopingAudio = walkingFootsteps;
+		//audioPlayer.Start();
+		//audioSleepTimer = 2000;
+
+		rand = new System.Random();
 	}
 
 	void Update(){
@@ -40,6 +64,7 @@ public class SpyAnimationController : MonoBehaviour{
 
 		if(controller.state == PlayerState.ClimbingRope){
 			animator.SetBool("IsClimbingRope", true);
+			//audioPlayer.Suspend();
 			if(Input.GetAxis("Vertical") == 0)
 				animator.speed = 0;
 			else
@@ -47,6 +72,7 @@ public class SpyAnimationController : MonoBehaviour{
 		}
 		else if(controller.state == PlayerState.ClimbingLadder){
 			animator.SetBool("IsClimbingLadder", true);
+			//audioPlayer.Suspend();
 			if(Input.GetAxis("Vertical") == 0)
 				animator.speed = 0;
 			else
@@ -56,20 +82,27 @@ public class SpyAnimationController : MonoBehaviour{
 			toggleOffOtherBools("IsWalking");
 			animator.SetBool("IsWalking", true);
 			animator.speed = walkAnimationSpeed;
+			//audioPlayer.Resume();
+			//currentLoopingAudio = walkingFootsteps;
 		}
 		else if(controller.state == PlayerState.Running){
 			toggleOffOtherBools("IsSprinting");
 			animator.SetBool("IsSprinting", true);
 			animator.speed = sprintAnimationSpeed;
+			//audioPlayer.Resume();
+			//currentLoopingAudio = spritingFootsteps;
 		}
 		else if(controller.state == PlayerState.Standing){
 			toggleOffOtherBools("IsStanding");
 			animator.SetBool("IsStanding", true);
-			animator.speed = standAnimationSpeed;
+			//audioPlayer.Suspend();
+			//animator.speed = standAnimationSpeed;
 		}
 		else if(controller.state == PlayerState.Sneaking){
 			toggleOffOtherBools("IsSneaking");
 			animator.SetBool("IsSneaking", true);
+			//currentLoopingAudio = sneakingFootsteps;
+			//audioPlayer.Resume();
 
 			if(Input.GetAxis("Horizontal") == 0)
 				animator.speed = 0f;
@@ -79,61 +112,8 @@ public class SpyAnimationController : MonoBehaviour{
 		else if(controller.state == PlayerState.Jumping){
 			animator.SetTrigger("Jump");
 			animator.speed = jumpAnimationSpeed;
-		}
-
-
-		/*
-		
-
-
-		if(controller.state == PlayerState.Running){
-			animator.SetBool("IsSprinting", true);
-			animator.speed = sprintAnimationSpeed;
-		}
-		else animator.SetBool("IsSprinting", false);
-
-
-		if(controller.state == PlayerState.Sneaking){
-			animator.SetBool("IsSneaking", true);
-			animator.speed = sneakAnimationSpeed;
-
-			// Moving right. //
-			if(Input.GetAxis("Horizontal") >= 1)
-				isFacingRight = true;
-			// Moving left. //
-			else if(Input.GetAxis("Horizontal") <= -1)
-				isFacingRight = false;
-
-			if(Input.GetAxis("Horizontal") == 0)
-				animator.speed = 0f;
-			else
-				animator.speed = sneakAnimationSpeed;
-		}
-		else animator.SetBool("IsSneaking", false);
-
-
-		if(controller.state == PlayerState.Walking){
-
-			animator.speed = walkAnimationSpeed;
-
-			// Moving right. //
-			if(Input.GetAxis("Horizontal") >= 1){
-				isFacingRight = true;
-				animator.SetBool("IsWalking", true);
-			}
-			// Moving left. //
-			else if(Input.GetAxis("Horizontal") <= -1){
-				isFacingRight = false;
-				animator.SetBool("IsWalking", true);
-			}
-		}
-		else animator.SetBool("IsWalking", false);
-
-
-		if(controller.state == PlayerState.Standing){
-			animator.speed = standAnimationSpeed;
-		}
-		*/		
+			//audioPlayer.Suspend();
+		}	
 
 		if(isFacingRight) sprite.flipX = true;
 		else sprite.flipX = false;
@@ -145,6 +125,18 @@ public class SpyAnimationController : MonoBehaviour{
 			if(animator.parameters[i].name != name)
 				animator.SetBool(animator.parameters[i].name, false);
 		}
+	}
+
+	/*
+	private IEnumerator playAudioLooping(){
+		while(true){
+			audio.clip = currentLoopingAudio[rand.Next(0, currentLoopingAudio.Length - 1)];
+			audio.Play();
+		}
+	}*/
+
+	private void playAudio(AudioClip audio){
+
 	}
 
 	public IEnumerator playDeath(){

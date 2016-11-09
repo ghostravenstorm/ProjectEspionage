@@ -37,7 +37,7 @@ public class InputManager : MonoBehaviour{
 			GameManager.instance.pauseGame();
 		}
 
-		if(Input.GetKeyDown(KeyCode.Two))
+		if(Input.GetKeyDown(KeyCode.Alpha2))
 			Application.Quit();
 	}
 }
