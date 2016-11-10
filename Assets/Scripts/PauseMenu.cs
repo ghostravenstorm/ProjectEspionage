@@ -44,6 +44,7 @@ public class PauseMenu : MonoBehaviour, IInputController{
 
 	public void OnConsole(){}
 	public void OnEscape(){}
+	public void OnAgentInteract(){}
 
 	private void updateStyle(){
 

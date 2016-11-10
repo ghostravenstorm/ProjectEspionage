@@ -46,6 +46,7 @@ public class MenuManager : MonoBehaviour, IInputController{
 
 	public void OnConsole(){}
 	public void OnEscape(){}
+	public void OnAgentInteract(){}
 
 
 

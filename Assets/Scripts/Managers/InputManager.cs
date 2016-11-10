@@ -8,6 +8,8 @@ public interface IInputController{
 	void OnSubmit();
 	void OnUpArrow();
 	void OnDownArrow();
+
+	void OnAgentInteract();
 }
 
 public class InputManager : MonoBehaviour{
@@ -15,12 +17,17 @@ public class InputManager : MonoBehaviour{
 	public static InputManager instance;
 
 	public IInputController inputController;
+	public IInputController secondaryInputController;
 
 	void Awake(){
 		if(instance == null){
 			instance = this;
 			DontDestroyOnLoad(this);
 		}
+	}
+
+	void Start(){
+		secondaryInputController = new NullInputController();
 	}
 
 	void Update(){
@@ -36,6 +43,9 @@ public class InputManager : MonoBehaviour{
 		if(Input.GetButtonDown("Pause")){
 			GameManager.instance.pauseGame();
 		}
+
+		if(Input.GetButtonDown("Interact"))
+			secondaryInputController.OnAgentInteract();
 
 		if(Input.GetKeyDown(KeyCode.Alpha2))
 			Application.Quit();

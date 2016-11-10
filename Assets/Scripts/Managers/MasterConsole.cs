@@ -41,4 +41,5 @@ public class MasterConsole : MonoBehaviour, IInputController{
 
 	public void OnUpArrow(){}
 	public void OnDownArrow(){}
+	public void OnAgentInteract(){}
 }

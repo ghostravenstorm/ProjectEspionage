@@ -14,4 +14,5 @@ public class Credits : MonoBehaviour, IInputController{
 
 	public void OnUpArrow(){}
 	public void OnDownArrow(){}
+	public void OnAgentInteract(){}
 }
