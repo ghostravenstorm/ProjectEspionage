@@ -8,29 +8,67 @@ public class dialogue_system : MonoBehaviour {
     public Text textbox;
     public Image avatar;
     public AudioSource audioSrc;
-    string text;
-    AudioClip soundbyte;
-    Sprite[] frames;
+
+
+    public string[] text;
+    public AudioClip[] soundbyte;
+    public Sprite[] frames;
+   public int[] CharacterLineSwitch;
+   public int[] framesPerCharacter;
+
+    int CurrentCharacter = 0;
+    public int CurrentLine = 0;
+    public int CurrentAvy = 0;
+    public string ButtonToContinueText = "Submit";
+
+
+    private bool isTyping = false;
+    private bool CancelTyping = false;
+    public float typingSpeed = 1.2f;
+
 
 	// Use this for initialization
 	void Start () {
-        Sprite one = Resources.Load<Sprite>("pacopen");
-        Sprite two = Resources.Load<Sprite>("pacclosed");
-
-        Sprite[] set =  new Sprite[] { one, two };
-        SetSound(Resources.Load<AudioClip>("pactalk2"));
-        frames = set;
+      
 	}
 	
 	// Update is called once per frame
 	void Update () {
 
-        if (Input.GetKeyDown(KeyCode.N))
-        {
-            text = "The quick brown dog jumped over the lazy fox";
 
-               StartCoroutine( RenderText());
+        if(Input.GetButtonDown(ButtonToContinueText))
+        {
+
+            
+            if (!isTyping)
+            {
+
+
+                if(CurrentLine >= text.Length)
+                {
+                    canvas.SetActive(false);
+                    return;
+                }
+               else
+                {
+                    StartRender();
+                }
+
+
             }
+            else if (isTyping )
+            {
+                StopAllCoroutines();
+
+                textbox.text = text[CurrentLine-1];
+                avatar.sprite = frames[CharacterLineSwitch[CurrentCharacter]];
+                isTyping = false;
+                return;
+            }
+            CurrentLine++;
+
+        }
+
 
     }
 
@@ -39,32 +77,48 @@ public class dialogue_system : MonoBehaviour {
         frames = img;
     }
 
-    public void SetText(string newtext)
+    public void SetText(string[] newtext)
     {
         text = newtext;
     }
 
-    public void SetSound(AudioClip sound)
+    public void SetSound(AudioClip[] sound)
     {
-        audioSrc.clip = sound;
+        soundbyte = sound;
     }
 
-    public IEnumerator RenderText()
+    public IEnumerator RenderText(string CurLine)
     {
+        isTyping = true;
         canvas.SetActive(true);
-        int len = text.Length;
+        int len = CurLine.Length;
         textbox.text = "";
-        char iterator = text[0];
+        char iterator = CurLine[0];
         int animationIterator = 0;
-        int avatarlength = frames.Length;
+       if(CharacterLineSwitch.Length > 0)
+        {
+            if(CurrentCharacter+1 < CharacterLineSwitch.Length )
+            {
+                if(CharacterLineSwitch[CurrentCharacter+1] <= CurrentLine)
+                {
+                    CurrentCharacter++;
+                }
+            }
+        }
+
+            animationIterator = CharacterLineSwitch[CurrentCharacter];
+        int avatarlength = framesPerCharacter[CurrentCharacter];
 
         for (int i = 0; i < len; i++)
         {
-            {
+         {
+              
+
                 AnimateAvatar(animationIterator);
-                iterator = text[i];
+                iterator = CurLine[i];
                 if (!audioSrc.isPlaying)
                 {
+                    audioSrc.clip = soundbyte[CurrentCharacter];
                     audioSrc.pitch = Random.Range(0, 3) + 1;
                     audioSrc.Play();
 
@@ -73,24 +127,24 @@ public class dialogue_system : MonoBehaviour {
 
                 textbox.text += iterator;
                 animationIterator++;
-                if (animationIterator == avatarlength)
-                    animationIterator = 0;
-                yield return new WaitForSeconds(0.15f);
+                if (animationIterator == CharacterLineSwitch[CurrentCharacter] + avatarlength)
+                    animationIterator = CharacterLineSwitch[CurrentCharacter];
+                yield return new WaitForSeconds(typingSpeed);
             }
         }
-        avatar.sprite = frames[0];
-        canvas.SetActive(false);
+        avatar.sprite = frames[CharacterLineSwitch[CurrentCharacter]];
+        isTyping = false;
         yield break;
-        
+
     }
 
-    public void  AnimateAvatar(int iter)
+    public void AnimateAvatar(int iter)
     {
-                //avatar.sprite = frames[iter];
+        avatar.sprite = frames[iter];
     }
 
     public void StartRender()
     {
-        StartCoroutine(RenderText());
+        StartCoroutine(RenderText(text[CurrentLine]));
     }
 }

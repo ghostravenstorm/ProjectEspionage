@@ -56,7 +56,8 @@ public class PlayerDetector : MonoBehaviour{
 						//this.transform.parent.GetComponent<GuardAnimationController>().playShoot();
 						//StopCoroutine(IEDetectorCheck);
 
-						Debug.Log("Beep");
+
+						//Debug.Log("Beep");
 						
 
 						//yield return new WaitForSeconds(2f);
@@ -74,13 +75,12 @@ public class PlayerDetector : MonoBehaviour{
 	}
 
 	private IEnumerator deathSequence(){
-		StartCoroutine( playerRef.GetComponent<SpyAnimationController>().playDeath() );
+		//StartCoroutine( playerRef.GetComponent<SpyAnimationController>().playDeath() );
+		
 		this.transform.parent.GetComponent<Guard>().isPatrolling = false;
 		this.transform.parent.GetComponent<GuardAnimationController>().playShoot();
 
-		//Debug.Log("check1");
 		yield return new WaitForSeconds(3f);
-		//Debug.Log("check2");
 		this.transform.parent.GetComponent<Guard>().isPatrolling = true;
 		//yield return new WaitForSeconds(0.5f);
 		//detectorCheck = StartCoroutine(detectorCheckRoutine(GetComponent<Collider>().gameObject));

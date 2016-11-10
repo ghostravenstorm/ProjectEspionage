@@ -1,14 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
 
+using System.Collections;
 
 public class Dialogue_Trigger : MonoBehaviour {
 
-    public Sprite[] frames;
-    public string Text_to_say;
-    public AudioClip SoundEffect;
-    public dialogue_system DialogueSystem;
+
+    public dialogue_system ds;
+    public string[] conversation;
+    public Sprite[] animationframes;
+    public AudioClip[] CharacterSound;
+    public int[] AvatarStartingIndex;
+    public int[] AmountofFramesPerAvatar;
+
+
 	// Use this for initialization
 	void Start () {
 	
@@ -19,14 +24,19 @@ public class Dialogue_Trigger : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter(Collider c)
+    void OnTriggerEnter( Collider c )
     {
         if(c.tag == "Player")
         {
-            DialogueSystem.SetText(Text_to_say);
-            DialogueSystem.SetSound(SoundEffect);
-            DialogueSystem.SetupAvatar(frames);
-            DialogueSystem.StartRender();
+            ds.text = conversation;
+            ds.frames = animationframes;
+            ds.CharacterLineSwitch = AvatarStartingIndex;
+            ds.framesPerCharacter = AmountofFramesPerAvatar;
+            ds.soundbyte = CharacterSound;
+
+
+            ds.StartRender();
+            ds.CurrentLine++;
             this.gameObject.SetActive(false);
         }
     }
