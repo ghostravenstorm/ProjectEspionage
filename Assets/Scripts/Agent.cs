@@ -2,9 +2,13 @@ using UnityEngine;
 
 public class Agent : MonoBehaviour {
 	
-	public static GameObject instance;
+	public static Agent instance;
 
 	void Awake(){
-		instance = this.gameObject;
+		instance = this;
+	}
+
+	public void Kill(float delay){
+		GetComponent<SpyAnimationController>().PlayDeath(delay);
 	}
 }

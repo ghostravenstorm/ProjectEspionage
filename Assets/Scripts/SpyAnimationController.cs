@@ -93,7 +93,11 @@ public class SpyAnimationController : MonoBehaviour{
 		}
 	}
 
-	public IEnumerator playDeath(float delay){
+	public void PlayDeath(float delay){
+		StartCoroutine(PlayDeathCoroutine(delay));
+	}
+
+	private IEnumerator PlayDeathCoroutine(float delay){
 
 		yield return new WaitForSeconds(delay);
 
@@ -102,8 +106,8 @@ public class SpyAnimationController : MonoBehaviour{
 
 		yield return new WaitForSeconds(2f);
 
+		ResetAnimation();
 		this.transform.position = GameManager.instance.getCheckPoint();
-		this.GetComponent<SpyAnimationController>().ResetAnimation();
 		this.GetComponent<MainController>().resumeController();
 
 	}
