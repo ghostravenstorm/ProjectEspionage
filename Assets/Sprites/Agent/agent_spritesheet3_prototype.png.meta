@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2484d003c1a6a5243909fb67e09a36ea
-timeCreated: 1477272200
+timeCreated: 1478839171
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -48,6 +48,14 @@ TextureImporter:
     21300082: ledge6
     21300084: ledge7
     21300086: ledge8
+    21300088: Head1
+    21300090: Head2
+    21300092: Head3
+    21300094: Head4
+    21300096: Head5
+    21300098: Head6
+    21300100: Head7
+    21300102: Head8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -455,6 +463,110 @@ TextureImporter:
         y: 270
         width: 156
         height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head1
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 200
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head2
+      rect:
+        serializedVersion: 2
+        x: 107
+        y: 200
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head3
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 199
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head4
+      rect:
+        serializedVersion: 2
+        x: 273
+        y: 199
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head5
+      rect:
+        serializedVersion: 2
+        x: 355
+        y: 199
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head6
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 199
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head7
+      rect:
+        serializedVersion: 2
+        x: 523
+        y: 199
+        width: 64
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Head8
+      rect:
+        serializedVersion: 2
+        x: 605
+        y: 201
+        width: 74
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

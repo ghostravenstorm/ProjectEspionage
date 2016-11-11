@@ -1,0 +1,269 @@
+fileFormatVersion: 2
+guid: 586163da8e684c84aa79cca353d0f381
+timeCreated: 1478836430
+licenseType: Free
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: Dr.Falsetto_0
+    21300002: Dr.Falsetto_1
+    21300004: Dr.Falsetto_2
+    21300006: Dr.Falsetto_3
+    21300008: Dr.Falsetto_4
+    21300010: Dr.Falsetto_5
+    21300012: Dr.Falsetto_6
+    21300014: Dr.Falsetto_7
+    21300016: Dr.Falsetto_8
+    21300018: Dr.Falsetto_9
+    21300020: Dr.Falsetto_10
+    21300022: Dr.Falsetto_11
+    21300024: Dr.Falsetto_12
+    21300026: Dr.Falsetto_13
+    21300028: Dr.Falsetto_14
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 1
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  cubemapConvolution: 0
+  cubemapConvolutionSteps: 7
+  cubemapConvolutionExponent: 1.5
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 2048
+  textureSettings:
+    filterMode: -1
+    aniso: 16
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  rGBM: 0
+  compressionQuality: 50
+  allowsAlphaSplitting: 0
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Dr.Falsetto_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 634
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_1
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 634
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_2
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 634
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_3
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 804
+        width: 46
+        height: 42
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 422
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_5
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 422
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_6
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 422
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_7
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 422
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_9
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 210
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_10
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 210
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_11
+      rect:
+        serializedVersion: 2
+        x: 267
+        y: 210
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_12
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 210
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_13
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 210
+        width: 89
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Dr.Falsetto_14
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 66
+        width: 61
+        height: 120
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    outline: []
+  spritePackingTag: 
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

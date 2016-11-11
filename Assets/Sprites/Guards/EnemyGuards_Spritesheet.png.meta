@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 9a50bf573134a714f91472e6a688fd5f
-timeCreated: 1477270455
+timeCreated: 1478834866
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -119,6 +119,7 @@ TextureImporter:
     21300224: EnemyGuards_Spritesheet_112
     21300226: EnemyGuards_Spritesheet_113
     21300228: EnemyGuards_Spritesheet_114
+    21300230: Camera
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -1657,6 +1658,19 @@ TextureImporter:
         y: 647
         width: 101
         height: 98
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: Camera
+      rect:
+        serializedVersion: 2
+        x: 1774
+        y: 256
+        width: 84
+        height: 47
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
