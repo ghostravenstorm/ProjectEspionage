@@ -2,6 +2,7 @@ using UnityEngine;
 
 public class OverrideButton : MonoBehaviour, IInputController{
 	
+	[Tooltip("This being the link to which ever camera or laser grid to be disabled by this button.")]
 	public GameObject objectToOverride;
 
 	void OnTriggerEnter(Collider collider){
@@ -17,7 +18,7 @@ public class OverrideButton : MonoBehaviour, IInputController{
 	}
 
 	public void OnAgentInteract(){
-		objectToOverride.GetComponent<IOverrideableObject>().Disable();
+		objectToOverride.GetComponent<IOverrideable>().Disable();
 		//play agent button pressing animation
 	}
 

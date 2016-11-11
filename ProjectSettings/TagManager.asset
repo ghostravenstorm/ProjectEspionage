@@ -11,6 +11,7 @@ TagManager:
   - Ladder
   - Ledge
   - Rope
+  - Climbable
   layers:
   - Default
   - TransparentFX
@@ -57,7 +58,7 @@ TagManager:
   - name: Ground
     uniqueID: 650228787
     locked: 0
-  - name: Climbables
+  - name: Interactables
     uniqueID: 2321903869
     locked: 0
   - name: Character
