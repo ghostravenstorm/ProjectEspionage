@@ -13,6 +13,9 @@ public class LaserGrid : MonoBehaviour, IOverrideable{
 	public float pulseOnTimer = 0f;
 	public float pulseOffTimer = 0f;
 
+	public Sprite active;
+	public Sprite disabled;
+
 	private bool triggerOnce = true;
 
 	void Start(){
@@ -37,14 +40,14 @@ public class LaserGrid : MonoBehaviour, IOverrideable{
 	public void Disable(){
 		Debug.Log("Laser disabled.");
 		state = DeviceState.Unactive;
-		GetComponent<SpriteRenderer>().enabled = false;
+		GetComponent<SpriteRenderer>().sprite = disabled;
 		StopCoroutine("Pulse");
 		if(isDisabledOnTimer) StartCoroutine(Reboot());
 	}
 
 	public void Activate(){
+		GetComponent<SpriteRenderer>().sprite = active;
 		state = DeviceState.Active;
-		GetComponent<SpriteRenderer>().enabled = true;
 		StartCoroutine("Pulse");
 	}
 
