@@ -11,12 +11,20 @@ public class GUIManager : MonoBehaviour {
 	public Sprite eyeOpen;
 	public Sprite eyeClosed;
 	public Text paused;
+	public Image groundcheck;
 
 	void Awake(){
 		if(instance == null){
 			instance = this;
 			DontDestroyOnLoad(this);
 		}
+	}
+
+	void Update(){
+		if(Agent.instance.GetComponent<MainController>().controller.isGrounded)
+			groundcheck.color = Color.white;
+		else
+			groundcheck.color = Color.red;
 	}
 
 	public void setDetector(bool detection){

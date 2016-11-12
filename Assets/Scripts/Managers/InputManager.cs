@@ -48,5 +48,12 @@ public class InputManager : MonoBehaviour{
 
 		if(Input.GetKeyDown(KeyCode.Alpha2))
 			Application.Quit();
+
+		/*
+		for (int i = 0;i < 20; i++) {
+            if(Input.GetKeyDown("joystick button "+i)){
+                print("joystick button "+i);
+            }
+        }*/
 	}
 }

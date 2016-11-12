@@ -133,7 +133,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012409724324}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 0, y: 2.5, z: 0}
   m_LocalScale: {x: 6.4, y: 0.9750006, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -277,7 +277,8 @@ MonoBehaviour:
   cameraPointRef: {fileID: 1000010802003974, guid: 098d91f20ec2a214686c80673bf913b1,
     type: 2}
   horizontalOffset: 2
-  verticalOffset: 1
+  topOffset: 1
+  bottomOffset: 0
   moveSpeed: 2
 --- !u!114 &114000010824269814
 MonoBehaviour:
@@ -297,6 +298,7 @@ MonoBehaviour:
   sprintAnimationSpeed: 1.2
   sneakAnimationSpeed: 0.6
   climbAnimationSpeed: 1
+  deathAniamtionSpeed: 1
 --- !u!114 &114000011096976818
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -364,8 +366,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   audio: {fileID: 82000013099941286}
-  sneakingFootsteps: []
-  walkingFootsteps: []
+  sneakingFootsteps:
+  - {fileID: 8300000, guid: 05712706490b39447828cfcb8f271a1b, type: 3}
+  - {fileID: 8300000, guid: a068d383471509b44b767df1130f759a, type: 3}
+  - {fileID: 8300000, guid: 2a5ebd39485ab524f8fb2b65d3859801, type: 3}
+  - {fileID: 8300000, guid: 74448921364976c4e9a7163deff8c0fa, type: 3}
+  - {fileID: 8300000, guid: 3a0742c52ce7df24ba8ebd0c1e58e8b5, type: 3}
+  walkingFootsteps:
+  - {fileID: 8300000, guid: be8a37877a73b644ca57426f301d8088, type: 3}
+  - {fileID: 8300000, guid: 874f9165cda05144b8ac383c8eead519, type: 3}
+  - {fileID: 8300000, guid: 85b2abef2a20a8a499485ca51317bc18, type: 3}
+  - {fileID: 8300000, guid: 3f30a09366dbc8e4a9791760fd08b339, type: 3}
+  - {fileID: 8300000, guid: b25ddea4e19005c46b5f198366dfda1d, type: 3}
+  jumping:
+  - {fileID: 8300000, guid: 53c702257b39ed04f9402fdcf30b3077, type: 3}
+  - {fileID: 8300000, guid: b4aee6a9f3d1a5d4a95a6bb472d3dfbc, type: 3}
+  - {fileID: 8300000, guid: 1c35cbf6f4eb8d042a033696734d21b4, type: 3}
+  landing: []
   dying:
   - {fileID: 8300000, guid: ecf6a8c748ccbff4bbd36de185f7c998, type: 3}
   - {fileID: 8300000, guid: 9038997f40684064a88feec4fcf3a437, type: 3}

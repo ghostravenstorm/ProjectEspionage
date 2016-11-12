@@ -18,7 +18,7 @@ public class GuardSoundController : MonoBehaviour{
 	public void PlayFootstep(){
 		if(footsteps == null) return;
 		audio1.clip = footsteps[rand.Next(0, footsteps.Length)];
-		audio1.Play();
+		//audio1.Play();
 	}
 
 	public void PlayGunshot(){

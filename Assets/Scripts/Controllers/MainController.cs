@@ -36,28 +36,33 @@ public class MainController : MonoBehaviour{
 			ToggleSneakMode();
 	}
 
-	void OnCollisionEnter(Collision collision){
-		if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Bridge")
+	void OnCollisionStay(Collision c){
+		if(c.gameObject.tag == "Ground" || c.gameObject.tag == "Bridge")
 			controller.isGrounded = true;
-
 	}
 
-	void OnCollisionExit(Collision collision){
-		if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Bridge")
+	void OnCollisionEnter(Collision c){
+		if(c.gameObject.tag == "Ground" || c.gameObject.tag == "Bridge")
+			controller.isGrounded = true;
+	}
+
+	void OnCollisionExit(Collision c){
+		if(c.gameObject.tag == "Ground" || c.gameObject.tag == "Bridge"){
 			controller.isGrounded = false;
+		}
 	}
 
-	void OnTriggerEnter(Collider collider){
-		if(collider.gameObject.tag == "Rope" && controller.state != PlayerState.Sneaking)
-			EnableClimbModeRope(collider.gameObject);
-		if(collider.gameObject.tag == "Ladder" && controller.state != PlayerState.Sneaking)
-			EnableClimbModeLadder(collider.gameObject);
+	void OnTriggerEnter(Collider c){
+		if(c.gameObject.tag == "Rope" && controller.state != PlayerState.Sneaking)
+			EnableClimbModeRope(c.gameObject);
+		if(c.gameObject.tag == "Ladder" && controller.state != PlayerState.Sneaking)
+			EnableClimbModeLadder(c.gameObject);
 	}
 
-	void OnTriggerExit(Collider collider){
-		if(collider.gameObject.tag == "Rope")
-			DisableClimbModeRope(collider.gameObject);
-		if(collider.gameObject.tag == "Ladder")
+	void OnTriggerExit(Collider c){
+		if(c.gameObject.tag == "Rope")
+			DisableClimbModeRope(GetComponent<Collider>().gameObject);
+		if(c.gameObject.tag == "Ladder")
 			DisableClimbModeLadder();
 	}
 
