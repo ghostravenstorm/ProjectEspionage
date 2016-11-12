@@ -15,6 +15,7 @@ public class SpyAnimationController : MonoBehaviour{
 	public float sprintAnimationSpeed = 1f;
 	public float sneakAnimationSpeed = 0.6f;
 	public float climbAnimationSpeed = 1f;
+	public float deathAniamtionSpeed = 1f;
 
 	void Start(){
 		animator = this.GetComponent<Animator>();
@@ -66,6 +67,7 @@ public class SpyAnimationController : MonoBehaviour{
 		else if(controller.state == PlayerState.Standing){
 			toggleOffOtherBools("IsStanding");
 			animator.SetBool("IsStanding", true);
+			animator.speed = standAnimationSpeed;
 		}
 		else if(controller.state == PlayerState.Sneaking){
 			toggleOffOtherBools("IsSneaking");
@@ -94,14 +96,18 @@ public class SpyAnimationController : MonoBehaviour{
 	}
 
 	public void PlayDeath(float delay){
+		
 		StartCoroutine(PlayDeathCoroutine(delay));
 	}
 
 	private IEnumerator PlayDeathCoroutine(float delay){
 
+
+
 		yield return new WaitForSeconds(delay);
 
 		this.GetComponent<MainController>().pauseController();
+		animator.speed = deathAniamtionSpeed;
 		animator.SetTrigger("Death");
 
 		yield return new WaitForSeconds(2f);

@@ -13,4 +13,39 @@ public class Player : MonoBehaviour{
 	void Update(){
 		XDistanceFromSpawn = (spawnPoint.x - this.transform.position.x);
 	}
+	
+	void OnCollisionStay(Collision collision){
+		if(collision.gameObject.tag == "Ground"){
+			var camtracker = this.transform.Find("CameraTracker");
+			camtracker.transform.localPosition = new Vector3(
+				camtracker.transform.localPosition.x,
+				2.5f,
+				camtracker.transform.localPosition.z
+			);
+		}
+
+		if(collision.gameObject.tag == "Bridge"){
+			Debug.Log("Bridge?");
+			var camtracker = this.transform.Find("CameraTracker");
+			camtracker.transform.localPosition = new Vector3(
+				camtracker.transform.localPosition.x,
+				0.5f,
+				camtracker.transform.localPosition.z
+			);
+		}
+	}
+
+	void OnTriggerStay(Collider collider){
+		if(collider.gameObject.tag == "Ladder" ||
+		   collider.gameObject.tag == "Rope"   ||
+		   collider.gameObject.tag == "Ladder"    ){
+
+				var camtracker = this.transform.Find("CameraTracker");
+				camtracker.transform.localPosition = new Vector3(
+					camtracker.transform.localPosition.x,
+					0.5f,
+					camtracker.transform.localPosition.z
+				);
+		}
+	}
 }

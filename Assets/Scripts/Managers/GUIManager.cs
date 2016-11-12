@@ -7,6 +7,7 @@ public class GUIManager : MonoBehaviour {
 	public static GUIManager instance;
 
 	public Image detector;
+	public Image sprintMeter;
 	public Sprite eyeOpen;
 	public Sprite eyeClosed;
 	public Text paused;
@@ -36,6 +37,10 @@ public class GUIManager : MonoBehaviour {
 
 	public void SetUnpause(){
 		paused.enabled = false;
+	}
+
+	public void UpdateSprintMeter(float n){
+		sprintMeter.fillAmount = n;
 	}
 }
 

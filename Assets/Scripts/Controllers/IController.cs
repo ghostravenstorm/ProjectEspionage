@@ -7,6 +7,7 @@ public interface IController{
 	float speed{ get; }
 	float modifier{ get; }
 	bool isGrounded{ set; get; }
+	bool isSprintExhausted{set; get;}
 	
-	void Update(Rigidbody rigidbody);
+	void UpdateController(Rigidbody rigidbody);
 }

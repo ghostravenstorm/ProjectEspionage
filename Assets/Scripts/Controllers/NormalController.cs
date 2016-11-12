@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class NormalController : IController{
@@ -8,6 +9,7 @@ public class NormalController : IController{
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
+	public bool isSprintExhausted{set; get;}
 
     private float jumpForce = 5f;
 
@@ -19,12 +21,17 @@ public class NormalController : IController{
         //Debug.Log("Normal controller active.");
     }
 
-    public void Update(Rigidbody rigidbody){
+    public void UpdateController(Rigidbody rigidbody){
 
         float vectorX = Input.GetAxis("Horizontal");
 
-		if(Input.GetButton("Sprint")) vectorX *= this.speed * this.modifier;
-		else vectorX *= this.speed;
+        if(Input.GetButtonDown("Sprint"))
+        	isSprintExhausted = false;
+
+		if(Input.GetButton("Sprint") && !isSprintExhausted)
+			vectorX *= this.speed * this.modifier;
+		else
+			vectorX *= this.speed;
 		
 		rigidbody.velocity = new Vector3(vectorX, rigidbody.velocity.y, 0);
 
@@ -39,7 +46,7 @@ public class NormalController : IController{
 		if(Input.GetButtonDown("Jump") /*&& rigidbody.velocity.y > 0*/){
 			state = PlayerState.Jumping;
 		}
-		else if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0){
+		else if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0 && !isSprintExhausted){
 			if(Input.GetButtonDown("Jump"))
 				state = PlayerState.Jumping;
 			else

@@ -7,6 +7,7 @@ public class SneakController : IController{
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
+	public bool isSprintExhausted{set; get;}
 
 	public SneakController(float speed, float modifier){
 		state = PlayerState.Sneaking;
@@ -19,7 +20,7 @@ public class SneakController : IController{
 		//Debug.Log("Sneak Active");
 	}
 
-	public void Update(Rigidbody rigidbody){
+	public void UpdateController(Rigidbody rigidbody){
 
 		float vectorX = Input.GetAxis("Horizontal");
 

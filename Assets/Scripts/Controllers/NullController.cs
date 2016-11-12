@@ -8,12 +8,13 @@ public class NullController : IController{
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
+	public bool isSprintExhausted{set; get;}
 
 	public NullController(PlayerState state){
 		this.state = state;
 	}
 
-	public void Update(Rigidbody rigidbody){
+	public void UpdateController(Rigidbody rigidbody){
 
 	}
 }

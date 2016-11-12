@@ -1,11 +1,12 @@
 using System;
+using System.Collections;
 using UnityEngine;
 
 public class MainController : MonoBehaviour{
 
 	public float movementSpeed = 3f;
 	public float climbModifier = 0.8f;
-	public float sprintModifier = 1.5f;
+	public float sprintModifier = 1.8f;
 	public float sneakModifier = 0.5f;
 	public GameObject ropePointRef;
 	private GameObject ropePointInstance;
@@ -13,30 +14,37 @@ public class MainController : MonoBehaviour{
 	private new Rigidbody rigidbody;
 
 	public IController controller;
-
 	private IController prevController;
+
+	public float sprintMeter = 1f;
 
 	void Start(){
 		rigidbody = this.GetComponent<Rigidbody>();
 
 		controller = new NormalController(movementSpeed, sprintModifier, true);
+
+		StartCoroutine("SprintMeter");
 	}
 
 	void Update(){
-		controller.Update(rigidbody);
+		controller.UpdateController(rigidbody);
+
+		//Debug.Log("current controller: " + controller);
+		//Debug.Log("saved controller: " + prevController);
 
 		if(Input.GetButtonDown("Sneak") && controller.isGrounded)
 			ToggleSneakMode();
 	}
 
 	void OnCollisionEnter(Collision collision){
-		if(collision.gameObject.tag == "Ground")
+		if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Bridge")
 			controller.isGrounded = true;
 
 	}
 
 	void OnCollisionExit(Collision collision){
-
+		if(collision.gameObject.tag == "Ground" || collision.gameObject.tag == "Bridge")
+			controller.isGrounded = false;
 	}
 
 	void OnTriggerEnter(Collider collider){
@@ -93,5 +101,28 @@ public class MainController : MonoBehaviour{
 
 	public void resumeController(){
 		controller = prevController;
+	}
+
+	private IEnumerator SprintMeter(){
+
+		while(true){
+			//Debug.Log("SprintMeter is runnning");
+
+			if(Input.GetButton("Sprint") && controller.state == PlayerState.Running){
+				yield return new WaitForSeconds(0.1f);
+				sprintMeter -= 0.08f;
+				if(sprintMeter <= 0){
+					sprintMeter = 0f;
+					controller.isSprintExhausted = true;
+				}
+			}
+			else{
+				yield return new WaitForSeconds(0.1f);
+				sprintMeter += 0.01f;
+				if(sprintMeter >= 1) sprintMeter = 1f;
+			}
+
+			GUIManager.instance.UpdateSprintMeter(sprintMeter);
+		}
 	}
 }

@@ -23,12 +23,6 @@ public class LaserGrid : MonoBehaviour, IOverrideable{
 			Disable();
 	}
 
-	void OnTriggerEnter(Collider collider){
-		if(collider.gameObject.tag == "Player" && state == DeviceState.Active){
-			Agent.instance.Kill(0);
-		}
-	}
-
 	void OnTriggerStay(Collider collider){
 		if(collider.gameObject.tag == "Player" && state == DeviceState.Active && triggerOnce){
 			Agent.instance.Kill(0);

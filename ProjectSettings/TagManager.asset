@@ -12,6 +12,7 @@ TagManager:
   - Ledge
   - Rope
   - Climbable
+  - Bridge
   layers:
   - Default
   - TransparentFX
@@ -49,8 +50,17 @@ TagManager:
   - name: ParallaxBackground
     uniqueID: 513171975
     locked: 0
-  - name: ParallaxMidground
+  - name: ParallaxMidground-L4
     uniqueID: 2808515965
+    locked: 0
+  - name: ParallaxMidground-L3
+    uniqueID: 3091145551
+    locked: 0
+  - name: ParallaxMidground-L2
+    uniqueID: 4287984741
+    locked: 0
+  - name: ParallaxMidground-L1
+    uniqueID: 3165753583
     locked: 0
   - name: Background
     uniqueID: 1519073239

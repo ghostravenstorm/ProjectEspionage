@@ -8,6 +8,7 @@ public class ClimbingController : IController{
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
+	public bool isSprintExhausted{set; get;}
 
 	private float jumpForce = 3f;
 	private GameObject climbable;
@@ -25,7 +26,7 @@ public class ClimbingController : IController{
 		//Debug.Log("Climbing controller active.");
 	}
 
-	public void Update(Rigidbody rigidbody){
+	public void UpdateController(Rigidbody rigidbody){
 
 		if(state == PlayerState.ClimbingRope){
 			ropePoint.transform.position = new Vector3(
