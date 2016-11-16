@@ -8,6 +8,7 @@ public interface IController{
 	float modifier{ get; }
 	bool isGrounded{ set; get; }
 	bool isSprintExhausted{set; get;}
+	bool didJump{set; get;}
 	
 	void UpdateController(Rigidbody rigidbody);
 }

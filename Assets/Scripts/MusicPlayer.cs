@@ -28,6 +28,14 @@ public class MusicPlayer : MonoBehaviour{
 		GetComponent<AudioSource>().Play();
 	}
 
+    public void SwitchTrack(AudioClip clip){
+        GetComponent<AudioSource>().Stop();
+        defaultMusic = clip;
+        GetComponent<AudioSource>().clip = clip;
+        defaultMusicPosition = 0;
+        GetComponent<AudioSource>().Play();   
+    }
+
 	/*
 	if(GameSrc == null)
         {

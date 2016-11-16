@@ -35,10 +35,25 @@ public class Player : MonoBehaviour{
 		}
 	}
 
-	void OnTriggerStay(Collider collider){
-		if(collider.gameObject.tag == "Ladder" ||
-		   collider.gameObject.tag == "Rope"   ||
-		   collider.gameObject.tag == "Ladder"    ){
+	void OnTriggerEnter(Collider c){
+		if(c.gameObject.tag == "DropDownZone"){
+			transform.Find("CameraTracker").GetComponent<CameraTracker>().isLookingDown = true;
+		}
+	}
+
+	void OnTriggerExit(Collider c){
+		if(c.gameObject.tag == "DropDownZone"){
+			transform.Find("CameraTracker").GetComponent<CameraTracker>().isLookingDown = false;
+		}
+	}
+
+	void OnTriggerStay(Collider c){
+
+		
+
+		if(c.gameObject.tag == "Ladder" ||
+		   c.gameObject.tag == "Rope"   ||
+		   c.gameObject.tag == "Ladder"    ){
 
 				var camtracker = this.transform.Find("CameraTracker");
 				camtracker.transform.localPosition = new Vector3(

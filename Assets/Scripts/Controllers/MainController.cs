@@ -29,7 +29,7 @@ public class MainController : MonoBehaviour{
 	void Update(){
 		controller.UpdateController(rigidbody);
 
-		//Debug.Log("current controller: " + controller);
+		Debug.Log("current controller: " + controller);
 		//Debug.Log("saved controller: " + prevController);
 
 		if(Input.GetButtonDown("Sneak") && controller.isGrounded)
@@ -42,8 +42,9 @@ public class MainController : MonoBehaviour{
 	}
 
 	void OnCollisionEnter(Collision c){
-		if(c.gameObject.tag == "Ground" || c.gameObject.tag == "Bridge")
+		if(c.gameObject.tag == "Ground" || c.gameObject.tag == "Bridge"){
 			controller.isGrounded = true;
+		}
 	}
 
 	void OnCollisionExit(Collision c){
@@ -61,7 +62,7 @@ public class MainController : MonoBehaviour{
 
 	void OnTriggerExit(Collider c){
 		if(c.gameObject.tag == "Rope")
-			DisableClimbModeRope(GetComponent<Collider>().gameObject);
+			DisableClimbModeRope(c.gameObject);
 		if(c.gameObject.tag == "Ladder")
 			DisableClimbModeLadder();
 	}
@@ -99,13 +100,13 @@ public class MainController : MonoBehaviour{
 		controller = new NormalController(movementSpeed, sprintModifier, true);
 	}
 
-	public void pauseController(){
-		prevController = controller;
-		controller = new NullController(PlayerState.Dead);
+	public void pauseController(PlayerState state){
+		//prevController = controller;
+		controller = new NullController(state);
 	}
 
 	public void resumeController(){
-		controller = prevController;
+		controller = new NormalController(movementSpeed, sprintModifier, true);
 	}
 
 	private IEnumerator SprintMeter(){
@@ -115,7 +116,7 @@ public class MainController : MonoBehaviour{
 
 			if(Input.GetButton("Sprint") && controller.state == PlayerState.Running){
 				yield return new WaitForSeconds(0.1f);
-				sprintMeter -= 0.08f;
+				sprintMeter -= 0.06f;
 				if(sprintMeter <= 0){
 					sprintMeter = 0f;
 					controller.isSprintExhausted = true;
@@ -123,7 +124,7 @@ public class MainController : MonoBehaviour{
 			}
 			else{
 				yield return new WaitForSeconds(0.1f);
-				sprintMeter += 0.01f;
+				sprintMeter += 0.02f;
 				if(sprintMeter >= 1) sprintMeter = 1f;
 			}
 

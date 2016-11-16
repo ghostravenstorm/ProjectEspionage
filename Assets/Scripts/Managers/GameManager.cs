@@ -29,6 +29,14 @@ public class GameManager : MonoBehaviour{
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 		isPaused = false;
+		/*
+		int count = 0;
+
+		 GameObject[] allObjects = UnityEngine.Object.FindObjectsOfType<GameObject>() ;
+ 			foreach(object go in allObjects)
+   				count++;
+
+   		Debug.Log(count);*/
 	}
 
 	void Update(){
@@ -86,5 +94,9 @@ public class GameManager : MonoBehaviour{
 		currentScene = demoEndScreen;
 
 		yield return null;
+	}
+
+	public static float ConvertToFloat(int whole, int dec){
+		return ((float)whole) + ((float)((float)dec/100.00f));
 	}
 }

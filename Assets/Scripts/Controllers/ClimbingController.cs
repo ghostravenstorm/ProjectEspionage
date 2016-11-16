@@ -9,6 +9,7 @@ public class ClimbingController : IController{
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
 	public bool isSprintExhausted{set; get;}
+	public bool didJump{set; get;}
 
 	private float jumpForce = 3f;
 	private GameObject climbable;

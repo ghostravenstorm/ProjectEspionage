@@ -13,6 +13,7 @@ TagManager:
   - Rope
   - Climbable
   - Bridge
+  - DropDownZone
   layers:
   - Default
   - TransparentFX
@@ -88,4 +89,7 @@ TagManager:
     locked: 0
   - name: ParallaxForeground
     uniqueID: 2355685475
+    locked: 0
+  - name: EditorGUIAlwaysOnTop
+    uniqueID: 2072477925
     locked: 0

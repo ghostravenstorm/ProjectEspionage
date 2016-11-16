@@ -9,6 +9,7 @@ public class NullController : IController{
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
 	public bool isSprintExhausted{set; get;}
+	public bool didJump{get; set;}
 
 	public NullController(PlayerState state){
 		this.state = state;
