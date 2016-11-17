@@ -8,6 +8,7 @@ public class SneakController : IController{
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
 	public bool isSprintExhausted{set; get;}
+	public bool didJump{set; get;}
 
 	public SneakController(float speed, float modifier){
 		state = PlayerState.Sneaking;

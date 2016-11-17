@@ -37,6 +37,12 @@ public class LaserGrid : MonoBehaviour, IOverrideable{
 		triggerOnce = true;
 	}
 
+	private void Reset(){
+		StopAllCoroutines();
+		GetComponent<SpriteRenderer>().sprite = active;
+		state = DeviceState.Active;
+	}
+
 	public void Disable(){
 		Debug.Log("Laser disabled.");
 		state = DeviceState.Unactive;

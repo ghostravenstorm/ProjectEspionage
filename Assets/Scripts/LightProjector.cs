@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class LightProjector : MonoBehaviour{
 	
@@ -6,13 +7,26 @@ public class LightProjector : MonoBehaviour{
 	public LightType lightType = LightType.Semi;
 	public ProjectorType projType = ProjectorType.Ceiling;
 	public float lightWidth = 3f;
+	
+	//public bool isFlickering = false;
+	//public int flickerRandMin = 2;
+	//public int flickerRandMax = 5;
+	//public bool isActive = true;
 
 	private Vector3 rightPosition;
 	private Vector3 leftPosition;
 	private Vector3 rightScale;
 	private Vector3 leftScale;
 
+	private System.Random rand;
+
+	void Awake(){
+		rand = new System.Random();
+	}
+
 	void Start(){
+
+		//isActive = true;
 
 		if(projType == ProjectorType.Flashlight){
 		
@@ -22,8 +36,6 @@ public class LightProjector : MonoBehaviour{
 			leftScale = this.transform.localScale * -1;
 		}
 
-		
-		
 		if(lightType == LightType.Semi){
 			this.gameObject.tag = "SemiLight";
 			this.GetComponent<SpriteRenderer>().color = new Color32(255, 240, 180, 50);
@@ -36,6 +48,9 @@ public class LightProjector : MonoBehaviour{
 		if(projType == ProjectorType.Ceiling){
 			this.transform.localScale = new Vector3(lightWidth, this.transform.localScale.y, this.transform.localScale.z);
 		}
+
+		//if(isFlickering)
+		//	StartCoroutine(Flicker());
 	}
 
 	void Update(){
@@ -60,4 +75,24 @@ public class LightProjector : MonoBehaviour{
 		this.transform.localPosition = leftPosition;
 		this.transform.localScale = leftScale;
 	}
+
+	// -- Disabled due to light states not properly updating on the agent. --
+	//private IEnumerator Flicker(){
+
+		//GetComponent<SpriteRenderer>().enabled = true;
+		//isActive = true;
+
+		//int randWhole = rand.Next(flickerRandMin, flickerRandMax);
+		//int randDec = rand.Next(0, 99);
+		//yield return new WaitForSeconds(GameManager.ConvertToFloat(randWhole, randDec));
+
+		//GetComponent<SpriteRenderer>().enabled = false;
+		//isActive = false;
+
+		//randWhole = rand.Next(flickerRandMin, flickerRandMax);
+		//randDec = rand.Next(0, 99);
+		//yield return new WaitForSeconds(GameManager.ConvertToFloat(randWhole, randDec));
+		
+		//yield return StartCoroutine(Flicker());
+	//}
 }

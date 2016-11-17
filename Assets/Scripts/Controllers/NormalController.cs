@@ -10,6 +10,7 @@ public class NormalController : IController{
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
 	public bool isSprintExhausted{set; get;}
+    public bool didJump{set; get;}
 
     private float jumpForce = 5f;
 
@@ -43,7 +44,7 @@ public class NormalController : IController{
 
 		//Debug.Log(rigidbody.velocity.y);
 
-		if(Input.GetButtonDown("Jump") /*&& rigidbody.velocity.y > 0*/){
+		if(Input.GetButtonDown("Jump")){
 			state = PlayerState.Jumping;
 		}
 		else if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0 && !isSprintExhausted){

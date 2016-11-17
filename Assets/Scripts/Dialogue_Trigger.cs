@@ -27,7 +27,9 @@ public class Dialogue_Trigger : MonoBehaviour {
     void OnTriggerEnter( Collider c )
     {
         if(c.tag == "Player")
-        {
+        {   
+            //c.GetComponent<MainController>().pauseController(PlayerState.Standing);
+            ds.CurrentLine = 0;
             ds.text = conversation;
             ds.frames = animationframes;
             ds.CharacterLineSwitch = AvatarStartingIndex;

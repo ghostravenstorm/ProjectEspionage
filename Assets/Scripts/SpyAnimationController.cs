@@ -83,7 +83,7 @@ public class SpyAnimationController : MonoBehaviour{
 			animator.speed = jumpAnimationSpeed;
 		}	
 
-		if(isFacingRight) sprite.flipX = true;
+		if(isFacingRight && controller.state != PlayerState.Dead) sprite.flipX = true;
 		else sprite.flipX = false;
 	}
 
@@ -106,7 +106,7 @@ public class SpyAnimationController : MonoBehaviour{
 
 		yield return new WaitForSeconds(delay);
 
-		this.GetComponent<MainController>().pauseController();
+		this.GetComponent<MainController>().pauseController(PlayerState.Dead);
 		animator.speed = deathAniamtionSpeed;
 		animator.SetTrigger("Death");
 

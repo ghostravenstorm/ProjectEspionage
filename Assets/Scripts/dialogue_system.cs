@@ -45,7 +45,8 @@ public class dialogue_system : MonoBehaviour {
 
 
                 if(CurrentLine >= text.Length)
-                {
+                {   
+                    //Agent.instance.GetComponent<MainController>().resumeController();
                     canvas.SetActive(false);
                     return;
                 }
@@ -134,6 +135,7 @@ public class dialogue_system : MonoBehaviour {
         }
         avatar.sprite = frames[CharacterLineSwitch[CurrentCharacter]];
         isTyping = false;
+        Debug.Log("Break");
         yield break;
 
     }

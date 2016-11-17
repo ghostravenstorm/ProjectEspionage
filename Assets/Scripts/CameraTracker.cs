@@ -15,8 +15,11 @@ public class CameraTracker : MonoBehaviour{
 	private GameObject rightPoint;
 	private GameObject leftPoint;
 	private GameObject topPoint;
+	private GameObject midPoint;
 	private GameObject bottomPoint;
 	private Vector3 point;
+
+	public bool isLookingDown = false;
 
 	void Start(){
 		point = new Vector3();
@@ -32,13 +35,20 @@ public class CameraTracker : MonoBehaviour{
 
 		bottomPoint = (GameObject)Instantiate(cameraPointRef, cameraMount.transform);
 		bottomPoint.transform.localPosition = new Vector3(0, bottomOffset * -1, 0);
+
+		midPoint = (GameObject)Instantiate(cameraPointRef, cameraMount.transform);
+		midPoint.transform.localPosition = new Vector3(0, 0, 0);
 	}
 
 	void Update(){
 
 		float camTrackerPosX = camTracker.transform.position.x;
 
-		if( (player.GetComponent<MainController>().controller.state == PlayerState.ClimbingRope ||
+		
+		if(isLookingDown){
+			point = bottomPoint.transform.position;
+		}
+		else if( (player.GetComponent<MainController>().controller.state == PlayerState.ClimbingRope ||
 			 player.GetComponent<MainController>().controller.state == PlayerState.ClimbingLadder ||
 			 player.GetComponent<MainController>().controller.state == PlayerState.ClimbingLedge) &&
 			 Input.GetButton("Vertical") ){
@@ -48,14 +58,14 @@ public class CameraTracker : MonoBehaviour{
 				if(Input.GetAxis("Vertical") > 0)
 					point = topPoint.transform.position;
 				else if(Input.GetAxis("Vertical") < 0)
-					point = bottomPoint.transform.position;
+					point = midPoint.transform.position;
 		}
-		else if(player.GetComponent<SpyAnimationController>().isFacingRight){
+		else if(player.GetComponent<SpyAnimationController>().isFacingRight && player.GetComponent<MainController>().controller.state != PlayerState.Dead){
 			cameraMount.transform.position = new Vector3(camTrackerPosX, cameraMount.transform.position.y, cameraMount.transform.position.z);
 			//cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
 			point = rightPoint.transform.position;
 		}
-		else if(!player.GetComponent<SpyAnimationController>().isFacingRight){
+		else if(!player.GetComponent<SpyAnimationController>().isFacingRight && player.GetComponent<MainController>().controller.state != PlayerState.Dead){
 			cameraMount.transform.position = new Vector3(camTrackerPosX, cameraMount.transform.position.y, cameraMount.transform.position.z);
 			//cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
 			point = leftPoint.transform.position;

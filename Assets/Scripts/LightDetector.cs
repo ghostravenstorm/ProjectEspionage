@@ -11,53 +11,43 @@ public class LightDetector : MonoBehaviour{
 	void Start(){
 		StartCoroutine("StateCheck");
 		maincontroller = (GetComponentInParent(typeof(MainController)) as MainController);
-		//Debug.Log(maincontroller.controller);
 	}
 
 	private IEnumerator StateCheck(){
 
-		while(true){
-			if(state == LightState.Darkness) isDetectable = false;
-			if(state == LightState.SemiLight && maincontroller.controller.state == PlayerState.Sneaking) isDetectable = false;
-			if(state == LightState.SemiLight && maincontroller.controller.state != PlayerState.Sneaking) isDetectable = true;
-			if(state == LightState.FullLight) isDetectable = true;
-			//Debug.Log("Detectable: " + isDetectable);
+		if(state == LightState.Darkness) isDetectable = false;
+		if(state == LightState.SemiLight && maincontroller.controller.state == PlayerState.Sneaking) isDetectable = false;
+		if(state == LightState.SemiLight && maincontroller.controller.state != PlayerState.Sneaking) isDetectable = true;
+		if(state == LightState.FullLight) isDetectable = true;
 			
-			yield return null;
-		}
+		yield return StartCoroutine("StateCheck");
 	}
 
 	void Update(){
 		if(isDetectable) GUIManager.instance.setDetector(true);
-		else GUIManager.instance.setDetector(false);		
+		else GUIManager.instance.setDetector(false);
+		Debug.Log(state);		
 	}
 
-	void OnTriggerEnter2D(Collider2D collider){
+	//void OnTriggerStay2D
+	// TODO: light state needs to update if/when flickering is enabled.
 
-		if(collider.gameObject.tag == "FullLight"){
+	void OnTriggerEnter2D(Collider2D c){
+
+		if(c.gameObject.tag == "FullLight" /*&& c.GetComponent<LightProjector>().isActive*/){
 			state = LightState.FullLight;
-			//Debug.Log("Light State: Full");
-			//Debug.Log("Detectable:" + isDetectable);
 		}
-		if(collider.gameObject.tag == "SemiLight"){
+		if(c.gameObject.tag == "SemiLight" /*&& c.GetComponent<LightProjector>().isActive*/){
 			state = LightState.SemiLight;
-			//Debug.Log("Light State: Semi");
-			//if(maincontroller.controller.state == PlayerState.Sneaking) Debug.Log("Stealth: Not Detectable");
-			//else Debug.Log("Detectable: " + isDetectable);
 		}
-
-		//Debug.Log("Light Detected.");
 	}
 
-	void OnTriggerExit2D(Collider2D collider){
-		if(collider.gameObject.tag == "FullLight"){
+	void OnTriggerExit2D(Collider2D c){
+		if(c.gameObject.tag == "FullLight"){
 			state = LightState.Darkness;
-			//Debug.Log("Light State: Darkness");
 		}
-		if(collider.gameObject.tag == "SemiLight"){
+		if(c.gameObject.tag == "SemiLight"){
 			state = LightState.Darkness;
-			//Debug.Log("Light State: Darkness");
 		}
-		//Debug.Log("Detectable: " + isDetectable);
 	}
 }

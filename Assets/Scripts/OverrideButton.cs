@@ -3,14 +3,17 @@ using System.Collections;
 
 public class OverrideButton : MonoBehaviour, IInputController{
 	
-	[Tooltip("This being the link to which ever camera or laser grid to be disabled by this button.")]
-	public GameObject[] objectsToOverride;
+	[Tooltip("This being the link to which ever camera or laser grid to be disabled by this button.")]	public GameObject[] objectsToOverride;
 	public Sprite active;
 	public Sprite disabled;
 	public float resetTimer = 2f;
 	public bool isResettable = true;
 
 	private bool isActive = true;
+
+	void Start(){
+		GetComponent<AudioSource>().volume = 2f;
+	}
 
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag == "Player"){
