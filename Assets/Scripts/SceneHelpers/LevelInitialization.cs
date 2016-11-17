@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TestingGrounds : MonoBehaviour{
+public class LevelInitialization : MonoBehaviour{
 	void Start(){
 		InputManager.instance.mainInput = new NullInputController();
 	}

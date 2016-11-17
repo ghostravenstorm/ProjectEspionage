@@ -17,13 +17,13 @@ public class OverrideButton : MonoBehaviour, IInputController{
 
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag == "Player"){
-			InputManager.instance.secondaryInputController = this;
+			InputManager.instance.secondaryInput = this;
 		}
 	}
 
 	void OnTriggerExit(Collider c){
 		if(c.gameObject.tag == "Player"){
-			InputManager.instance.secondaryInputController = new NullInputController();
+			InputManager.instance.secondaryInput = new NullInputController();
 		}
 	}
 

@@ -10,7 +10,7 @@ public class MenuManager : MonoBehaviour, IInputController{
 	private int selection = 0;
 
 	void Start(){
-		InputManager.instance.inputController = this;
+		InputManager.instance.mainInput = this;
 		updateStyle();
 	}
 

@@ -28,7 +28,7 @@ public class Dialogue_Trigger : MonoBehaviour {
     {
         if(c.tag == "Player")
         {   
-            //c.GetComponent<MainController>().pauseController(PlayerState.Standing);
+            c.GetComponent<MainController>().pauseController(PlayerState.Standing);
             ds.CurrentLine = 0;
             ds.text = conversation;
             ds.frames = animationframes;
@@ -36,6 +36,7 @@ public class Dialogue_Trigger : MonoBehaviour {
             ds.framesPerCharacter = AmountofFramesPerAvatar;
             ds.soundbyte = CharacterSound;
 
+            InputManager.instance.mainInput = ds;
 
             ds.StartRender();
             ds.CurrentLine++;

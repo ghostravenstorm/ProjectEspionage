@@ -46,7 +46,7 @@ GameObject:
   - 114: {fileID: 114000013958804646}
   - 114: {fileID: 114000011864681108}
   m_Layer: 9
-  m_Name: Character
+  m_Name: Agent
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -91,7 +91,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012400274930}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -11.91, y: 0.01, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -230,7 +230,7 @@ AudioSource:
       tangentMode: 0
     m_PreInfinity: 2
     m_PostInfinity: 2
-    m_RotationOrder: 4
+    m_RotationOrder: 0
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
@@ -280,6 +280,7 @@ MonoBehaviour:
   topOffset: 1
   bottomOffset: 0
   moveSpeed: 2
+  isLookingDown: 0
 --- !u!114 &114000010824269814
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -382,7 +383,8 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 53c702257b39ed04f9402fdcf30b3077, type: 3}
   - {fileID: 8300000, guid: b4aee6a9f3d1a5d4a95a6bb472d3dfbc, type: 3}
   - {fileID: 8300000, guid: 1c35cbf6f4eb8d042a033696734d21b4, type: 3}
-  landing: []
+  landing:
+  - {fileID: 8300000, guid: 25f53aa1d27c27b44952372aebd88b31, type: 3}
   dying:
   - {fileID: 8300000, guid: ecf6a8c748ccbff4bbd36de185f7c998, type: 3}
   - {fileID: 8300000, guid: 9038997f40684064a88feec4fcf3a437, type: 3}

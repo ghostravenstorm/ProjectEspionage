@@ -9,7 +9,7 @@ public class LightDetector : MonoBehaviour{
 	private MainController maincontroller;
 
 	void Start(){
-		StartCoroutine("StateCheck");
+		//StartCoroutine("StateCheck");
 		maincontroller = (GetComponentInParent(typeof(MainController)) as MainController);
 	}
 
@@ -19,18 +19,20 @@ public class LightDetector : MonoBehaviour{
 		if(state == LightState.SemiLight && maincontroller.controller.state == PlayerState.Sneaking) isDetectable = false;
 		if(state == LightState.SemiLight && maincontroller.controller.state != PlayerState.Sneaking) isDetectable = true;
 		if(state == LightState.FullLight) isDetectable = true;
-			
+		
+		// -- This yield prevents stack overflow at start time.s
+		yield return new WaitForSeconds(0.0001f);
 		yield return StartCoroutine("StateCheck");
 	}
 
 	void Update(){
 		if(isDetectable) GUIManager.instance.setDetector(true);
 		else GUIManager.instance.setDetector(false);
-		Debug.Log(state);		
+		//Debug.Log(state);		
 	}
 
 	//void OnTriggerStay2D
-	// TODO: light state needs to update if/when flickering is enabled.
+	// -- TODO: light state needs to update if/when flickering is enabled.
 
 	void OnTriggerEnter2D(Collider2D c){
 

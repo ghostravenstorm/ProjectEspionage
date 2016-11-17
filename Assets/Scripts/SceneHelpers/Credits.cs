@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 public class Credits : MonoBehaviour, IInputController{
 
 	void Start(){
-		InputManager.instance.inputController = this;
+		InputManager.instance.mainInput = this;
 	}
 	
 	public void OnSubmit(){

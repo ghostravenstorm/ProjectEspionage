@@ -29,7 +29,7 @@ public class MainController : MonoBehaviour{
 	void Update(){
 		controller.UpdateController(rigidbody);
 
-		Debug.Log("current controller: " + controller);
+		//Debug.Log("current controller: " + controller);
 		//Debug.Log("saved controller: " + prevController);
 
 		if(Input.GetButtonDown("Sneak") && controller.isGrounded)

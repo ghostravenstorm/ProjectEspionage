@@ -9,19 +9,19 @@ public class PauseMenu : MonoBehaviour, IInputController{
 	private int selection = 0;
 
 	void Start(){
-		InputManager.instance.inputController = this;
+		InputManager.instance.mainInput = this;
 		sceneList = new int[menuList.transform.childCount];
-		updateStyle();
+		UpdateStyle();
 		Debug.Log("Object loaded");
 	}
 
 	public void OnSubmit(){
 		switch(selection){
 			case 0 :
-				GameManager.instance.unpauseGame();
+				GameManager.instance.UnpauseGame();
 				break;
 			case 1 :
-				GameManager.instance.unpauseGame();
+				GameManager.instance.UnpauseGame();
 				GameManager.instance.restartFromCheckpoint();
 				break;
 			case 2 :
@@ -33,20 +33,20 @@ public class PauseMenu : MonoBehaviour, IInputController{
 	public void OnUpArrow(){
 		selection--;
 		if(selection <= -1) selection = sceneList.Length - 1;
-		updateStyle();
+		UpdateStyle();
 	}
 
 	public void OnDownArrow(){
 		selection++;
 		if(selection >= sceneList.Length) selection = 0;
-		updateStyle();
+		UpdateStyle();
 	}
 
 	public void OnConsole(){}
 	public void OnEscape(){}
 	public void OnAgentInteract(){}
 
-	private void updateStyle(){
+	private void UpdateStyle(){
 
 		for(int i = 0; i < menuList.transform.childCount; i++){
 			menuList.transform.GetChild(i).GetComponent<Text>().fontStyle = FontStyle.Normal;
