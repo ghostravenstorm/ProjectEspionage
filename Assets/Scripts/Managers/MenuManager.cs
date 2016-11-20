@@ -2,7 +2,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MenuManager : MonoBehaviour, IInputController{
+public class MenuManager : InputController{
 	
 	public GameObject menuList;
 	public string[] sceneList;
@@ -11,10 +11,10 @@ public class MenuManager : MonoBehaviour, IInputController{
 
 	void Start(){
 		InputManager.instance.mainInput = this;
-		updateStyle();
+		UpdateStyle();
 	}
 
-	public void OnSubmit(){
+	public override void OnSubmit(){
 		switch(selection){
 			case 0 : 
 				SceneManager.LoadScene(sceneList[selection]);
@@ -32,65 +32,19 @@ public class MenuManager : MonoBehaviour, IInputController{
 		}
 	}
 
-	public void OnUpArrow(){
+	public override void OnUp(){
 		selection--;
 		if(selection <= -1) selection = sceneList.Length - 1;
-		updateStyle();
+		UpdateStyle();
 	}
 
-	public void OnDownArrow(){
+	public override void OnDown(){
 		selection++;
 		if(selection >= sceneList.Length) selection = 0;
-		updateStyle();
+		UpdateStyle();
 	}
 
-	public void OnConsole(){}
-	public void OnEscape(){}
-	public void OnAgentInteract(){}
-
-
-
-	/*
-	void Update(){
-
-		//E35143
-
-		//Debug.Log(selection);
-
-		if(Input.GetButtonDown("Up")){
-			selection--;
-			if(selection <= -1) selection = sceneList.Length-1;
-			if(selection >= sceneList.Length) selection = 0;
-			updateStyle();
-		}
-
-		if(Input.GetButtonDown("Down")){
-			selection++;
-			if(selection <= -1) selection = sceneList.Length-1;
-			if(selection >= sceneList.Length) selection = 0;
-			updateStyle();
-		}
-
-		if(Input.GetButtonDown("Submit")){
-
-			switch(selection){
-				case 0 : 
-					SceneManager.LoadScene(sceneList[selection]);
-					GameManager.instance.setCurrentScene(sceneList[selection]);
-					break;
-				case 1 : 
-					SceneManager.LoadScene(sceneList[selection]);
-					GameManager.instance.setCurrentScene(sceneList[selection]);
-					break;
-				case 2 : 
-					Application.Quit();
-					break;					
-			}
-
-		}
-	}*/
-
-	private void updateStyle(){
+	private void UpdateStyle(){
 
 		for(int i = 0; i < menuList.transform.childCount; i++){
 			menuList.transform.GetChild(i).GetComponent<Text>().fontStyle = FontStyle.Normal;

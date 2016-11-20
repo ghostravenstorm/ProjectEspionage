@@ -2,9 +2,9 @@ using System;
 using System.Collections;
 using UnityEngine;
 
-public class NormalController : IController{
+public class NormalController : IAgentController{
 
-	public PlayerState state{ private set; get; }
+	public AgentState state{ private set; get; }
 
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
@@ -15,7 +15,7 @@ public class NormalController : IController{
     private float jumpForce = 5f;
 
     public NormalController(float speed, float modifier, bool groundState){
-		this.state = PlayerState.Standing;
+		this.state = AgentState.Standing;
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = groundState;
@@ -45,22 +45,26 @@ public class NormalController : IController{
 		//Debug.Log(rigidbody.velocity.y);
 
 		if(Input.GetButtonDown("Jump")){
-			state = PlayerState.Jumping;
+			state = AgentState.Jumping;
 		}
 		else if(Input.GetButton("Sprint") && rigidbody.velocity.x != 0 && !isSprintExhausted){
 			if(Input.GetButtonDown("Jump"))
-				state = PlayerState.Jumping;
+				state = AgentState.Jumping;
 			else
-				state = PlayerState.Running;
+				state = AgentState.Running;
 		}
 		else if(rigidbody.velocity.x != 0){
 			if(Input.GetButtonDown("Jump"))
-				state = PlayerState.Jumping;
+				state = AgentState.Jumping;
 			else
-				state = PlayerState.Walking;
+				state = AgentState.Walking;
 		}
 		else{
-			state = PlayerState.Standing;
+			state = AgentState.Standing;
 		}
 	}
 }
+
+
+
+

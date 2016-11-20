@@ -48,9 +48,9 @@ public class CameraTracker : MonoBehaviour{
 		if(isLookingDown){
 			point = bottomPoint.transform.position;
 		}
-		else if( (player.GetComponent<MainController>().controller.state == PlayerState.ClimbingRope ||
-			 player.GetComponent<MainController>().controller.state == PlayerState.ClimbingLadder ||
-			 player.GetComponent<MainController>().controller.state == PlayerState.ClimbingLedge) &&
+		else if( (player.GetComponent<MainController>().controller.state == AgentState.ClimbingRope ||
+			 player.GetComponent<MainController>().controller.state == AgentState.ClimbingLadder ||
+			 player.GetComponent<MainController>().controller.state == AgentState.ClimbingLedge) &&
 			 Input.GetButton("Vertical") ){
 
 			cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
@@ -60,12 +60,12 @@ public class CameraTracker : MonoBehaviour{
 				else if(Input.GetAxis("Vertical") < 0)
 					point = midPoint.transform.position;
 		}
-		else if(player.GetComponent<SpyAnimationController>().isFacingRight && player.GetComponent<MainController>().controller.state != PlayerState.Dead){
+		else if(player.GetComponent<SpyAnimationController>().isFacingRight && player.GetComponent<MainController>().controller.state != AgentState.Dead){
 			cameraMount.transform.position = new Vector3(camTrackerPosX, cameraMount.transform.position.y, cameraMount.transform.position.z);
 			//cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
 			point = rightPoint.transform.position;
 		}
-		else if(!player.GetComponent<SpyAnimationController>().isFacingRight && player.GetComponent<MainController>().controller.state != PlayerState.Dead){
+		else if(!player.GetComponent<SpyAnimationController>().isFacingRight && player.GetComponent<MainController>().controller.state != AgentState.Dead){
 			cameraMount.transform.position = new Vector3(camTrackerPosX, cameraMount.transform.position.y, cameraMount.transform.position.z);
 			//cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
 			point = leftPoint.transform.position;

@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class NullController : IController{
+public class NullController : IAgentController{
 	
-	public PlayerState state{ private set; get; }
+	public AgentState state{ private set; get; }
 
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
@@ -11,7 +11,7 @@ public class NullController : IController{
 	public bool isSprintExhausted{set; get;}
 	public bool didJump{get; set;}
 
-	public NullController(PlayerState state){
+	public NullController(AgentState state){
 		this.state = state;
 	}
 

@@ -21,7 +21,8 @@ public class GUIManager : MonoBehaviour {
 	}
 
 	void Update(){
-		if(Agent.instance.GetComponent<MainController>().controller.isGrounded)
+		if(/*Agent.instance.GetComponent<MainController>().controller.isGrounded*/
+			Agent.instance.GetComponent<AgentInputController>().isGrounded)
 			groundcheck.color = Color.white;
 		else
 			groundcheck.color = Color.red;

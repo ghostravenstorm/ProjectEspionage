@@ -3,7 +3,7 @@ public enum DeviceState{
 	Unactive
 }
 
-public enum PlayerState{
+public enum AgentState{
 	Walking,
 	Sneaking,
 	Running,

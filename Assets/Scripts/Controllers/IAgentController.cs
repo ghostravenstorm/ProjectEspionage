@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public interface IController{
+public interface IAgentController{
 
-	PlayerState state{ get; }
+	AgentState state{ get; }
 	float speed{ get; }
 	float modifier{ get; }
 	bool isGrounded{ set; get; }

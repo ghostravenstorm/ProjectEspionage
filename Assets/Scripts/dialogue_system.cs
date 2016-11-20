@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class dialogue_system : MonoBehaviour, IInputController {
+public class dialogue_system : InputController {
 
     public GameObject canvas;
     public Text textbox;
@@ -26,11 +26,11 @@ public class dialogue_system : MonoBehaviour, IInputController {
     private bool CancelTyping = false;
     public float typingSpeed = 1.2f;
 
-    public void OnSubmit(){
+    public override void OnSubmit(){
         if (!isTyping){
             if(CurrentLine >= text.Length){   
-                Agent.instance.GetComponent<MainController>().resumeController();
-                InputManager.instance.mainInput = new NullInputController();
+                //Agent.instance.GetComponent<MainController>().ResumeController();
+                //InputManager.instance.mainInput = new NullInputController();
                 canvas.SetActive(false);
                 //Debug.Log("Dialogue Complete.");
                 return;
@@ -56,7 +56,9 @@ public class dialogue_system : MonoBehaviour, IInputController {
         //if(Input.GetButtonDown(ButtonToContinueText)){
 
         //    if (!isTyping){
-        //        if(CurrentLine >= text.Length){   
+        //        if(CurrentLine >= text.Length){
+
+                    // -- Caused issues whenever submit was pressed when no dialogue is active.
                     //Agent.instance.GetComponent<MainController>().resumeController();
         //            canvas.SetActive(false);
         //            Debug.Log("Dialogue");
@@ -142,8 +144,4 @@ public class dialogue_system : MonoBehaviour, IInputController {
     public void StartRender(){
         StartCoroutine(RenderText(text[CurrentLine]));
     }
-
-    public void OnUpArrow(){}
-    public void OnDownArrow(){}
-    public void OnAgentInteract(){}
 }

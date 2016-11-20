@@ -16,8 +16,8 @@ public class LightDetector : MonoBehaviour{
 	private IEnumerator StateCheck(){
 
 		if(state == LightState.Darkness) isDetectable = false;
-		if(state == LightState.SemiLight && maincontroller.controller.state == PlayerState.Sneaking) isDetectable = false;
-		if(state == LightState.SemiLight && maincontroller.controller.state != PlayerState.Sneaking) isDetectable = true;
+		if(state == LightState.SemiLight && maincontroller.controller.state == AgentState.Sneaking) isDetectable = false;
+		if(state == LightState.SemiLight && maincontroller.controller.state != AgentState.Sneaking) isDetectable = true;
 		if(state == LightState.FullLight) isDetectable = true;
 		
 		// -- This yield prevents stack overflow at start time.s

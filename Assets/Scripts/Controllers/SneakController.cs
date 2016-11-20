@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class SneakController : IController{
+public class SneakController : IAgentController{
 
-	public PlayerState state{ private set; get; }
+	public AgentState state{ private set; get; }
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
 	public bool isGrounded{ set; get; }
@@ -11,7 +11,7 @@ public class SneakController : IController{
 	public bool didJump{set; get;}
 
 	public SneakController(float speed, float modifier){
-		state = PlayerState.Sneaking;
+		state = AgentState.Sneaking;
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = true;

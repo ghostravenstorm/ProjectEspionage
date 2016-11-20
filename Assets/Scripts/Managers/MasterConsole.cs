@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class MasterConsole : MonoBehaviour, IInputController{
+public class MasterConsole : InputController{
 		
 	public GameObject canvas;
 	public GameObject console;
@@ -35,11 +35,7 @@ public class MasterConsole : MonoBehaviour, IInputController{
 		}
 	}
 
-	public void OnSubmit(){
+	public override void OnSubmit(){
 
 	}
-
-	public void OnUpArrow(){}
-	public void OnDownArrow(){}
-	public void OnAgentInteract(){}
 }
