@@ -2,8 +2,9 @@ using UnityEngine;
 using System.Collections;
 
 public class OverrideButton : InputController{
-	
-	[Tooltip("This being the link to which ever camera or laser grid to be disabled by this button.")]	public GameObject[] objectsToOverride;
+
+	[Tooltip("This being the link to which ever camera or laser grid to be disabled by this button.")]
+	public GameObject[] objectsToOverride;
 	public Sprite active;
 	public Sprite disabled;
 	public float resetTimer = 2f;
@@ -28,7 +29,7 @@ public class OverrideButton : InputController{
 	}
 
 	public override void OnAgentInteract(){
-		
+
 		if(isActive){
 			GetComponent<AudioSource>().Play();
 			GetComponent<SpriteRenderer>().sprite = disabled;

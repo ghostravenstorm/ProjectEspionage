@@ -3,7 +3,7 @@ using System;
 using System.Collections;
 
 public class InputManager : MonoBehaviour{
-	
+
 	public static InputManager instance;
 
 	public IInputController mainInput;
@@ -29,6 +29,17 @@ public class InputManager : MonoBehaviour{
 
 		if(Input.GetButtonDown("Down"))
 			mainInput.OnDown();
+
+		if(Input.GetButton("Vertical")){
+			if(Input.GetAxis("Vertical") > 0)
+				mainInput.OnMoveUp();
+			else if(Input.GetAxis("Vertical") < 0)
+				mainInput.OnMoveDown();
+		}
+		else if(Input.GetButtonUp("Vertical")){
+			mainInput.OffMoveUp();
+			mainInput.OffMoveDown();
+		}
 
 		if(Input.GetButton("Horizontal")){
 			if(Input.GetAxis("Horizontal") > 0)

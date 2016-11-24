@@ -1,7 +1,7 @@
 using UnityEngine;
 
 public class CameraTracker : MonoBehaviour{
-	
+
 	public GameObject player;
 	public GameObject cameraMount;
 	public GameObject camTracker;
@@ -42,15 +42,17 @@ public class CameraTracker : MonoBehaviour{
 
 	void Update(){
 
+		var agentInput = Agent.instance.GetComponent<AgentInputController>();
+		var agentAnim = Agent.instance.GetComponent<SpyAnimationController>();
+
 		float camTrackerPosX = camTracker.transform.position.x;
 
-		
 		if(isLookingDown){
 			point = bottomPoint.transform.position;
 		}
-		else if( (player.GetComponent<MainController>().controller.state == AgentState.ClimbingRope ||
-			 player.GetComponent<MainController>().controller.state == AgentState.ClimbingLadder ||
-			 player.GetComponent<MainController>().controller.state == AgentState.ClimbingLedge) &&
+		else if( (agentInput.state == AgentState.ClimbingRope ||
+			 agentInput.state == AgentState.ClimbingLadder ||
+			 agentInput.state == AgentState.ClimbingLedge) &&
 			 Input.GetButton("Vertical") ){
 
 			cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
@@ -60,12 +62,12 @@ public class CameraTracker : MonoBehaviour{
 				else if(Input.GetAxis("Vertical") < 0)
 					point = midPoint.transform.position;
 		}
-		else if(player.GetComponent<SpyAnimationController>().isFacingRight && player.GetComponent<MainController>().controller.state != AgentState.Dead){
+		else if(agentAnim.isFacingRight && agentInput.state != AgentState.Dead){
 			cameraMount.transform.position = new Vector3(camTrackerPosX, cameraMount.transform.position.y, cameraMount.transform.position.z);
 			//cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
 			point = rightPoint.transform.position;
 		}
-		else if(!player.GetComponent<SpyAnimationController>().isFacingRight && player.GetComponent<MainController>().controller.state != AgentState.Dead){
+		else if(!agentAnim.isFacingRight && agentInput.state != AgentState.Dead){
 			cameraMount.transform.position = new Vector3(camTrackerPosX, cameraMount.transform.position.y, cameraMount.transform.position.z);
 			//cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
 			point = leftPoint.transform.position;
@@ -74,7 +76,7 @@ public class CameraTracker : MonoBehaviour{
 		cam.transform.position = Vector3.Lerp(cam.transform.position, point, moveSpeed * Time.deltaTime);
 		cam.transform.position = new Vector3(cam.transform.position.x, cam.transform.position.y, -10);
 
-		if(player.GetComponent<MainController>().controller.isGrounded)
+		if(agentInput.isGrounded)
 			cameraMount.transform.position = Vector3.Lerp(cameraMount.transform.position, camTracker.transform.position, moveSpeed * Time.deltaTime);
 	}
 }
