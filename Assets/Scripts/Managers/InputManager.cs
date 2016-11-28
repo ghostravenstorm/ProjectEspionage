@@ -6,6 +6,8 @@ public class InputManager : MonoBehaviour{
 
 	public static InputManager instance;
 
+	// -- References to things that recieve input.
+	// -- Set to NullInputController to inact no input.
 	public IInputController mainInput;
 	public IInputController secondaryInput;
 
@@ -17,9 +19,14 @@ public class InputManager : MonoBehaviour{
 	}
 
 	void Start(){
+		// -- Default: nothing to receive input at start.
 		secondaryInput = new NullInputController();
 	}
 
+	// -- Any and all actions on input events occur here.
+	// -- Objects that receive input must be set to one of the IInputController
+	//    variables above and must also use the interface.
+	// -- The code below calls the appropiate methods in the interface.
 	void Update(){
 		if(Input.GetButtonDown("Submit"))
 			mainInput.OnSubmit();
@@ -72,7 +79,8 @@ public class InputManager : MonoBehaviour{
 		if(Input.GetButtonDown("Interact"))
 			secondaryInput.OnAgentInteract();
 
-		if(Input.GetKeyDown(KeyCode.Alpha2))
+		// -- Hard-coded escape button for arcade cabnet.
+		if(Input.GetKeyDown(KeyCode.Alpha3))
 			Application.Quit();
 
 		//Debug.Log(mainInput);

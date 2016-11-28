@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
+// -- Do not use.
+
 public class MasterConsole : InputController{
 		
 	public GameObject canvas;

@@ -1,3 +1,7 @@
+
+// -- Used to create an IInputController variable that isn't
+// -- suppost to recieve any input. 
+
 public class NullInputController : IInputController{
 	public void OnSubmit(){}
 	public void OnUp(){}

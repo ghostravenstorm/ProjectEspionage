@@ -1,5 +1,6 @@
 using UnityEngine;
 
+// -- Interface that is used to reference objects that receive and react to input.
 public interface IInputController{
 
 	void OnSubmit();
@@ -24,6 +25,9 @@ public interface IInputController{
 	void OnAgentInteract();
 }
 
+// -- Extend this to GameObjects so the default implementation doesn't
+//    have to be manually written in each sub-class. Only the methods 
+//    that need to be used can be overridden.
 public abstract class InputController : MonoBehaviour, IInputController{
 
 	public virtual void OnSubmit(){}

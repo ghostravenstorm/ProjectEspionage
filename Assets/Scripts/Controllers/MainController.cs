@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+// -- Obsolete. Use AgentInputManager.
+
 public class MainController : MonoBehaviour{
 
 	public float movementSpeed = 3f;

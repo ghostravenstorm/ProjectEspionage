@@ -2,6 +2,8 @@ using System;
 using System.Collections;
 using UnityEngine;
 
+// -- Obsolete. Use AgentInputManager.
+
 public class NormalController : IAgentController{
 
 	public AgentState state{ private set; get; }

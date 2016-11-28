@@ -21,6 +21,7 @@ public class RopeSwing : MonoBehaviour{
 		var rb = GetComponent<Rigidbody>();
 
 		interpolatedRotation += swingRate;
+		// -- Do not use physics unless Agent has a way to translate with the rope.
 		//rb.rotation = Quaternion.Euler(0, 0, interpolatedRotation);
 		transform.rotation = Quaternion.Euler(0, 0, interpolatedRotation);
 

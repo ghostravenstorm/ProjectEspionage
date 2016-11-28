@@ -9,6 +9,8 @@ public class AgentInputController : InputController{
 	public float sprintModifier = 1.8f;
 	public float sneakModifier = 0.5f;
 	public float sprintMeter = 1f;
+
+	// -- Used to prevent double jumping.
 	public bool isGrounded = false;
 
 	public AgentState state;
@@ -16,6 +18,8 @@ public class AgentInputController : InputController{
 	private float currentSpeed;
 	private bool isAtLadder = false;
 	private bool isAtRope = false;
+
+	// -- Used to identify when the agent is actually on the ground.
 	private bool isTouchingGround = false;
 
 	private GameObject ropeRef;
@@ -26,32 +30,32 @@ public class AgentInputController : InputController{
 	void Start(){
 		state = AgentState.Standing;
 		currentSpeed = movementSpeed;
-		InputManager.instance.mainInput = this;
 		originalScale = transform.localScale;
 		originalRotation = transform.localRotation;
 
-		//Time.timeScale = 0.1f;
+		// -- Gives default control over the Agent when the scene starts.
+		InputManager.instance.mainInput = this;
 	}
 
 	void Update(){
-		//Debug.Log(state);
+		Debug.Log(state);
 		//Debug.Log("Is Grounded: " + isGrounded);
 		//Debug.Log("Is Touching Ground: " + isTouchingGround);
 		//Debug.Log("Is at rope: " + isAtRope);
 
-		if(ropeRef == null) return;
+		// if(ropeRef == null) return;
 
-		Transform ropeAnchor = ropeRef.transform.parent;
-		Transform bottomPoint = ropeAnchor.Find("BottomPoint");
-		float rotation = ropeAnchor.localRotation.eulerAngles.z;
-		float dist = Vector3.Distance(ropeAnchor.position, transform.position);
-		float length = Vector3.Distance(ropeAnchor.position, bottomPoint.position);
-		float modifier = ((dist * 100f) / length) / 100;
-		float velx = modifier * (length / 2f);
-		float vely = Mathf.Abs(Mathf.Sin(rotation)) + (currentSpeed * climbModifier);
-		if(rotation > 0 && rotation < 180) velx *= -1;
+		// Transform ropeAnchor = ropeRef.transform.parent;
+		// Transform bottomPoint = ropeAnchor.Find("BottomPoint");
+		// float rotation = ropeAnchor.localRotation.eulerAngles.z;
+		// float dist = Vector3.Distance(ropeAnchor.position, transform.position);
+		// float length = Vector3.Distance(ropeAnchor.position, bottomPoint.position);
+		// float modifier = ((dist * 100f) / length) / 100;
+		// float velx = modifier * (length / 2f);
+		// float vely = Mathf.Abs(Mathf.Sin(rotation)) + (currentSpeed * climbModifier);
+		// if(rotation > 0 && rotation < 180) velx *= -1;
 
-		Debug.Log(new Vector3(velx, vely, 0));
+		//Debug.Log(new Vector3(velx, vely, 0));
 		//Debug.Log("curSpeed: " + currentSpeed);
 		//Debug.Log("rotation: " + rotation);
 		//Debug.Log("velx: " + velx);
@@ -91,6 +95,7 @@ public class AgentInputController : InputController{
 			isAtLadder = false;
 		}
 		if(c.gameObject.tag == "Rope"){
+			// -- Remove Agent form rope and restore default scaling.
 			isAtRope = false;
 			c.gameObject.transform.DetachChildren();
 			transform.localScale = originalScale;
@@ -98,8 +103,11 @@ public class AgentInputController : InputController{
 		}
 	}
 
+	// -- Movement logic for climable things.
 	public override void OnMoveUp(){
 		if((!isAtLadder && !isAtRope) && state != AgentState.Sneaking){
+			// -- Agent shouldn't be ale to climb while sneaking or not standing at 
+			//    a climbable object.
 			GetComponent<Rigidbody>().useGravity = true;
 			return;
 		}
@@ -108,6 +116,7 @@ public class AgentInputController : InputController{
 			state = AgentState.ClimbingLadder;
 		else if(isAtRope){
 			if(state != AgentState.ClimbingRope){
+				// -- Attach Agent to the rope as a child transform.
 				transform.parent = ropeRef.transform;
 			}
 			state = AgentState.ClimbingRope;
@@ -122,6 +131,8 @@ public class AgentInputController : InputController{
 			rb.velocity = new Vector3(rb.velocity.x, 0, 0);
 
 		GetComponent<Rigidbody>().useGravity = false;
+
+		// -- Movement logic for swinging ropes. WIP.
 		if(state == AgentState.ClimbingRope){
 			Transform ropeAnchor = ropeRef.transform.parent;
 			Transform bottomPoint = ropeAnchor.Find("BottomPoint");
@@ -132,6 +143,7 @@ public class AgentInputController : InputController{
 			float velx = modifier * (1f);
 			float vely = Mathf.Abs(Mathf.Sin(rotation)) + (currentSpeed * climbModifier);
 			if(rotation > 0 && rotation < 180) velx *= -1;
+			// -- TODO: X vector still doesn't track with the rope properly.
 			rb.velocity = new Vector3(velx, vely, 0);
 		}
 		else
@@ -144,6 +156,7 @@ public class AgentInputController : InputController{
 		rb.velocity = new Vector3(0, 0, 0);
 	}
 
+	// -- Movement logic for climable things.
 	public override void OnMoveDown(){
 		if((!isAtLadder && !isAtRope) && state == AgentState.Sneaking && isGrounded){
 			GetComponent<Rigidbody>().useGravity = true;
@@ -186,6 +199,7 @@ public class AgentInputController : InputController{
 		rb.velocity = new Vector3(0, 0, 0);
 	}
 
+	// -- Movement logic for left and right.
 	public override void OnMoveRight(){
 		if(state != AgentState.Jumping)
 			state = AgentState.Walking;

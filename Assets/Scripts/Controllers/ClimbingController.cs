@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+// -- Obsolete. Use AgentInputManager.
+
 public class ClimbingController : IAgentController{
 	
 	public AgentState state{ private set; get; }

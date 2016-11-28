@@ -344,6 +344,11 @@ Prefab:
       propertyPath: sceneList.Array.data[0]
       value: Level
       objectReference: {fileID: 0}
+    - target: {fileID: 114000013499382298, guid: 353804885d9a80e4eb56aa56aca9b2b0,
+        type: 2}
+      propertyPath: sceneList.Array.data[1]
+      value: Controls
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 353804885d9a80e4eb56aa56aca9b2b0, type: 2}
   m_IsPrefabParent: 0

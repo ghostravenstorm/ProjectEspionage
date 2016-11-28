@@ -1,6 +1,8 @@
 using System;
 using UnityEngine;
 
+// -- Obsolete. Use AgentInputManager.
+
 public interface IAgentController{
 
 	AgentState state{ get; }

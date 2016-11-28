@@ -20,7 +20,9 @@ public class MenuManager : InputController{
 				SceneManager.LoadScene(sceneList[selection]);
 				GameManager.instance.setCurrentScene(sceneList[selection]);
 				break;
-			case 1 : 
+			case 1 :
+				SceneManager.LoadScene(sceneList[selection]);
+				GameManager.instance.setCurrentScene(sceneList[selection]); 
 				break;
 			case 2 : 
 				SceneManager.LoadScene(sceneList[selection]);
