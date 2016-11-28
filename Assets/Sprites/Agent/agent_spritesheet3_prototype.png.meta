@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 2484d003c1a6a5243909fb67e09a36ea
-timeCreated: 1478839171
+timeCreated: 1480371549
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -56,6 +56,16 @@ TextureImporter:
     21300098: Head6
     21300100: Head7
     21300102: Head8
+    21300104: agent_spritesheet3_prototype_0
+    21300106: agent_spritesheet3_prototype_1
+    21300108: agent_spritesheet3_prototype_2
+    21300110: agent_spritesheet3_prototype_3
+    21300112: agent_spritesheet3_prototype_4
+    21300114: agent_spritesheet3_prototype_5
+    21300116: agent_spritesheet3_prototype_6
+    21300118: agent_spritesheet3_prototype_7
+    21300120: agent_spritesheet3_prototype_9
+    21300122: agent_spritesheet3_prototype_8
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -473,100 +483,139 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 21
-        y: 200
-        width: 64
-        height: 42
+        y: 151
+        width: 114
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Head2
+      name: agent_spritesheet3_prototype_0
       rect:
         serializedVersion: 2
-        x: 107
-        y: 200
-        width: 64
-        height: 42
+        x: 21
+        y: 151
+        width: 114
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Head3
+      name: agent_spritesheet3_prototype_1
       rect:
         serializedVersion: 2
-        x: 191
-        y: 199
-        width: 64
-        height: 42
+        x: 172
+        y: 151
+        width: 114
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Head4
+      name: agent_spritesheet3_prototype_2
       rect:
         serializedVersion: 2
-        x: 273
-        y: 199
-        width: 64
-        height: 42
+        x: 321
+        y: 151
+        width: 114
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Head5
+      name: agent_spritesheet3_prototype_3
       rect:
         serializedVersion: 2
-        x: 355
-        y: 199
-        width: 64
-        height: 42
+        x: 464
+        y: 151
+        width: 114
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Head6
+      name: agent_spritesheet3_prototype_4
       rect:
         serializedVersion: 2
-        x: 436
-        y: 199
-        width: 64
-        height: 42
+        x: 607
+        y: 151
+        width: 114
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Head7
+      name: agent_spritesheet3_prototype_5
       rect:
         serializedVersion: 2
-        x: 523
-        y: 199
-        width: 64
-        height: 42
+        x: 750
+        y: 151
+        width: 114
+        height: 75
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       tessellationDetail: 0
     - serializedVersion: 2
-      name: Head8
+      name: agent_spritesheet3_prototype_6
       rect:
         serializedVersion: 2
-        x: 605
-        y: 201
-        width: 74
-        height: 47
+        x: 902
+        y: 151
+        width: 114
+        height: 75
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet3_prototype_7
+      rect:
+        serializedVersion: 2
+        x: 1048
+        y: 155
+        width: 132
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet3_prototype_9
+      rect:
+        serializedVersion: 2
+        x: 1924
+        y: 22
+        width: 178
+        height: 194
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      tessellationDetail: 0
+    - serializedVersion: 2
+      name: agent_spritesheet3_prototype_8
+      rect:
+        serializedVersion: 2
+        x: 1675
+        y: 22
+        width: 178
+        height: 194
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
