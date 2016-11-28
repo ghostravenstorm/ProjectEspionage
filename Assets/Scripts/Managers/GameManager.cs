@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour{
 		Cursor.lockState = CursorLockMode.Locked;
 		Cursor.visible = false;
 		isPaused = false;
+
 		/*
 		int count = 0;
 
@@ -46,9 +47,9 @@ public class GameManager : MonoBehaviour{
 		}
 	}
 
-	public void pauseGame(){
+	public void PauseGame(){
 		if(!isPaused){
-			Debug.Log("Game manager pause");
+			//Debug.Log("Game manager pause");
 			isPaused = true;
 			Time.timeScale = 0;
 			SceneManager.LoadSceneAsync("PauseMenu", LoadSceneMode.Additive);
@@ -58,11 +59,11 @@ public class GameManager : MonoBehaviour{
 		}
 	}
 
-	public void unpauseGame(){
+	public void UnpauseGame(){
 		isPaused = false;
 		Time.timeScale = 1;
 		SceneManager.UnloadScene("PauseMenu");
-		InputManager.instance.inputController = new NullInputController();
+		InputManager.instance.mainInput = new NullInputController();
 		GUIManager.instance.SetUnpause();
 		if(musicPlayerRef == null) musicPlayerRef = GameObject.Find("MusicPlayer");
 		musicPlayerRef.GetComponent<MusicPlayer>().Unpause();

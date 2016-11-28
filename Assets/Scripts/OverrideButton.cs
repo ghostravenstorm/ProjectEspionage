@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Collections;
 
-public class OverrideButton : MonoBehaviour, IInputController{
-	
-	[Tooltip("This being the link to which ever camera or laser grid to be disabled by this button.")]	public GameObject[] objectsToOverride;
+public class OverrideButton : InputController{
+
+	[Tooltip("This being the link to which ever camera or laser grid to be disabled by this button.")]
+	public GameObject[] objectsToOverride;
 	public Sprite active;
 	public Sprite disabled;
 	public float resetTimer = 2f;
@@ -17,36 +18,33 @@ public class OverrideButton : MonoBehaviour, IInputController{
 
 	void OnTriggerEnter(Collider c){
 		if(c.gameObject.tag == "Player"){
-			InputManager.instance.secondaryInputController = this;
+			InputManager.instance.secondaryInput = this;
 		}
 	}
 
 	void OnTriggerExit(Collider c){
 		if(c.gameObject.tag == "Player"){
-			InputManager.instance.secondaryInputController = new NullInputController();
+			InputManager.instance.secondaryInput = new NullInputController();
 		}
 	}
 
-	public void OnAgentInteract(){
-		for(int i = 0; i < objectsToOverride.Length; i++){
-			if(isActive){
-				GetComponent<AudioSource>().Play();
-				GetComponent<SpriteRenderer>().sprite = disabled;
-				if(isResettable) StartCoroutine("ResetButton");
+	public override void OnAgentInteract(){
+
+		if(isActive){
+			GetComponent<AudioSource>().Play();
+			GetComponent<SpriteRenderer>().sprite = disabled;
+			if(isResettable) StartCoroutine("ResetButton");
+			for(int i = 0; i < objectsToOverride.Length; i++){
 				objectsToOverride[i].GetComponent<IOverrideable>().Disable();
 			}
+			isActive = false;
 		}
-		isActive = false;
-		//play agent button pressing animation
 	}
+		//play agent button pressing animation
 
 	private IEnumerator ResetButton(){
 		yield return new WaitForSeconds(resetTimer);
 		isActive = true;
 		GetComponent<SpriteRenderer>().sprite = active;
 	}
-
-	public void OnSubmit(){}
-	public void OnUpArrow(){}
-	public void OnDownArrow(){}
 }

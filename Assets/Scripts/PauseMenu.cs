@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PauseMenu : MonoBehaviour, IInputController{
+public class PauseMenu : InputController{
 	
 	public GameObject menuList;
 	private int[] sceneList;
@@ -9,19 +9,19 @@ public class PauseMenu : MonoBehaviour, IInputController{
 	private int selection = 0;
 
 	void Start(){
-		InputManager.instance.inputController = this;
+		InputManager.instance.mainInput = this;
 		sceneList = new int[menuList.transform.childCount];
-		updateStyle();
+		UpdateStyle();
 		Debug.Log("Object loaded");
 	}
 
-	public void OnSubmit(){
+	public override void OnSubmit(){
 		switch(selection){
 			case 0 :
-				GameManager.instance.unpauseGame();
+				GameManager.instance.UnpauseGame();
 				break;
 			case 1 :
-				GameManager.instance.unpauseGame();
+				GameManager.instance.UnpauseGame();
 				GameManager.instance.restartFromCheckpoint();
 				break;
 			case 2 :
@@ -30,23 +30,19 @@ public class PauseMenu : MonoBehaviour, IInputController{
 		}
 	}
 
-	public void OnUpArrow(){
+	public override void OnUp(){
 		selection--;
 		if(selection <= -1) selection = sceneList.Length - 1;
-		updateStyle();
+		UpdateStyle();
 	}
 
-	public void OnDownArrow(){
+	public override void OnDown(){
 		selection++;
 		if(selection >= sceneList.Length) selection = 0;
-		updateStyle();
+		UpdateStyle();
 	}
 
-	public void OnConsole(){}
-	public void OnEscape(){}
-	public void OnAgentInteract(){}
-
-	private void updateStyle(){
+	private void UpdateStyle(){
 
 		for(int i = 0; i < menuList.transform.childCount; i++){
 			menuList.transform.GetChild(i).GetComponent<Text>().fontStyle = FontStyle.Normal;
@@ -56,5 +52,4 @@ public class PauseMenu : MonoBehaviour, IInputController{
 		menuList.transform.GetChild(selection).GetComponent<Text>().fontStyle = FontStyle.Bold;
 		menuList.transform.GetChild(selection).GetComponent<Text>().color = new Color32(0xe3, 0x51, 0x43, 0xff);
 	}
-
 }

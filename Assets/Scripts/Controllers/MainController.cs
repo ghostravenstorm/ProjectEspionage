@@ -13,8 +13,8 @@ public class MainController : MonoBehaviour{
 
 	private new Rigidbody rigidbody;
 
-	public IController controller;
-	private IController prevController;
+	public IAgentController controller;
+	private IAgentController prevController;
 
 	public float sprintMeter = 1f;
 
@@ -29,7 +29,7 @@ public class MainController : MonoBehaviour{
 	void Update(){
 		controller.UpdateController(rigidbody);
 
-		Debug.Log("current controller: " + controller);
+		//Debug.Log("current controller: " + controller);
 		//Debug.Log("saved controller: " + prevController);
 
 		if(Input.GetButtonDown("Sneak") && controller.isGrounded)
@@ -54,9 +54,9 @@ public class MainController : MonoBehaviour{
 	}
 
 	void OnTriggerEnter(Collider c){
-		if(c.gameObject.tag == "Rope" && controller.state != PlayerState.Sneaking)
+		if(c.gameObject.tag == "Rope" && controller.state != AgentState.Sneaking)
 			EnableClimbModeRope(c.gameObject);
-		if(c.gameObject.tag == "Ladder" && controller.state != PlayerState.Sneaking)
+		if(c.gameObject.tag == "Ladder" && controller.state != AgentState.Sneaking)
 			EnableClimbModeLadder(c.gameObject);
 	}
 
@@ -100,12 +100,12 @@ public class MainController : MonoBehaviour{
 		controller = new NormalController(movementSpeed, sprintModifier, true);
 	}
 
-	public void pauseController(PlayerState state){
+	public void PauseController(AgentState state){
 		//prevController = controller;
 		controller = new NullController(state);
 	}
 
-	public void resumeController(){
+	public void ResumeController(){
 		controller = new NormalController(movementSpeed, sprintModifier, true);
 	}
 
@@ -114,7 +114,7 @@ public class MainController : MonoBehaviour{
 		while(true){
 			//Debug.Log("SprintMeter is runnning");
 
-			if(Input.GetButton("Sprint") && controller.state == PlayerState.Running){
+			if(Input.GetButton("Sprint") && controller.state == AgentState.Running){
 				yield return new WaitForSeconds(0.1f);
 				sprintMeter -= 0.06f;
 				if(sprintMeter <= 0){

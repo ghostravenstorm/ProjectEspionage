@@ -41,7 +41,7 @@ GameObject:
   - 65: {fileID: 65000011796510578}
   m_Layer: 0
   m_Name: Rope
-  m_TagString: Climbable
+  m_TagString: Rope
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -53,8 +53,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011697413572}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.31, z: 0}
-  m_LocalScale: {x: 1, y: 10.852961, z: 1}
+  m_LocalPosition: {x: 0, y: -1.68, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000013766221168}
@@ -66,8 +66,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011160337908}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.1753693, y: 4.14, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalPosition: {x: 60.41, y: 2.34, z: 0}
+  m_LocalScale: {x: 1.2343303, y: 1.2343307, z: 4.114435}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013512293066}
@@ -98,7 +98,7 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.89, y: 1.28, z: 0.2}
+  m_Size: {x: 0.43, y: 3.36, z: 0.2}
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &114000012215493390
 MonoBehaviour:
@@ -111,8 +111,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0133c374628c8724b9de7a9718c60957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  swingAmount: 45
-  swingRate: 1.2
+  swingAmount: 35
+  swingRate: 0.8
 --- !u!212 &212000012596214224
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -175,7 +175,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1973063427
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 25ee35448d494304d9b4268f252cbe9b, type: 3}
-  m_Color: {r: 0, g: 1, b: 0.83448267, a: 1}
+  m_Sprite: {fileID: 21300000, guid: 3589ce06662f9cd45827ec1a4ccd2c3e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

@@ -61,10 +61,18 @@ MonoBehaviour:
   m_GameObject: {fileID: 1000011206634248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ade12c72653b78f4186dcd8949577531, type: 3}
+  m_Script: {fileID: 11500000, guid: 06cada91a55151b4b96d665f94e0999e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
+  textbox: {fileID: 0}
+  avatar: {fileID: 0}
+  audioSrc: {fileID: 0}
+  text: []
+  soundbyte: []
   frames: []
-  Text_to_say: butts butts butts butts
-  SoundEffect: {fileID: 8300000, guid: 21d91a14132076f4eb117dc11151d300, type: 3}
-  DialogueSystem: {fileID: 0}
+  CharacterLineSwitch: 
+  framesPerCharacter: 
+  CurrentLine: 0
+  CurrentAvy: 0
+  typingSpeed: 1.2

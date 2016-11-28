@@ -2,21 +2,12 @@ using UnityEngine;
 using System;
 using System.Collections;
 
-public interface IInputController{
-
-	void OnSubmit();
-	void OnUpArrow();
-	void OnDownArrow();
-
-	void OnAgentInteract();
-}
-
 public class InputManager : MonoBehaviour{
-	
+
 	public static InputManager instance;
 
-	public IInputController inputController;
-	public IInputController secondaryInputController;
+	public IInputController mainInput;
+	public IInputController secondaryInput;
 
 	void Awake(){
 		if(instance == null){
@@ -26,34 +17,72 @@ public class InputManager : MonoBehaviour{
 	}
 
 	void Start(){
-		secondaryInputController = new NullInputController();
+		secondaryInput = new NullInputController();
 	}
 
 	void Update(){
 		if(Input.GetButtonDown("Submit"))
-			inputController.OnSubmit();
+			mainInput.OnSubmit();
 
 		if(Input.GetButtonDown("Up"))
-			inputController.OnUpArrow();
+			mainInput.OnUp();
 
 		if(Input.GetButtonDown("Down"))
-			inputController.OnDownArrow();
+			mainInput.OnDown();
+
+		if(Input.GetButton("Vertical")){
+			if(Input.GetAxis("Vertical") > 0)
+				mainInput.OnMoveUp();
+			else if(Input.GetAxis("Vertical") < 0)
+				mainInput.OnMoveDown();
+		}
+		else if(Input.GetButtonUp("Vertical")){
+			mainInput.OffMoveUp();
+			mainInput.OffMoveDown();
+		}
+
+		if(Input.GetButton("Horizontal")){
+			if(Input.GetAxis("Horizontal") > 0)
+				mainInput.OnMoveRight();
+			else if(Input.GetAxis("Horizontal") < 0)
+				mainInput.OnMoveLeft();
+		}
+		else if(Input.GetButtonUp("Horizontal")){
+			mainInput.OffMoveRight();
+			mainInput.OffMoveLeft();
+		}
+
+		if(Input.GetButton("Sprint"))
+			mainInput.OnSprint();
+		else if(Input.GetButtonUp("Sprint"))
+			mainInput.OffSprint();
+
+		if(Input.GetButton("Sneak"))
+			mainInput.OnSneak();
+		else if(Input.GetButtonUp("Sneak"))
+			mainInput.OffSneak();
+
+		if(Input.GetButtonDown("Jump"))
+			mainInput.OnJump();
 
 		if(Input.GetButtonDown("Pause")){
-			GameManager.instance.pauseGame();
+			GameManager.instance.PauseGame();
 		}
 
 		if(Input.GetButtonDown("Interact"))
-			secondaryInputController.OnAgentInteract();
+			secondaryInput.OnAgentInteract();
 
 		if(Input.GetKeyDown(KeyCode.Alpha2))
 			Application.Quit();
 
-		
+		//Debug.Log(mainInput);
+
+		/*
 		for (int i = 0;i < 20; i++) {
             if(Input.GetKeyDown("joystick button "+i)){
                 print("joystick button "+i);
             }
         }
+        */
 	}
 }

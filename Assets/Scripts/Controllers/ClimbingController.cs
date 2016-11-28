@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-public class ClimbingController : IController{
+public class ClimbingController : IAgentController{
 	
-	public PlayerState state{ private set; get; }
+	public AgentState state{ private set; get; }
 
 	public float speed{ private set; get; }
 	public float modifier{ private set; get; }
@@ -16,9 +16,9 @@ public class ClimbingController : IController{
 	private GameObject ropePoint;
 
 	public ClimbingController(float speed, float modifier, GameObject ropePoint, GameObject climbable){
-		if(climbable.tag == "Rope") this.state = PlayerState.ClimbingRope;
-		if(climbable.tag == "Ladder") this.state = PlayerState.ClimbingLadder;
-		if(climbable.tag == "Ledge") this.state = PlayerState.ClimbingLedge;
+		if(climbable.tag == "Rope") this.state = AgentState.ClimbingRope;
+		if(climbable.tag == "Ladder") this.state = AgentState.ClimbingLadder;
+		if(climbable.tag == "Ledge") this.state = AgentState.ClimbingLedge;
 		this.speed = speed;
 		this.modifier = modifier;
 		this.isGrounded = true;
@@ -29,7 +29,7 @@ public class ClimbingController : IController{
 
 	public void UpdateController(Rigidbody rigidbody){
 
-		if(state == PlayerState.ClimbingRope){
+		if(state == AgentState.ClimbingRope){
 			ropePoint.transform.position = new Vector3(
 				climbable.transform.position.x, climbable.transform.position.y, ropePoint.transform.position.z
 			);

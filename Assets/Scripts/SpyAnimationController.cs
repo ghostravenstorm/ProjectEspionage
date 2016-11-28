@@ -27,7 +27,7 @@ public class SpyAnimationController : MonoBehaviour{
 
 	void Update(){
 
-		var controller = this.GetComponent<MainController>().controller;
+		var controller = this.GetComponent<AgentInputController>();
 
 		//Debug.Log(controller.state);
 		//Debug.Log(controller.isGrounded);
@@ -40,36 +40,36 @@ public class SpyAnimationController : MonoBehaviour{
 			isFacingRight = false;
 
 
-		if(controller.state == PlayerState.ClimbingRope){
+		if(controller.state == AgentState.ClimbingRope){
 			animator.SetBool("IsClimbingRope", true);
 			if(Input.GetAxis("Vertical") == 0)
 				animator.speed = 0;
 			else
 				animator.speed = climbAnimationSpeed;
 		}
-		else if(controller.state == PlayerState.ClimbingLadder){
+		else if(controller.state == AgentState.ClimbingLadder){
 			animator.SetBool("IsClimbingLadder", true);
 			if(Input.GetAxis("Vertical") == 0)
 				animator.speed = 0;
 			else
 				animator.speed = climbAnimationSpeed;
 		}
-		else if(controller.state == PlayerState.Walking){
+		else if(controller.state == AgentState.Walking){
 			toggleOffOtherBools("IsWalking");
 			animator.SetBool("IsWalking", true);
 			animator.speed = walkAnimationSpeed;
 		}
-		else if(controller.state == PlayerState.Running){
+		else if(controller.state == AgentState.Running){
 			toggleOffOtherBools("IsSprinting");
 			animator.SetBool("IsSprinting", true);
 			animator.speed = sprintAnimationSpeed;
 		}
-		else if(controller.state == PlayerState.Standing){
+		else if(controller.state == AgentState.Standing){
 			toggleOffOtherBools("IsStanding");
 			animator.SetBool("IsStanding", true);
 			animator.speed = standAnimationSpeed;
 		}
-		else if(controller.state == PlayerState.Sneaking){
+		else if(controller.state == AgentState.Sneaking){
 			toggleOffOtherBools("IsSneaking");
 			animator.SetBool("IsSneaking", true);
 
@@ -78,12 +78,12 @@ public class SpyAnimationController : MonoBehaviour{
 			else
 				animator.speed = sneakAnimationSpeed;
 		}
-		else if(controller.state == PlayerState.Jumping){
+		else if(controller.state == AgentState.Jumping){
 			animator.SetTrigger("Jump");
 			animator.speed = jumpAnimationSpeed;
 		}	
 
-		if(isFacingRight && controller.state != PlayerState.Dead) sprite.flipX = true;
+		if(isFacingRight && controller.state != AgentState.Dead) sprite.flipX = true;
 		else sprite.flipX = false;
 	}
 
@@ -106,7 +106,7 @@ public class SpyAnimationController : MonoBehaviour{
 
 		yield return new WaitForSeconds(delay);
 
-		this.GetComponent<MainController>().pauseController(PlayerState.Dead);
+		this.GetComponent<MainController>().PauseController(AgentState.Dead);
 		animator.speed = deathAniamtionSpeed;
 		animator.SetTrigger("Death");
 
@@ -114,7 +114,7 @@ public class SpyAnimationController : MonoBehaviour{
 
 		ResetAnimation();
 		this.transform.position = GameManager.instance.getCheckPoint();
-		this.GetComponent<MainController>().resumeController();
+		this.GetComponent<MainController>().ResumeController();
 
 	}
 
