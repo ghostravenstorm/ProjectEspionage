@@ -22,6 +22,7 @@ ExportedObj/
 
 # Unity3D generated meta files
 *.pidb.meta
+*.meta
 
 # Unity3D Generated File On Crash Reports
 sysinfo.txt
@@ -31,5 +32,6 @@ sysinfo.txt
 *.unitypackage
 
 # Other
+*.psd
 *.sublime-workspace
 *.sublime-project
