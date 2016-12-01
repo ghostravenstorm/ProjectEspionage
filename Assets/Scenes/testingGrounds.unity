@@ -409,7 +409,7 @@ Transform:
   m_Children:
   - {fileID: 1619749325}
   m_Father: {fileID: 0}
-  m_RootOrder: 51
+  m_RootOrder: 52
 --- !u!212 &169026262
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -608,7 +608,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000014083337138, guid: 7aa387d03a3f51d4aa7d78124595eaf8, type: 2}
       propertyPath: m_RootOrder
-      value: 52
+      value: 51
       objectReference: {fileID: 0}
     - target: {fileID: 4000014083337138, guid: 7aa387d03a3f51d4aa7d78124595eaf8, type: 2}
       propertyPath: m_LocalScale.x
@@ -3210,7 +3210,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000010757122836, guid: 6e9bb947909f8d546b48ff994ec23e9d, type: 2}
       propertyPath: m_RootOrder
-      value: 35
+      value: 34
       objectReference: {fileID: 0}
     - target: {fileID: 1000014085208720, guid: 6e9bb947909f8d546b48ff994ec23e9d, type: 2}
       propertyPath: m_Name
@@ -3370,7 +3370,7 @@ RectTransform:
   - {fileID: 1973102111}
   - {fileID: 1672003736}
   m_Father: {fileID: 0}
-  m_RootOrder: 34
+  m_RootOrder: 35
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}

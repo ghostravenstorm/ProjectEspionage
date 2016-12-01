@@ -5,7 +5,7 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: agent_spritesheet3_prototype_8
+  m_Name: agent_buttonPress
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
