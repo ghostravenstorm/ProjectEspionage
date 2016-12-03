@@ -16,8 +16,8 @@ public class AgentInputController : InputController{
 	public AgentState state;
 
 	private float currentSpeed;
-	private bool isAtLadder = false;
-	private bool isAtRope = false;
+	public bool isAtLadder = false;
+	public bool isAtRope = false;
 
 	// -- Used to identify when the agent is actually on the ground.
 	private bool isTouchingGround = false;
@@ -162,6 +162,8 @@ public class AgentInputController : InputController{
 			GetComponent<Rigidbody>().useGravity = true;
 			return;
 		}
+		if(state != AgentState.ClimbingLadder || state != AgentState.ClimbingRope)
+			return;
 
 		if(isAtLadder)
 			state = AgentState.ClimbingLadder;

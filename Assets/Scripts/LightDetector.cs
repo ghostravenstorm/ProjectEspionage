@@ -6,18 +6,20 @@ public class LightDetector : MonoBehaviour{
 	public bool isDetectable;
 	public LightState state;
 
-	private MainController maincontroller;
+	private AgentInputController maincontroller;
 
 	void Start(){
 		//StartCoroutine("StateCheck");
-		maincontroller = (GetComponentInParent(typeof(MainController)) as MainController);
+		maincontroller = (GetComponentInParent(typeof(AgentInputController)) as AgentInputController);
 	}
 
 	private IEnumerator StateCheck(){
 
+
+
 		if(state == LightState.Darkness) isDetectable = false;
-		if(state == LightState.SemiLight && maincontroller.controller.state == AgentState.Sneaking) isDetectable = false;
-		if(state == LightState.SemiLight && maincontroller.controller.state != AgentState.Sneaking) isDetectable = true;
+		if(state == LightState.SemiLight && maincontroller.state == AgentState.Sneaking) isDetectable = false;
+		if(state == LightState.SemiLight && maincontroller.state != AgentState.Sneaking) isDetectable = true;
 		if(state == LightState.FullLight) isDetectable = true;
 		
 		// -- This yield prevents stack overflow at start time.s

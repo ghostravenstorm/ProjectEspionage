@@ -106,7 +106,8 @@ public class SpyAnimationController : MonoBehaviour{
 
 		yield return new WaitForSeconds(delay);
 
-		this.GetComponent<MainController>().PauseController(AgentState.Dead);
+		//this.GetComponent<MainController>().PauseController(AgentState.Dead);
+		InputManager.instance.mainInput = new NullInputController();
 		animator.speed = deathAniamtionSpeed;
 		animator.SetTrigger("Death");
 
@@ -114,7 +115,8 @@ public class SpyAnimationController : MonoBehaviour{
 
 		ResetAnimation();
 		this.transform.position = GameManager.instance.getCheckPoint();
-		this.GetComponent<MainController>().ResumeController();
+		//this.GetComponent<MainController>().ResumeController();
+		InputManager.instance.mainInput = GetComponent<AgentInputController>();
 
 	}
 
