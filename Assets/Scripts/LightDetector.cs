@@ -4,32 +4,36 @@ using System.Collections;
 public class LightDetector : MonoBehaviour{
 
 	public bool isDetectable;
-	public LightState state;
+	// -- Change this variable in editor to set global light state
+	public LightState defaultLightState;
+	public LightState currentLightState;
 
-	private AgentInputController maincontroller;
+	private AgentInputController controller;
 
 	void Start(){
-		//StartCoroutine("StateCheck");
-		maincontroller = (GetComponentInParent(typeof(AgentInputController)) as AgentInputController);
-	}
-
-	private IEnumerator StateCheck(){
-
-
-
-		if(state == LightState.Darkness) isDetectable = false;
-		if(state == LightState.SemiLight && maincontroller.state == AgentState.Sneaking) isDetectable = false;
-		if(state == LightState.SemiLight && maincontroller.state != AgentState.Sneaking) isDetectable = true;
-		if(state == LightState.FullLight) isDetectable = true;
-		
-		// -- This yield prevents stack overflow at start time.s
-		yield return new WaitForSeconds(0.0001f);
-		yield return StartCoroutine("StateCheck");
+		controller = (GetComponentInParent(typeof(AgentInputController)) as AgentInputController);
 	}
 
 	void Update(){
+
+		if(controller.state == AgentState.Running)
+			isDetectable = true;
+		else if(currentLightState == LightState.Darkness)
+			isDetectable= false;
+		//else if(currentLightState == LightState.Darkness && controller.state != AgentState.Sneaking)
+		//	isDetectable = true;
+		//else if(currentLightState == LightState.Darkness && controller.state == AgentState.Sneaking)
+		//	isDetectable = false;
+		else if(currentLightState == LightState.SemiLight && controller.state == AgentState.Sneaking)
+			isDetectable = false;
+		else if(currentLightState == LightState.SemiLight && controller.state != AgentState.Sneaking)
+			isDetectable = true;
+		else if(currentLightState == LightState.FullLight)
+			isDetectable = true;
+
 		if(isDetectable) GUIManager.instance.setDetector(true);
 		else GUIManager.instance.setDetector(false);
+		
 		//Debug.Log(state);		
 	}
 
@@ -39,19 +43,19 @@ public class LightDetector : MonoBehaviour{
 	void OnTriggerEnter2D(Collider2D c){
 
 		if(c.gameObject.tag == "FullLight" /*&& c.GetComponent<LightProjector>().isActive*/){
-			state = LightState.FullLight;
+			currentLightState = LightState.FullLight;
 		}
 		if(c.gameObject.tag == "SemiLight" /*&& c.GetComponent<LightProjector>().isActive*/){
-			state = LightState.SemiLight;
+			currentLightState = LightState.SemiLight;
 		}
 	}
 
 	void OnTriggerExit2D(Collider2D c){
 		if(c.gameObject.tag == "FullLight"){
-			state = LightState.Darkness;
+			currentLightState = defaultLightState;
 		}
 		if(c.gameObject.tag == "SemiLight"){
-			state = LightState.Darkness;
+			currentLightState = defaultLightState;
 		}
 	}
 }

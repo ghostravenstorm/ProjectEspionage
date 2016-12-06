@@ -9,6 +9,9 @@ public class AgentInputController : InputController{
 	public float sprintModifier = 1.8f;
 	public float sneakModifier = 0.5f;
 	public float sprintMeter = 1f;
+	public float sprintRecharge = 0.02f;
+	public float sprintDecay = 0.06f;
+	private bool isSprintExhausted;
 
 	// -- Used to prevent double jumping.
 	public bool isGrounded = false;
@@ -32,6 +35,8 @@ public class AgentInputController : InputController{
 		currentSpeed = movementSpeed;
 		originalScale = transform.localScale;
 		originalRotation = transform.localRotation;
+
+		StartCoroutine("SprintMeter");
 
 		// -- Gives default control over the Agent when the scene starts.
 		InputManager.instance.mainInput = this;
@@ -100,6 +105,29 @@ public class AgentInputController : InputController{
 			c.gameObject.transform.DetachChildren();
 			transform.localScale = originalScale;
 			transform.localRotation = originalRotation;
+		}
+	}
+
+	private IEnumerator SprintMeter(){
+
+		while(true){
+			//Debug.Log("SprintMeter is runnning");
+
+			if(Input.GetButton("Sprint") && state == AgentState.Running){
+				yield return new WaitForSeconds(0.1f);
+				sprintMeter -= 0.06f;
+				if(sprintMeter <= 0){
+					sprintMeter = 0f;
+					isSprintExhausted = true;
+				}
+			}
+			else{
+				yield return new WaitForSeconds(0.1f);
+				sprintMeter += 0.02f;
+				if(sprintMeter >= 1) sprintMeter = 1f;
+			}
+
+			GUIManager.instance.UpdateSprintMeter(sprintMeter);
 		}
 	}
 
@@ -258,6 +286,12 @@ public class AgentInputController : InputController{
 	}
 
 	public override void OnSprint(){
+		if(isSprintExhausted){
+			currentSpeed = movementSpeed;
+			return;
+		}
+
+		isSprintExhausted = false;
 		var rb = GetComponent<Rigidbody>();
 
 		if(state == AgentState.Jumping)

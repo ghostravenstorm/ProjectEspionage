@@ -1,9 +1,9 @@
 
-- fix light detection
-- retrofit rope swing from old controller
-- sprinting forces isDetectable true
++ fix light detection
++ retrofit rope swing from old controller
++ sprinting forces isDetectable true
 - slap in loading screen
-- double check menu functions
++ double check menu functions
 - sprint meter
 - up and down pitches camera
 
